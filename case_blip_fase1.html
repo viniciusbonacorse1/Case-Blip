@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Blip · Geração de demanda para Fintechs</title>
+<style>
+  :root{
+    --blip-blue:#1968F0;
+    --blip-blue-bright:#0A85FF;
+    --blip-blue-deep:#0B43B0;
+    --blip-ink:#0A0A1A;
+    --blip-ink-2:#12121F;
+    --blip-ink-line:#23233a;
+
+    --paper:#ffffff;
+    --paper-2:#f4f6fb;
+    --ink:#10111a;
+    --ink-soft:#51546a;
+    --mist:#8a8da3;
+    --line:#e4e7f0;
+
+    --on-dark:#f3f5fb;
+    --on-dark-soft:#9aa0be;
+
+    --font:"Helvetica Neue","Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:var(--font); background:var(--blip-ink); color:var(--ink);
+    overflow:hidden; -webkit-font-smoothing:antialiased;
+  }
+
+  .deck{position:fixed;inset:0}
+  .panel{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    padding:52px 48px 96px; opacity:0; visibility:hidden;
+    transform:translateY(14px); transition:opacity .55s ease, transform .55s ease, visibility .55s;
+    overflow-y:auto;
+  }
+  .panel.is-active{opacity:1; visibility:visible; transform:none}
+  .panel--light{background:var(--paper); color:var(--ink)}
+  .panel--paper2{background:var(--paper-2); color:var(--ink)}
+  .panel--dark{
+    color:var(--on-dark);
+    background:
+      radial-gradient(1100px 580px at 74% 16%, rgba(25,104,240,.22), transparent 62%),
+      radial-gradient(900px 520px at 12% 92%, rgba(10,133,255,.10), transparent 60%),
+      var(--blip-ink);
+  }
+  .inner{width:100%; max-width:var(--maxw); margin:auto}
+
+  .eyebrow{font-size:.72rem; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:var(--blip-blue)}
+  .panel--dark .eyebrow{color:var(--blip-blue-bright)}
+
+  .hero-glyph{display:flex;align-items:center;gap:13px;margin-bottom:30px}
+  .dot{width:13px;height:13px;border-radius:50%;background:var(--blip-blue-bright);box-shadow:0 0 0 6px rgba(10,133,255,.16); display:inline-block}
+  .hero-tag{font-size:.72rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--on-dark-soft)}
+  .hero h1{font-size:clamp(2.1rem,5.2vw,4rem); line-height:1.05; font-weight:800; letter-spacing:-.025em; max-width:17ch}
+  .hero h1 em{font-style:normal;color:var(--blip-blue-bright)}
+  .hero .lede{margin-top:26px; max-width:54ch; font-size:clamp(1rem,1.6vw,1.18rem); line-height:1.55; color:var(--on-dark-soft); font-weight:400}
+  .hero .signature{margin-top:42px; display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+  .hero .sig-name{font-size:1.05rem;font-weight:700;color:var(--on-dark);letter-spacing:.01em}
+  .hero .sig-role{font-size:.82rem;color:var(--on-dark-soft);letter-spacing:.04em}
+  .hero .sig-sep{width:1px;height:26px;background:var(--blip-ink-line)}
+  .hero .hint{margin-top:38px; font-size:.82rem; letter-spacing:.04em; color:var(--on-dark-soft); display:flex; gap:18px; flex-wrap:wrap; align-items:center}
+  .kbd{display:inline-block; border:1px solid var(--blip-ink-line); border-radius:6px; padding:2px 9px; font-size:.76rem; color:var(--on-dark); background:rgba(255,255,255,.03)}
+
+  .context h2{font-size:clamp(1.6rem,3.3vw,2.5rem);line-height:1.12;font-weight:800;letter-spacing:-.015em;max-width:21ch;margin-top:16px}
+  .context .quote{margin-top:30px; max-width:60ch; font-size:clamp(1.12rem,1.9vw,1.42rem); line-height:1.5; color:var(--ink); font-weight:500; padding-left:24px; border-left:3px solid var(--blip-blue)}
+  .context .pills{margin-top:36px;display:flex;gap:10px;flex-wrap:wrap}
+  .pill{font-size:.78rem;font-weight:600;color:var(--ink-soft); border:1px solid var(--line);border-radius:100px;padding:7px 15px;background:var(--paper)}
+  .pill b{color:var(--blip-blue);font-weight:800}
+
+  .qa h2{font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.12;font-weight:800;letter-spacing:-.015em;margin-top:14px;max-width:22ch}
+  .qa .task{margin-top:16px;max-width:72ch;font-size:.98rem;line-height:1.55;color:var(--ink-soft)}
+  .qa .task-highlight{margin-top:12px;font-size:.86rem;font-weight:800;color:var(--blip-blue);text-transform:uppercase;letter-spacing:.06em;max-width:72ch;line-height:1.4}
+  .qa-grid{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media (max-width:820px){.qa-grid{grid-template-columns:1fr}}
+  .qa-card{background:var(--paper-2);border:1px solid var(--line);border-radius:16px;padding:22px 22px 24px;position:relative}
+  .qa-q-label{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blip-blue)}
+  .qa-q{margin-top:10px;font-size:1.02rem;line-height:1.4;font-weight:700;color:var(--ink)}
+  .qa-a{margin-top:14px;font-size:.95rem;line-height:1.5;color:var(--ink)}
+  .qa-a b{color:var(--blip-blue-deep)}
+  .qa-data{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+  .qa-data .row{font-size:.85rem;line-height:1.45;color:var(--ink-soft);padding-left:16px;position:relative}
+  .qa-data .row::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--blip-blue)}
+
+  .insight{max-width:var(--maxw)}
+  .ins-head{margin-bottom:24px}
+  .ins-num-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .ins-num{font-size:clamp(2.1rem,4.4vw,3rem);font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--blip-blue)}
+  .panel--dark .ins-num{color:var(--blip-blue-bright)}
+  .ins-eyebrow{font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blip-blue);display:flex;align-items:center;gap:8px}
+  .ins-eyebrow::before{content:"";width:18px;height:2px;background:var(--blip-blue);display:inline-block}
+  .panel--dark .ins-eyebrow{color:var(--blip-blue-bright)}
+  .panel--dark .ins-eyebrow::before{background:var(--blip-blue-bright)}
+  .ins-title{margin-top:12px;font-size:clamp(1.2rem,2.2vw,1.7rem);line-height:1.18;font-weight:800;letter-spacing:-.015em;color:var(--ink);max-width:46ch}
+  .panel--dark .ins-title{color:var(--on-dark)}
+  .ins-title b{color:var(--blip-blue)}
+  .panel--dark .ins-title b{color:var(--blip-blue-bright)}
+
+  .ins-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 26px;align-items:start}
+  @media (max-width:860px){.ins-grid{grid-template-columns:1fr;gap:16px}}
+
+  .ins-label{font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blip-blue);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .panel--dark .ins-label{color:var(--blip-blue-bright)}
+  .ins-label::before{content:"";width:18px;height:2px;background:var(--blip-blue);display:inline-block}
+  .panel--dark .ins-label::before{background:var(--blip-blue-bright)}
+  .ins-text{font-size:.86rem;line-height:1.5;color:var(--ink-soft)}
+  .panel--dark .ins-text{color:var(--on-dark-soft)}
+  .ins-text b{color:var(--ink);font-weight:700}
+  .panel--dark .ins-text b{color:var(--on-dark)}
+
+  .ins-support{background:var(--paper-2);border:1px solid var(--line);border-radius:13px;padding:14px 16px;font-size:.8rem;line-height:1.5;color:var(--ink)}
+  .panel--dark .ins-support{background:var(--blip-ink-2);border-color:var(--blip-ink-line);color:var(--on-dark)}
+  .ins-support p{margin:0}
+  .ins-support p + p{margin-top:7px}
+  .ins-support .stat{color:var(--blip-blue-deep);font-weight:800}
+  .panel--dark .ins-support .stat{color:var(--blip-blue-bright)}
+
+  .ins-disclaimer{margin-top:16px;grid-column:1 / -1;border:1px dashed var(--blip-blue);border-radius:12px;padding:13px 17px;background:rgba(25,104,240,.05);display:flex;gap:12px;align-items:flex-start}
+  .panel--dark .ins-disclaimer{background:rgba(10,133,255,.08);border-color:var(--blip-blue-bright)}
+  .ins-disclaimer .tag{font-size:.64rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--blip-blue);border-radius:6px;padding:4px 8px;white-space:nowrap;flex-shrink:0}
+  .ins-disclaimer .d-text{font-size:.83rem;line-height:1.48;color:var(--ink)}
+  .panel--dark .ins-disclaimer .d-text{color:var(--on-dark)}
+
+  .method h2{font-size:clamp(1.6rem,3.2vw,2.4rem);line-height:1.12;font-weight:800;letter-spacing:-.015em;max-width:22ch;margin-top:16px}
+  .method .sub{margin-top:16px;max-width:64ch;font-size:.98rem;line-height:1.55;color:var(--on-dark-soft)}
+  .method .steps{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:820px){.method .steps{grid-template-columns:1fr}}
+  .step{background:var(--blip-ink-2);border:1px solid var(--blip-ink-line);border-radius:14px;padding:20px;display:flex;flex-direction:column}
+  .step .s-num{font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blip-blue-bright)}
+  .step .s-title{margin-top:9px;font-size:1.05rem;font-weight:700;color:var(--on-dark);line-height:1.25}
+  .step .s-text{margin-top:10px;font-size:.84rem;line-height:1.5;color:var(--on-dark-soft);flex-grow:1}
+  .step .s-cta{margin-top:18px;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-size:.82rem;font-weight:700;letter-spacing:.02em;cursor:pointer;background:var(--blip-blue);color:#fff;border:none;border-radius:10px;padding:11px 14px;transition:background .2s ease, transform .15s ease;width:100%}
+  .step .s-cta:hover{background:var(--blip-blue-bright);transform:translateY(-1px)}
+  .step .s-cta svg{width:14px;height:14px;flex-shrink:0}
+  .step .s-cta--ghost{margin-top:9px;background:transparent;color:var(--blip-blue-bright);border:1px solid var(--blip-ink-line)}
+  .step .s-cta--ghost:hover{background:rgba(10,133,255,.08);border-color:var(--blip-blue-bright)}
+
+  .closing .para{margin-top:8px;max-width:76ch;font-size:1.04rem;line-height:1.7;color:var(--on-dark);padding:26px 28px;background:rgba(255,255,255,.03);border:1px solid var(--blip-ink-line);border-radius:16px}
+  .closing .para b{color:var(--blip-blue-bright);font-weight:700}
+  .closing .sign-off{margin-top:24px;display:flex;align-items:center;gap:14px}
+  .closing .so-name{font-size:1rem;font-weight:700;color:var(--on-dark)}
+  .closing .so-sep{width:1px;height:24px;background:var(--blip-ink-line)}
+  .closing .so-role{font-size:.82rem;color:var(--on-dark-soft);letter-spacing:.04em}
+
+  .modal-scrim{position:fixed;inset:0;z-index:60;background:rgba(5,5,12,.74);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:40px 24px;opacity:0;visibility:hidden;transition:opacity .3s ease, visibility .3s}
+  .modal-scrim.is-open{opacity:1;visibility:visible}
+  .modal{width:100%;max-width:760px;max-height:82vh;background:#0e0e1c;border:1px solid var(--blip-ink-line);border-radius:18px;display:flex;flex-direction:column;overflow:hidden;transform:translateY(12px) scale(.99);transition:transform .3s ease}
+  .modal-scrim.is-open .modal{transform:none}
+  .modal-head{padding:20px 24px;border-bottom:1px solid var(--blip-ink-line);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-shrink:0}
+  .modal-head .mh-eyebrow{font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--blip-blue-bright)}
+  .modal-head .mh-title{margin-top:5px;font-size:1.08rem;font-weight:700;color:var(--on-dark)}
+  .modal-close{width:38px;height:38px;border-radius:50%;border:1px solid var(--blip-ink-line);background:transparent;color:var(--on-dark-soft);font-size:1.2rem;cursor:pointer;flex-shrink:0;line-height:1;display:flex;align-items:center;justify-content:center;transition:border-color .2s, color .2s}
+  .modal-close:hover{border-color:var(--blip-blue-bright);color:var(--on-dark)}
+  .modal-body{padding:22px 24px 26px;overflow-y:auto}
+  .modal-body pre{font-family:"SF Mono",ui-monospace,"Cascadia Code","Roboto Mono",Menlo,Consolas,monospace;font-size:.82rem;line-height:1.62;color:#d4d8ec;white-space:pre-wrap;word-wrap:break-word}
+  .modal-body pre .pk{color:var(--blip-blue-bright);font-weight:700}
+  .modal-body pre .pc{color:#6f7496;font-style:italic}
+
+  .progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--blip-blue-bright);z-index:30;transition:width .45s ease}
+  .counter{position:fixed;top:22px;right:26px;z-index:30;font-size:.78rem;font-weight:700;letter-spacing:.12em;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  body.on-dark .counter{color:var(--on-dark-soft)}
+  .nav{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:30;display:flex;gap:10px;align-items:center}
+  .nav button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .15s ease, background .2s ease, border-color .2s ease}
+  .nav button:hover:not(:disabled){transform:translateY(-2px);border-color:var(--blip-blue);color:var(--blip-blue)}
+  .nav button:disabled{opacity:.32;cursor:default}
+  body.on-dark .nav button{background:var(--blip-ink-2);border-color:var(--blip-ink-line);color:var(--on-dark)}
+  body.on-dark .nav button:hover:not(:disabled){border-color:var(--blip-blue-bright);color:var(--blip-blue-bright)}
+  .nav .nav-label{font-size:.74rem;letter-spacing:.1em;color:var(--mist);min-width:128px;text-align:center;font-weight:600}
+  body.on-dark .nav .nav-label{color:var(--on-dark-soft)}
+
+  @media (max-width:680px){.panel{padding:48px 22px 92px}.qa-grid{gap:16px}}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+<div class="counter" id="counter">01 / 09</div>
+
+<div class="deck" id="deck">
+
+  <!-- 01 CAPA -->
+  <section class="panel panel--dark is-active" data-theme="dark">
+    <div class="inner hero">
+      <div class="hero-glyph"><span class="dot"></span><span class="hero-tag">Staff Product Manager</span></div>
+      <h1>Case Blip:<br>geração de demanda<br>para <em>Fintechs</em></h1>
+      <p class="lede">Fase 1 — Discovery com dados públicos do Banco Central. Cruzando datasets públicos para entender o cenário e construir o racional que vai sustentar as decisões de produto: do segmento correto ao beachhead geográfico do produto.</p>
+      <div class="signature">
+        <div><div class="sig-name">Vinicius Bonacorse</div><div class="sig-role">Staff Product Manager</div></div>
+        <div class="sig-sep"></div>
+        <div class="sig-role">SCR.data &nbsp;×&nbsp; Estatísticas do Pix</div>
+      </div>
+      <div class="hint"><span><span class="kbd">→</span> avançar</span><span><span class="kbd">←</span> voltar</span></div>
+    </div>
+  </section>
+
+  <!-- 02 CONTEXTO -->
+  <section class="panel panel--light" data-theme="light">
+    <div class="inner context">
+      <p class="eyebrow">O desafio</p>
+      <h2>O contexto que abre a oportunidade</h2>
+      <p class="quote">"Fintechs e bancos digitais brasileiros dominam o WhatsApp para suporte, mas raramente o usam para geração de demanda ativa. Você quer entrar nesse segmento com um produto de Marketing e seu desafio é descobrir se existe oportunidade real, definir o que o produto precisaria ter e prototipar a feature core."</p>
+      <div class="pills">
+        <span class="pill">Produto <b>standalone</b> de Marketing</span>
+        <span class="pill">Canal: <b>WhatsApp</b></span>
+        <span class="pill">2 datasets: <b>SCR</b> + <b>Pix</b></span>
+        <span class="pill">2 perguntas a responder</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 PERGUNTAS -->
+  <section class="panel panel--paper2" data-theme="light">
+    <div class="inner qa">
+      <p class="eyebrow">A tarefa</p>
+      <h2>Cruzar os datasets para responder duas perguntas</h2>
+      <p class="task">Usei IA para cruzar os datasets SCR.data e Estatísticas do Pix e responder, pautado nos números e no que eles dizem, qual segmento tem maior incentivo para aquisição via WhatsApp e onde está o beachhead geográfico (caso exista).</p>
+      <p class="task-highlight">Volume de crédito e transações de Pix sinalizando os tamanhos das bases e seus potenciais.</p>
+      <div class="qa-grid">
+        <div class="qa-card">
+          <div class="qa-q-label">Pergunta 1 · Segmento</div>
+          <div class="qa-q">Qual segmento tem maior volume de operações com PF e menor cobertura de canal físico?</div>
+          <div class="qa-a"><b>Financeiras</b>, com Fintechs como segundo perfil mais relevante.</div>
+          <div class="qa-data">
+            <div class="row">Financeiras: R$ 3,6 tri de carteira PF, 100x maior que Fintechs, inadimplência de 12,9%. Capilaridade física via correspondente comissionado, cara e desproporcional à base.</div>
+            <div class="row">Fintechs: carteira de R$ 36 bi, +62% no ano, inadimplência de 12,7%, sem canal físico. Chaves Pix: 41 mil por SCD contra 4,7 mi por IP.</div>
+          </div>
+        </div>
+        <div class="qa-card">
+          <div class="qa-q-label">Pergunta 2 · Beachhead</div>
+          <div class="qa-q">Existe concentração regional que sinalize um beachhead geográfico para uma oferta entry-level?</div>
+          <div class="qa-a">Sim. <b>BA, PE e CE</b> se mostram como o beachhead, com SP como mercado que não pode ser ignorado.</div>
+          <div class="qa-data">
+            <div class="row">SCR: BA, PE e CE concentram inadimplência de Financeiras acima de 14% e bases Fintech relevantes, com alta proporção de contratos em potencial renegociação e oferta de produtos complementares.</div>
+            <div class="row">Pix: Nordeste com 42 transações por pessoa ao ano, a maior do Brasil. SP concentra 34,8% da carteira Fintech (R$ 12,6 bi), escala imediata.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 INSIGHT 1 -->
+  <section class="panel panel--light" data-theme="light">
+    <div class="inner insight">
+      <div class="ins-head">
+        <div class="ins-num-row"><span class="ins-num">01</span><span class="ins-eyebrow">Insight · Segmento Financeiras</span></div>
+        <h2 class="ins-title">Financeiras têm o maior mercado de crédito <b>pessoa física</b> com pouca ou nenhuma estrutura física própria.</h2>
+      </div>
+      <div class="ins-grid">
+        <div class="ins-block">
+          <div class="ins-label">Interpretação</div>
+          <p class="ins-text">A relevância das Financeiras vem de um modelo de custo alto para sustentar capilaridade física: o correspondente comissionado. Foi essa capilaridade que construiu uma base de clientes robusta. Quando colocamos esse volume contra players de presença física irrelevante como as Fintechs, as Financeiras viram a <b>prioridade 1</b> em aquisição por canais digitais. As Fintechs ficam como prioridade 2, com pouca ou nenhuma estrutura física, mas compensando com a natureza digital e o uso mais intenso de canais próprios e WhatsApp.</p>
+        </div>
+        <div class="ins-block">
+          <div class="ins-label">Como cheguei aqui</div>
+          <p class="ins-text">A resposta que parece óbvia ao ligar ausência de estrutura física a WhatsApp como canal seria apontar para fintechs. Mas os dados mostram que financeiras têm carteira de crédito 100x maior, com inadimplência parecida. A maior oportunidade de volume está nesse player, que mantém estrutura física com gaps fora das capitais e opera boa parte dela via correspondente comissionado. É um modelo caro, num tradeoff claro entre capilaridade e custo.</p>
+        </div>
+        <div class="ins-block">
+          <div class="ins-label">Implicação para o produto</div>
+          <p class="ins-text">Para as Financeiras, o WhatsApp disputa espaço com o call center, não com a estrutura física. A lógica de segmentação que faz sentido construir é a de <b>campanha outbound por perfil de risco</b>: segmentar clientes por modalidade de crédito, produtos adquiridos, ticket, comportamento de pagamento e, principalmente, perfil para produtos complementares como contas, cartões, financiamentos e investimentos, sempre mirando aumento de relacionamento.</p>
+        </div>
+        <div class="ins-block">
+          <div class="ins-label">Dado de suporte</div>
+          <div class="ins-support">
+            <p>Financeiras: <span class="stat">R$ 3,6 trilhões</span> de carteira PF acumulada em 2025, <span class="stat">3,3 bilhões</span> de operações, inadimplência de <span class="stat">12,9%</span>.</p>
+            <p>Volume <span class="stat">100x maior</span> que Fintechs.</p>
+            <p>Capilaridade existente, mas cara, com grande potencial para canais digitais na construção do relacionamento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 INSIGHT 2 -->
+  <section class="panel panel--dark" data-theme="dark">
+    <div class="inner insight">
+      <div class="ins-head">
+        <div class="ins-num-row"><span class="ins-num">02</span><span class="ins-eyebrow">Insight · Segmento Fintechs</span></div>
+        <h2 class="ins-title">O ciclo de inadimplência de 2025 nas Fintechs abre espaço para <b>ultra segmentação via WhatsApp</b> pautada em score e comportamento de pagamento.</h2>
+      </div>
+      <div class="ins-grid">
+        <div class="ins-block">
+          <div class="ins-label">Interpretação</div>
+          <p class="ins-text">A oportunidade do ciclo de 2025 está na diversificação de produtos junto à instituição. De um lado, clientes adimplentes que mantiveram score e acesso ao crédito, de menor risco. De outro, quem teve o crédito restrito, de maior risco para produtos de crédito mas com potencial para outros produtos. Nos dois casos a instituição conhece o mesmo: histórico de pagamento, crédito contratado, potencial, score e contato. <b>A inadimplência, aqui, vai além do risco: é critério de segmentação.</b> O gap de 41 mil chaves Pix por SCD mostra que a Fintech não explorou esse canal contínuo com nenhuma das populações.</p>
+        </div>
+        <div class="ins-block">
+          <div class="ins-label">Como cheguei aqui</div>
+          <p class="ins-text">A carteira das Fintechs no SCR mostra a inadimplência subindo de 11% para 15% até julho e recuando para 10% em dezembro. O padrão indica concessão agressiva com critérios de score que fizeram a inadimplência disparar, mudando o perfil da carteira e restringindo o acesso dos inadimplentes a novo crédito. Isso cria uma base com dois perfis: quem continua com acesso a crédito e quem teve esse acesso restrito e vira oportunidade de diversificação de produtos.</p>
+        </div>
+        <div class="ins-block">
+          <div class="ins-label">Implicação para o produto</div>
+          <p class="ins-text">O dado de inadimplência oscilando ao longo de 2025 revela que clientes da mesma base vivem momentos muito diferentes no ciclo de crédito: quem está no fim do contrato, quem acabou de contratar, quem passou pelo pico de inadimplência e voltou a ser adimplente. A implicação direta para o produto é que <b>segmentar por perfil binário não resolve</b>, segmentar por momento no ciclo é o que gera oferta relevante. O produto precisa identificar onde cada cliente está no seu ciclo e acionar a campanha certa para aquele momento, usando histórico de pagamento, prazo restante de contrato e produtos já adquiridos como critérios de segmentação.</p>
+        </div>
+        <div class="ins-block">
+          <div class="ins-label">Dado de suporte</div>
+          <div class="ins-support">
+            <p>Inadimplência Fintech: jan/25 <span class="stat">11,7%</span> → pico jul/25 <span class="stat">15,6%</span> → dez/25 <span class="stat">10,4%</span>.</p>
+            <p>Carteira PF: <span class="stat">+62%</span> em 2025 (R$ 2,35bi → R$ 3,82bi).</p>
+            <p>Modalidade dominante: empréstimo pessoal R$ 24,6bi, 68% da carteira, 13,1% de inadimplência.</p>
+            <p>Ticket médio: <span class="stat">R$ 682</span>. Chaves Pix PF: 41 mil por participante SCD.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 INSIGHT 3 -->
+  <section class="panel panel--light" data-theme="light">
+    <div class="inner insight">
+      <div class="ins-head">
+        <div class="ins-num-row"><span class="ins-num">03</span><span class="ins-eyebrow">Insight · Cruzamento SCR × Pix</span></div>
+        <h2 class="ins-title">O volume de transações por Pix mostra que o cliente de Financeiras e Fintechs <b>já usa o mobile para decisões financeiras</b>, o que reduz barreiras de relacionamento via WhatsApp.</h2>
+      </div>
+      <div class="ins-grid">
+        <div class="ins-block">
+          <div class="ins-label">Interpretação</div>
+          <p class="ins-text">O cliente de crédito pessoal de Fintech e Financeira já resolve parte importante da rotina bancária no mobile e toma decisões financeiras nesse ambiente todo dia. São 30,6 bilhões de transações P2B, sinal de que o comportamento é permanente, não sazonal. Isso muda o foco: precisamos <b>menos "educar" o usuário</b> sobre canal mobile e digital, em especial o WhatsApp, e mais explorar bem o canal. A diferença está na qualidade do contato, na relevância da oferta e no timing da abordagem.</p>
+        </div>
+        <div class="ins-block">
+          <div class="ins-label">Como cheguei aqui</div>
+          <p class="ins-text">O cruzamento revela correlação clara de comportamento e perfil. O SCR define o cliente: tomador de empréstimo pessoal, ticket baixo, faixa de 30 a 49 anos, com pouco ou nenhum vínculo com pontos físicos. O Pix mostra o mesmo perfil etário com 55% do volume de P2B, 30,6 bilhões de transações em 2025, 80% iniciadas por QR dinâmico ou chave. Se esse cliente já opera tanto no mobile, a barreira ao WhatsApp como ponto de contato é baixa.</p>
+        </div>
+        <div class="ins-block">
+          <div class="ins-label">Implicação para o produto</div>
+          <p class="ins-text">Se o cliente já opera no mobile com essa intensidade e a barreira não é de canal, o produto precisa ser preciso em <b>quando e para quem acionar a campanha</b>. O comportamento de 30,6 bilhões de transações Pix mostra que esse cliente toma decisões financeiras no mobile todo dia, o que significa que uma mensagem no momento errado ou para o perfil errado some no ruído. A implicação para o produto é que timing e relevância do contato são o diferencial real: a campanha precisa chegar no momento certo do ciclo de crédito daquele cliente específico, com a oferta que faz sentido para o que ele já tem e para o que o seu histórico indica que ele pode adquirir.</p>
+        </div>
+        <div class="ins-block">
+          <div class="ins-label">Dado de suporte</div>
+          <div class="ins-support">
+            <p>Pix P2B 2025: <span class="stat">R$ 3,5 trilhões</span>, com <span class="stat">30,6 bilhões</span> de transações.</p>
+            <p>Faixa de 30 a 49 anos: <span class="stat">55%</span> do volume P2B, ticket R$ 108 a R$ 129.</p>
+            <p>80% das transações PF iniciadas por QR dinâmico ou chave, menos de 11% do tipo manual.</p>
+            <p>Ticket médio Fintech PF: R$ 682. Usuários Pix PF cadastrados: 166 milhões.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 INSIGHT 4 -->
+  <section class="panel panel--paper2" data-theme="light">
+    <div class="inner insight">
+      <div class="ins-head">
+        <div class="ins-num-row"><span class="ins-num">04</span><span class="ins-eyebrow">Insight · Beachhead geográfico</span></div>
+        <h2 class="ins-title">BA, PE e CE são o beachhead mais claro, e <b>SP é o mercado de escala</b> que não pode ser ignorado em nenhum contexto.</h2>
+      </div>
+      <div class="ins-grid">
+        <div class="ins-block">
+          <div class="ins-label">Interpretação</div>
+          <p class="ins-text">BA, PE e CE reúnem dois fatores que não convergem em nenhuma outra região: a maior frequência de uso digital por pessoa do Brasil e a maior concentração de inadimplência de crédito pessoal PF. O primeiro contraria a tese de que o Nordeste é "menos maduro digitalmente": o uso de Pix é mais intenso por pessoa que no Sudeste e no Sul, só com ticket menor. O segundo aponta demanda imediata por renegociação, com ROI mensurável e decisão mais rápida. SP tem o maior volume absoluto, então não pode ser ignorado, mas tem urgência menor: a dor existe, porém é mais branda num mercado mais disputado e com mais pontos físicos.</p>
+        </div>
+        <div class="ins-block">
+          <div class="ins-label">Como cheguei aqui</div>
+          <p class="ins-text">A definição do beachhead teve duas abordagens. Uma olha só a oportunidade de fato, com BA, PE e CE. A outra não ignora o tamanho absoluto de SP. Para chegar na primeira, cruzei dois dados isolados: inadimplência de crédito por UF no SCR e frequência de uso do Pix por região. Quando os dois dados, vindos de fontes separadas, apontam para o mesmo conjunto de UFs, o racional se sustenta.</p>
+        </div>
+        <div class="ins-block">
+          <div class="ins-label">Implicação para o produto</div>
+          <p class="ins-text">Pensando em ciclo de venda B2B e numa oferta entry-level, apostar em SP como prioridade é um erro: mais concorrência, mais customização e menos espaço para entry-level pela maturidade do mercado. BA, PE e CE indicam o inverso: <b>ticket de produto menor, comprador com dor mais aguda, ROI de renegociação demonstrável em menos tempo</b>. A oferta entry-level deve nascer para o perfil nordestino, com listas menores, renegociação como caso de uso primário e estimativa calibrada para ticket de R$ 150, e só depois ser adaptada para SP, com mais complexidade de segmentação e aquisição pura.</p>
+        </div>
+        <div class="ins-block">
+          <div class="ins-label">Dado de suporte</div>
+          <div class="ins-support">
+            <p>SCR, inadimplência de Financeiras: BA <span class="stat">16,1%</span>, PE <span class="stat">15,5%</span>, CE <span class="stat">14,3%</span>.</p>
+            <p>Carteira Fintech: BA R$ 2,0bi (11,4%), PE R$ 1,3bi (11,3%), CE R$ 1,1bi (12,6%).</p>
+            <p>Frequência Pix: Nordeste <span class="stat">42</span> contra Sudeste 35 e Sul 31 transações por pessoa ao ano.</p>
+            <p>Ticket médio: Nordeste R$ 150 contra Sudeste R$ 206. SP: 34,8% da carteira Fintech PF (R$ 12,6bi).</p>
+          </div>
+        </div>
+        <div class="ins-disclaimer">
+          <span class="tag">Disclaimer</span>
+          <span class="d-text"><b>Problema estrutural que vai na contramão do dado:</b> o Nordeste, em linhas gerais, tem menos players, ou seja, um mercado endereçável bem menor. Na prática, isso significaria menos possibilidades de venda.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 PROMPTS -->
+  <section class="panel panel--dark" data-theme="dark">
+    <div class="inner method">
+      <p class="eyebrow">Como a IA foi usada · os prompts</p>
+      <h2>O prompt-chave da análise, em três etapas</h2>
+      <p class="sub">Toda a análise dos datasets passou por um mesmo prompt evoluindo em três momentos. Clique em cada etapa para ver o prompt que usei.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="s-num">Etapa 01 · Antes</div>
+          <div class="s-title">Exploração e definição</div>
+          <div class="s-text">Estruturar a leitura dos dois datasets, mapear campos e padrões e decidir o que cada um responde antes de cruzar.</div>
+          <button class="s-cta" data-prompt="p1">Ver prompt da etapa 1<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+        <div class="step">
+          <div class="s-num">Etapa 02 · Durante</div>
+          <div class="s-title">Refino e descarte</div>
+          <div class="s-text">Corrigir leituras fracas: inadimplência tratada só como risco e SP escolhida como beachhead apenas pelo volume absoluto.</div>
+          <button class="s-cta" data-prompt="p2">Ver prompt da etapa 2<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="s-cta s-cta--ghost" data-adjust="a2">Ajustes de output</button>
+        </div>
+        <div class="step">
+          <div class="s-num">Etapa 03 · Depois</div>
+          <div class="s-title">Consolidação final</div>
+          <div class="s-text">Fechar as conclusões que já validei como critério final e usar as restrições para gerar o cruzamento final dos datasets escolhidos.</div>
+          <button class="s-cta" data-prompt="p3">Ver prompt da etapa 3<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="s-cta s-cta--ghost" data-adjust="a3">Ajustes de output</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 FECHAMENTO -->
+  <section class="panel panel--dark" data-theme="dark">
+    <div class="inner closing">
+      <p class="eyebrow">Como a IA foi usada · síntese</p>
+      <p class="para">Usei o <b>Claude</b> durante toda a fase 1 do case para manter uniformidade de raciocínio, como copiloto analítico em três etapas separadas. Primeiro, construí um prompt de exploração estruturada para definir os Datasets que seriam usados, buscando um equilíbrio entre qualidade de informação crítica e relevância qualitativa dos dados nas tabelas disponíveis. Depois, escolhidos os Datasets "SCR.data" e "Estatísticas do Pix", por serem complementares: o SCR entrega volume, inadimplência e comportamento de carteira por segmento de IF, enquanto o Pix entrega tamanho e maturidade de um ambiente nativo digital e frequência de uso por região. Na segunda etapa, dois outputs foram descartados: inadimplência interpretada apenas como risco de carteira (sendo corrigida para observar segmentação de base) e SP sendo apontada como beachhead por volume absoluto (sendo substituída por BA/PE/CE após cruzamento de frequência de Pix por usuário com inadimplência por UF, revelando convergência de dois dados independentes). Na etapa final, o prompt foi reconstruído com as conclusões já validadas como premissas, teses e restrições negativas como instrução, produzindo o cenário para a construção dos insights.</p>
+      <div class="sign-off">
+        <span class="so-name">Vinicius Bonacorse</span>
+        <span class="so-sep"></span>
+        <span class="so-role">Case Blip · Fase 1 · Discovery com dados públicos</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="modal-scrim" id="scrim">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-head">
+      <div>
+        <div class="mh-eyebrow" id="modalEyebrow">Prompt-chave</div>
+        <div class="mh-title" id="modalTitle">Etapa</div>
+      </div>
+      <button class="modal-close" id="modalClose" aria-label="Fechar">&times;</button>
+    </div>
+    <div class="modal-body"><pre id="modalBody"></pre></div>
+  </div>
+</div>
+
+<nav class="nav" aria-label="Navegação da apresentação">
+  <button id="prev" aria-label="Painel anterior">&#8592;</button>
+  <span class="nav-label" id="navLabel">Capa</span>
+  <button id="next" aria-label="Próximo painel">&#8594;</button>
+</nav>
+
+<script>
+  (function(){
+    var panels = Array.prototype.slice.call(document.querySelectorAll('.panel'));
+    var total = panels.length, i = 0;
+    var progress = document.getElementById('progress');
+    var counter = document.getElementById('counter');
+    var prev = document.getElementById('prev');
+    var next = document.getElementById('next');
+    var navLabel = document.getElementById('navLabel');
+    var labels = ['Capa','Contexto','Tarefa & respostas','Insight 01 · Financeiras','Insight 02 · Fintechs','Insight 03 · SCR × Pix','Insight 04 · Beachhead','Prompts da análise','Como usei IA'];
+    function pad(n){return (n<10?'0':'')+n;}
+    function show(n){
+      i = Math.max(0, Math.min(total-1, n));
+      panels.forEach(function(p,idx){ p.classList.toggle('is-active', idx===i); });
+      progress.style.width = ((i+1)/total*100) + '%';
+      counter.textContent = pad(i+1) + ' / ' + pad(total);
+      navLabel.textContent = labels[i] || '';
+      document.body.classList.toggle('on-dark', panels[i].getAttribute('data-theme')==='dark');
+      prev.disabled = (i===0); next.disabled = (i===total-1);
+      panels[i].scrollTop = 0; panels[i].setAttribute('tabindex','-1');
+    }
+    function go(d){ show(i+d); }
+    prev.addEventListener('click', function(){ go(-1); });
+    next.addEventListener('click', function(){ go(1); });
+
+    var prompts = {
+      p1: {
+        title: 'Etapa 01 · Exploração e definição',
+        body: '<span class="pc"># Objetivo: decidir, com critério, quais dois datasets sustentam as respostas do case antes de cruzar qualquer coisa.</span>\n\n'
+            + 'Você é um Staff Product Manager analisando dados públicos do Banco Central para avaliar a oportunidade de um produto de marketing via WhatsApp voltado a instituições financeiras.\n\n'
+            + 'Tenho disponíveis os datasets <span class="pk">SCR.data</span> (carteira de crédito PF por segmento, modalidade, UF e porte) e <span class="pk">Estatísticas do Pix</span> (transações, estoque de chaves e frequência de uso por região e por participante).\n\n'
+            + 'Antes de cruzar, faça uma leitura estruturada de cada um:\n'
+            + '1. Liste os campos relevantes para responder duas perguntas: (a) qual segmento tem maior volume PF e menor cobertura física e (b) se há concentração regional que indique um beachhead.\n'
+            + '2. Para cada dataset, diga o que ele responde bem e o que ele não responde, sem inventar dado que não está na tabela.\n'
+            + '3. Aponte os padrões e anomalias por segmento, por modalidade e por região que merecem investigação.\n'
+            + '4. Recomende qual par de datasets dá a leitura mais completa das duas perguntas, com o porquê da escolha apoiado em complementaridade, não em conveniência.\n\n'
+            + '<span class="pc"># Restrição: não tire conclusão de produto ainda. Esta etapa é só para mapear o terreno e escolher as fontes.</span>'
+      },
+      p2: {
+        title: 'Etapa 02 · Refino e descarte',
+        body: '<span class="pc"># Objetivo: estressar as primeiras leituras e descartar as que não se sustentam, antes de fechar qualquer resposta.</span>\n\n'
+            + 'Com os dados já cruzados e pré analisados de SCR.data e Estatísticas do Pix, revise de forma extremamente crítica as interpretações abaixo e corrija o que não está se sustentando ou fazendo sentido:\n\n'
+            + '1. <span class="pk">Inadimplência como risco.</span> A primeira iteração trata a inadimplência de 12,7% das Fintechs apenas como risco de carteira, o que não é verdade. Para repensar: o que a evolução mensal, subindo até julho e recuando em dezembro, revela sobre a base de clientes? Aqui vamos tratar a inadimplência também como critério de segmentação, separando quem manteve acesso ao crédito de quem teve acesso restrito por redução de score.\n\n'
+            + '2. <span class="pk">Beachhead por volume absoluto.</span> Foi indicado SP como beachhead por concentrar o maior volume de carteira, mas isso já é esperado por se tratar de SP. Vamos repensar cruzando dois dados independentes e que vão se sustentar sozinhos e juntos: inadimplência de crédito por UF no SCR e frequência de uso de Pix por região. Verifique se há um conjunto de UFs onde os dois sinais convergem e o que isso muda na escolha.\n\n'
+            + 'Para cada ponto, diga o que estava errado na leitura anterior, qual dado sustenta a correção e qual conclusão passa a valer.\n\n'
+            + '<span class="pc"># Restrição inegociável: nenhuma conclusão pode se apoiar em premissas como "é digital, então o WhatsApp faz sentido e é canal ideal". As correções devem estar pautadas em dados que sustentam a narrativa.</span>'
+      },
+      p3: {
+        title: 'Etapa 03 · Consolidação final',
+        body: '<span class="pc"># Objetivo: com as conclusões já validadas como critério final, aprofundar e consolidar o cruzamento dos datasets, deixando a análise pronta para virar insight.</span>\n\n'
+            + 'Você é um Staff Product Manager com domínio do mercado financeiro brasileiro. As conclusões abaixo já foram validadas e são critério fixo da análise:\n\n'
+            + '<span class="pk">Segmento:</span> o conjunto Financeiras + Fintechs (SCD) tem maior volume PF e menor cobertura física própria. Financeiras lideram em volume (R$ 3,6 tri, 100x as Fintechs, inadimplência de 12,9%, capilaridade cara via correspondente). Fintechs reforçam o sinal (R$ 36 bi, +62% no ano, inadimplência de 12,7%, sem canal físico, 41 mil chaves Pix por SCD contra 4,7 mi por IP).\n\n'
+            + '<span class="pk">Beachhead:</span> BA, PE e CE, pela convergência de inadimplência de Financeiras acima de 14% e maior frequência de Pix do país (Nordeste 42 por pessoa ao ano contra 35 no Sudeste e 31 no Sul). SP é o mercado de escala (34,8% da carteira Fintech), não o de entrada.\n\n'
+            + 'Aprofunde o cruzamento dos dois datasets sobre esses critérios e consolide a análise nos seguintes eixos, sem ainda formatar como insight:\n'
+            + '1. Como o volume e a estrutura de cobertura das Financeiras se relacionam com a oportunidade de aquisição por canal digital.\n'
+            + '2. O que o ciclo de inadimplência das Fintechs em 2025 diz sobre a base de clientes e a diversificação de produtos.\n'
+            + '3. Como o comportamento de uso do Pix do cliente PF se conecta ao perfil de crédito do SCR.\n'
+            + '4. Por que a convergência de sinais em BA, PE e CE sustenta o beachhead, com o tradeoff de SP explícito.\n\n'
+            + '<span class="pc"># Restrições negativas:</span>\n'
+            + '- Use apenas os números das premissas, sem inventar dado.\n'
+            + '- Não trate inadimplência só como risco; ela também é critério de segmentação.\n'
+            + '- Não sustente SP como beachhead sem deixar o tradeoff claro.\n'
+            + '- Toda correlação precisa apontar para um mecanismo concreto do WhatsApp, como segmentação de lista, flows por perfil, timing ou estimativa antes do disparo, nunca "canal digital" genérico.'
+      }
+    };
+
+    var adjusts = {
+      a2: {
+        title: 'Etapa 02 · Ajustes que propus',
+        body: '<span class="pc"># O que descartei e corrigi nesta iteração:</span>\n\n'
+            + '<span class="pk">1. Inadimplência sendo considerada apenas como risco.</span>\nO primeiro output tratou a inadimplência de 12,7% das Fintechs apenas como um risco de base de usuários. Descartei essa interpretação porque ela descarta uma linha de raciocínio que permite grande diversidade e profundidade de campanhas para diversificar oferta de produtos. Revisei para olharmos a inadimplência como um critério acionável de segmentação de base, separando quem manteve acesso ao crédito de quem teve acesso restrito, cada grupo com uma oferta diferente.\n\n'
+            + '<span class="pk">2. SP como beachhead por volume geral de crédito e transações de Pix.</span>\nO output apontou SP como beachhead só pelo volume absoluto de carteira, que era esperado e óbvio, por se tratar de SP. Descartei e cruzei os dados de inadimplência por UF com frequência de Pix por região, o que trouxe BA, PE e CE como UFs que convergem nesse cruzamento de dados de forma independente, o que vai sustentar o raciocínio para estas UFs serem as beachheads.\n\n'
+            + '<span class="pc"># Resultado: as duas correções se tornaram critério para a última iteração.</span>'
+      },
+      a3: {
+        title: 'Etapa 03 · Ajustes que propus',
+        body: '<span class="pc"># O que ajustei sobre o output gerado nesta etapa:</span>\n\n'
+            + '<span class="pk">1. Correlações e implicações genéricas de canal.</span>\nAnálise do cruzamento de datasets vinha acompanhada de outputs que tratavam as correlações de forma genérica, tornando a posterior construção dos insights mais difícil e obrigando a direcionamentos mais claros com mecanismos nativos do WhatsApp como finalidade do produto: segmentação de lista, flows por perfil, timing de campanha ou estimativa antes do disparo.\n\n'
+            + '<span class="pk">2. Equilíbrio entre os dois segmentos.</span>\nO output tendia a tratar Fintech como alvo principal pela natureza digital. Ajustei para deixar explícito o peso de cada um que já havia sido observado nas análises: Financeiras como prioridade 1 pelo mix entre volume e características da estrutura física, com Fintechs como prioridade 2 pela natureza digital, que faz sentido ser trazida para o racional.\n\n'
+            + '<span class="pk">3. Tom e formato.</span>\nReescrevi trechos para manter linguagem natural e fiel ao meu raciocínio, e direcionei que a análise já endereçasse o objetivo do Discovery para que o output saísse mais claro.\n\n'
+            + '<span class="pc"># Resultado: análise enriquecida e pronta para ser transformada nos insights.</span>'
+      }
+    };
+
+    var modalBody = document.getElementById('modalBody');
+    var modalTitle = document.getElementById('modalTitle');
+    var modalClose = document.getElementById('modalClose');
+    function openModal(data){
+      if(!data) return;
+      modalTitle.textContent = data.title; modalBody.innerHTML = data.body;
+      scrim.classList.add('is-open');
+    }
+    function closeModal(){ scrim.classList.remove('is-open'); }
+    document.querySelectorAll('.s-cta').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var pk = btn.getAttribute('data-prompt');
+        var ak = btn.getAttribute('data-adjust');
+        if(pk) openModal(prompts[pk]);
+        else if(ak) openModal(adjusts[ak]);
+      });
+    });
+    modalClose.addEventListener('click', closeModal);
+    scrim.addEventListener('click', function(e){ if(e.target===scrim) closeModal(); });
+    document.addEventListener('keydown', function(e){
+      if(scrim.classList.contains('is-open')){ if(e.key==='Escape'){ closeModal(); } return; }
+      if(e.key==='ArrowRight' || e.key==='PageDown'){ e.preventDefault(); go(1); }
+      else if(e.key==='ArrowLeft' || e.key==='PageUp'){ e.preventDefault(); go(-1); }
+      else if(e.key==='Home'){ e.preventDefault(); show(0); }
+      else if(e.key==='End'){ e.preventDefault(); show(total-1); }
+    });
+    show(0);
+  })();
+</script>
+</body>
+</html>
