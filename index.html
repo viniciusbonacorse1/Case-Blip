@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pulse — Marketing via WhatsApp</title>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<style>
+  :root{
+    --blue:#1968F0; --blue-bright:#0A85FF; --blue-deep:#0B43B0;
+    --dark:#0A0A1A; --white:#FFFFFF; --offwhite:#F4F6FB;
+    --text:#10111A; --text-soft:#51546A; --text-grey:#8A8DA3;
+    --green:#16B364; --red:#E8554E; --amber:#E8954E;
+    --border:#E4E7F0; --border-soft:#EDEFF6;
+    --shadow-sm:0 1px 2px rgba(16,17,26,0.04);
+    --shadow-md:0 6px 22px rgba(16,17,26,0.08);
+    --shadow-lg:0 14px 40px rgba(11,67,176,0.16);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;height:100%;}
+  body{
+    font-family:'Segoe UI','Helvetica Neue',system-ui,-apple-system,Arial,sans-serif;
+    background:var(--offwhite); color:var(--text);
+    -webkit-font-smoothing:antialiased; font-variant-numeric:tabular-nums;
+  }
+  #root{height:100%;}
+  .app{display:flex;min-height:100vh;}
+  .num,.kpi-val,.seg-size,.metric-row .val,.roi-num,.total-banner .num,
+  .delta-item .num,.summary-item .val,table.camp-table td,.bs-val{font-variant-numeric:tabular-nums;}
+
+  /* ===== Sidebar ===== */
+  .sidebar{
+    width:252px;flex-shrink:0;background:var(--dark);color:#fff;
+    display:flex;flex-direction:column;padding:26px 16px 18px;
+    position:sticky;top:0;height:100vh;align-self:flex-start;
+  }
+  .brand{display:flex;align-items:center;gap:11px;padding:0 8px 26px;font-weight:800;font-size:21px;letter-spacing:-0.02em;}
+  .brand-dot{width:12px;height:12px;border-radius:50%;background:var(--blue-bright);box-shadow:0 0 0 4px rgba(10,133,255,0.18);}
+  .btn-newcampaign{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;background:var(--blue);color:#fff;border:none;border-radius:12px;padding:13px;font-weight:700;font-size:15px;font-family:inherit;cursor:pointer;box-shadow:0 5px 16px rgba(25,104,240,0.45);transition:background .16s,box-shadow .16s,transform .12s;}
+  .btn-newcampaign:hover{background:var(--blue-bright);box-shadow:0 7px 20px rgba(25,104,240,0.55);}
+  .btn-newcampaign:active{transform:translateY(1px);}
+  .btn-newcampaign.active{box-shadow:0 0 0 3px rgba(10,133,255,0.35),0 5px 16px rgba(25,104,240,0.45);}
+  .nc-plus{font-size:18px;font-weight:700;line-height:1;}
+  .nav-section{font-size:10.5px;font-weight:800;letter-spacing:.08em;color:#5B5E7E;padding:18px 14px 7px;text-transform:uppercase;}
+  .nav{display:flex;flex-direction:column;gap:3px;}
+  .nav-item{display:flex;align-items:center;gap:11px;padding:10px 14px;border-radius:10px;color:#B9BBD6;font-size:14px;font-weight:600;cursor:pointer;transition:background .16s,color .16s;user-select:none;}
+  .nav-item:hover{background:rgba(255,255,255,0.06);color:#fff;}
+  .nav-item.active{background:rgba(255,255,255,0.08);color:#fff;box-shadow:inset 3px 0 0 var(--blue-bright);}
+  .nav-icon{width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;}
+  .sidebar-footer{margin-top:auto;padding:16px 10px 6px;border-top:1px solid rgba(255,255,255,0.08);}
+  .sidebar-footer .user{display:flex;align-items:center;gap:11px;}
+  .avatar{width:38px;height:38px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--blue),var(--blue-deep));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#fff;}
+  .userinfo{font-size:12px;color:#9799BA;line-height:1.35;min-width:0;}
+  .userinfo strong{display:block;color:#fff;font-size:13.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+  /* ===== Páginas com scroll (dashboard/campanhas/base) ===== */
+  .main{flex:1;min-width:0;padding:34px 44px 56px;max-width:1280px;}
+  .page-header{margin-bottom:26px;}
+  .page-title{font-size:25px;font-weight:800;letter-spacing:-0.025em;margin:0 0 6px;}
+  .page-subtitle{color:var(--text-soft);font-size:14px;margin:0;}
+
+  /* ===== Flow shell viewport-fit ===== */
+  .flow{flex:1;min-width:0;height:100vh;height:100dvh;display:flex;flex-direction:column;}
+  .flow-header{flex-shrink:0;padding:20px 44px 16px;border-bottom:1px solid var(--border-soft);background:#fff;}
+  .flow-eyebrow{font-size:11px;font-weight:800;letter-spacing:.07em;color:var(--blue);text-transform:uppercase;}
+  .flow-title{font-size:19px;font-weight:800;letter-spacing:-0.02em;margin:13px 0 3px;}
+  .flow-subtitle{font-size:13px;color:var(--text-soft);margin:0;line-height:1.45;}
+  .flow-body{flex:1;overflow-y:auto;padding:22px 44px;min-height:0;}
+  .flow-footer{flex-shrink:0;padding:14px 44px;border-top:1px solid var(--border);background:#fff;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+
+  /* Stepper compacto (dentro do header) */
+  .stepper{display:flex;align-items:center;margin-top:12px;}
+  .step{display:flex;align-items:center;gap:9px;flex:1;}
+  .step:not(:last-child)::after{content:'';flex:1;height:2px;background:#E9ECF5;margin:0 10px;border-radius:2px;transition:background .3s;}
+  .step.done:not(:last-child)::after{background:var(--blue);}
+  .step-circle{width:26px;height:26px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;background:#EDEFF6;color:var(--text-grey);transition:all .25s;}
+  .step.active .step-circle{background:var(--blue);color:#fff;box-shadow:0 0 0 4px rgba(25,104,240,0.14);}
+  .step.done .step-circle{background:var(--green);color:#fff;}
+  .step-label{font-size:12px;font-weight:600;color:var(--text-grey);white-space:nowrap;}
+  .step.active .step-label{color:var(--text);}
+  .step.done .step-label{color:var(--text-soft);}
+
+  /* ===== Cards / inputs (densidade reduzida) ===== */
+  .card{background:#fff;border-radius:15px;padding:20px;box-shadow:var(--shadow-sm);border:1px solid var(--border-soft);}
+  .section-title{font-size:15px;font-weight:700;margin:0 0 4px;letter-spacing:-0.01em;}
+  .section-sub{font-size:12.5px;color:var(--text-soft);margin:0 0 15px;line-height:1.45;}
+
+  label.field-label{display:block;font-size:12px;font-weight:600;color:var(--text-soft);margin-bottom:6px;}
+  input[type=text],input[type=number],input[type=date],select,textarea{
+    width:100%;padding:10px 13px;border-radius:10px;border:1.5px solid var(--border);
+    font-size:14px;font-family:inherit;color:var(--text);background:#fff;transition:border-color .15s,box-shadow .15s;
+  }
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(25,104,240,0.1);}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 20px;border-radius:11px;font-weight:700;font-size:14px;border:none;cursor:pointer;transition:background .16s,transform .12s,box-shadow .16s,border-color .16s,color .16s;}
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 4px 14px rgba(25,104,240,0.28);}
+  .btn-primary:hover:not(:disabled){background:var(--blue-deep);box-shadow:0 6px 18px rgba(25,104,240,0.34);}
+  .btn-primary:disabled{background:#C9D4ED;cursor:not-allowed;box-shadow:none;}
+  .btn-secondary{background:#fff;color:var(--text);border:1.5px solid var(--border);}
+  .btn-secondary:hover{border-color:var(--blue);color:var(--blue);}
+  .btn-ghost{background:transparent;color:var(--text-soft);}
+  .btn-ghost:hover{color:var(--blue);}
+  .btn-big{padding:14px 32px;font-size:15px;border-radius:12px;}
+  .btn-sm{padding:7px 13px;font-size:12.5px;border-radius:9px;}
+  .link-btn{background:none;border:none;color:var(--blue);font-weight:600;font-size:12.5px;cursor:pointer;padding:0;text-decoration:underline;font-family:inherit;}
+
+  /* Cards de caminho */
+  .path-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px;}
+  .path-card{border:1.5px solid var(--border);border-radius:14px;padding:18px;cursor:pointer;transition:border-color .16s,box-shadow .16s,transform .16s;background:#fff;position:relative;}
+  .path-card:hover{border-color:#A9C4F7;transform:translateY(-2px);box-shadow:var(--shadow-md);}
+  .path-card.selected{border-color:var(--blue);box-shadow:0 0 0 3px rgba(25,104,240,0.1);}
+  .path-icon{width:40px;height:40px;border-radius:11px;background:rgba(25,104,240,0.08);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px;}
+  .path-title{font-size:15.5px;font-weight:700;margin:0 0 6px;letter-spacing:-0.01em;}
+  .path-sub{font-size:13px;color:var(--text-soft);margin:0;line-height:1.5;}
+  .path-check{position:absolute;top:16px;right:16px;width:22px;height:22px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .16s;color:transparent;font-size:13px;}
+  .path-card.selected .path-check{background:var(--blue);border-color:var(--blue);color:#fff;}
+
+  .obj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:4px;}
+  .obj-card{border:1.5px solid var(--border);border-radius:11px;padding:13px 15px;cursor:pointer;font-weight:600;font-size:13.5px;transition:all .15s;background:#fff;}
+  .obj-card:hover{border-color:#A9C4F7;}
+  .obj-card.selected{border-color:var(--blue);background:rgba(25,104,240,0.05);color:var(--blue-deep);}
+
+  /* Upload */
+  .upload-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .upload-box{border:1.5px dashed #C9D2EA;border-radius:13px;padding:26px 20px;text-align:center;background:#FAFBFE;transition:border-color .16s,background .16s;}
+  .upload-box:hover{border-color:#A9C4F7;background:#F7F9FE;}
+  .upload-box .icon{font-size:27px;margin-bottom:10px;}
+  .upload-box h4{margin:0 0 6px;font-size:14.5px;font-weight:700;}
+  .upload-box p{margin:0 0 15px;font-size:12.5px;color:var(--text-soft);line-height:1.5;}
+  .hidden-input{display:none;}
+  .warning-box{background:#FDF1EE;border:1px solid #F6CFC8;color:#9B3A33;border-radius:10px;padding:11px 14px;font-size:12.5px;margin-top:13px;line-height:1.5;}
+  .success-box{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#EAFBF2;border:1px solid #B5EBCE;color:#0E7B47;border-radius:11px;padding:12px 16px;font-size:13px;font-weight:600;}
+
+  .base-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:6px 0 16px;}
+  .bs-stat{background:#F7F9FE;border:1px solid var(--border-soft);border-radius:12px;padding:15px 16px;}
+  .bs-lbl{font-size:10.5px;color:var(--text-soft);font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:7px;}
+  .bs-val{font-size:22px;font-weight:800;letter-spacing:-0.01em;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
+  .chip{font-size:11px;font-weight:600;background:#EDF1FB;color:var(--blue-deep);padding:4px 10px;border-radius:8px;}
+
+  /* Segmentos — grid denso 2 colunas */
+  .seg-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px;}
+  .seg-card{border:1.5px solid var(--border);border-radius:14px;padding:16px;background:#fff;cursor:pointer;transition:border-color .16s,box-shadow .16s,transform .16s;position:relative;display:flex;flex-direction:column;}
+  .seg-card:hover{border-color:#A9C4F7;transform:translateY(-2px);box-shadow:var(--shadow-md);}
+  .seg-card.selected{border-color:var(--blue);box-shadow:0 0 0 3px rgba(25,104,240,0.1);}
+  .seg-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;}
+  .seg-radio{width:19px;height:19px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .16s;}
+  .seg-card.selected .seg-radio{border-color:var(--blue);}
+  .seg-card.selected .seg-radio::after{content:'';width:9px;height:9px;border-radius:50%;background:var(--blue);}
+  .prop-tag{font-size:10px;font-weight:800;padding:3px 9px;border-radius:7px;letter-spacing:.03em;text-transform:uppercase;}
+  .prop-alta{background:rgba(22,179,100,0.12);color:var(--green);}
+  .prop-media{background:rgba(25,104,240,0.1);color:var(--blue-deep);}
+  .prop-baixa{background:rgba(138,141,163,0.14);color:var(--text-soft);}
+  .seg-name{font-weight:700;font-size:14.5px;margin:0 0 3px;letter-spacing:-0.01em;}
+  .seg-size-line{font-size:12px;color:var(--text-grey);font-weight:600;margin:0 0 9px;}
+  .seg-size-line b{color:var(--text);font-weight:800;font-size:14px;}
+  .seg-criteria{font-size:12px;color:var(--text-soft);margin:0 0 10px;line-height:1.45;flex:1;}
+  .seg-obj{font-size:11.5px;font-weight:700;color:var(--blue);margin:0;padding-top:10px;border-top:1px solid var(--border-soft);}
+
+  .processing{display:flex;flex-direction:column;align-items:center;gap:14px;padding:40px 0;}
+  .spinner{width:40px;height:40px;border-radius:50%;border:3.5px solid #E6E9F2;border-top-color:var(--blue);animation:spin .8s linear infinite;}
+  .spinner-sm{width:16px;height:16px;border-width:2.5px;display:inline-block;vertical-align:middle;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  .total-banner{margin-top:16px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(135deg,#0B43B0,#1968F0);color:#fff;border-radius:14px;padding:16px 22px;box-shadow:var(--shadow-lg);}
+  .total-banner .num{font-size:18px;font-weight:800;letter-spacing:-0.01em;}
+  .total-banner .lbl{font-size:11.5px;opacity:.85;font-weight:600;}
+
+  /* Mensagem */
+  .t3-layout{display:grid;grid-template-columns:1.25fr 0.92fr;gap:18px;align-items:start;}
+  .t3-right{position:sticky;top:0;align-self:start;}
+  .template-list{display:flex;flex-direction:column;gap:10px;}
+  .template-card{border:1.5px solid var(--border);border-radius:13px;padding:14px 16px;cursor:pointer;background:#fff;transition:border-color .15s,box-shadow .15s;}
+  .template-card:hover{border-color:#A9C4F7;}
+  .template-card.selected{border-color:var(--blue);box-shadow:0 0 0 3px rgba(25,104,240,0.09);}
+  .template-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;}
+  .pill{font-size:10px;font-weight:800;padding:3px 8px;border-radius:6px;letter-spacing:.02em;}
+  .pill-meta{background:rgba(22,179,100,0.12);color:var(--green);}
+  .pill-cat{background:#EDEFF7;color:var(--text-soft);}
+  .template-name{font-weight:700;font-size:14px;}
+  .template-body{font-size:12.5px;color:var(--text-soft);line-height:1.55;}
+  .var-highlight{color:var(--blue-deep);font-weight:700;background:rgba(25,104,240,0.08);padding:1px 4px;border-radius:4px;}
+  .var-fields{margin-top:14px;}
+  .var-field-row{margin-bottom:11px;}
+  .var-source{font-size:11px;color:var(--text-grey);margin-top:4px;}
+
+  .wa-caption{font-size:11px;font-weight:700;color:var(--text-grey);letter-spacing:.03em;text-transform:uppercase;margin:0 0 8px 2px;}
+  .wa-phone{background:#E5DDD5;border-radius:18px;padding:16px 13px;min-height:330px;display:flex;flex-direction:column;box-shadow:var(--shadow-md);}
+  .wa-header{display:flex;align-items:center;gap:10px;background:var(--blue-deep);color:#fff;margin:-16px -13px 13px;padding:13px 15px;border-radius:18px 18px 0 0;}
+  .wa-avatar{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;}
+  .wa-name{font-weight:700;font-size:14px;}
+  .wa-status{font-size:11px;opacity:.82;}
+  .wa-body{flex:1;display:flex;flex-direction:column;justify-content:flex-end;}
+  .wa-bubble{background:#DCF8C6;border-radius:11px;padding:10px 13px 18px;font-size:13px;line-height:1.5;max-width:92%;align-self:flex-end;position:relative;box-shadow:0 1px 1px rgba(0,0,0,0.08);margin-bottom:6px;}
+  .wa-time{position:absolute;bottom:5px;right:11px;font-size:10px;color:#5b6b58;display:flex;align-items:center;gap:3px;}
+
+  /* Estimativa */
+  .scenario-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0 6px;}
+  .scenario-grid.single{grid-template-columns:1fr;max-width:440px;}
+  .scenario-card{position:relative;border-radius:14px;padding:18px;border:1.5px solid var(--border);background:#fff;transition:box-shadow .16s,border-color .16s,transform .16s;}
+  .scenario-card.cluster{border-color:#A9C4F7;}
+  .scenario-card.selectable{cursor:pointer;}
+  .scenario-card.selectable:hover{border-color:#A9C4F7;transform:translateY(-1px);}
+  .scenario-card.selectable.selected{border-color:var(--blue);box-shadow:0 0 0 3px rgba(25,104,240,0.1);}
+  .scenario-best-badge{position:absolute;top:-11px;right:16px;display:inline-flex;align-items:center;gap:5px;background:var(--green);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.03em;padding:5px 11px;border-radius:7px;box-shadow:0 3px 8px rgba(22,179,100,0.35);pointer-events:none;}
+  .scenario-radio{width:18px;height:18px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;transition:all .16s;}
+  .scenario-card.selected .scenario-radio{border-color:var(--blue);}
+  .scenario-card.selected .scenario-radio::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--blue);}
+  .scenario-chosen{font-size:10.5px;font-weight:800;color:var(--blue-deep);background:rgba(25,104,240,0.1);display:inline-block;padding:3px 9px;border-radius:6px;letter-spacing:.02em;text-transform:uppercase;margin:-6px 0 13px;visibility:visible;opacity:1;transition:opacity .12s;}
+  .scenario-chosen.hidden{visibility:hidden;opacity:0;}
+  .scenario-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px;}
+  .scenario-label{font-weight:800;font-size:14.5px;letter-spacing:-0.01em;}
+  .scenario-badge{font-size:11px;font-weight:700;padding:5px 11px;border-radius:7px;background:#EDEFF7;color:var(--text-soft);}
+  .scenario-badge.blue{background:rgba(25,104,240,0.1);color:var(--blue-deep);}
+  .metric-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border-soft);font-size:12.5px;}
+  .metric-row:last-child{border-bottom:none;}
+  .metric-row .lbl{color:var(--text-soft);}
+  .metric-row .val{font-weight:700;white-space:nowrap;}
+  .roi-display{text-align:center;margin-top:14px;padding:14px;border-radius:12px;background:#F6F8FC;}
+  .roi-display .roi-num{font-size:27px;font-weight:800;letter-spacing:-0.02em;}
+  .roi-num.pos{color:var(--green);}
+  .roi-num.neg{color:var(--red);}
+  .roi-display .roi-lbl{font-size:11px;color:var(--text-soft);font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-top:2px;}
+
+  .delta-banner{margin-top:16px;border-radius:14px;padding:20px 24px;background:linear-gradient(135deg,#0E2A57,#1968F0);color:#fff;box-shadow:var(--shadow-lg);}
+  .delta-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:14px;}
+  .delta-item .num{font-size:21px;font-weight:800;letter-spacing:-0.01em;}
+  .delta-item .lbl{font-size:12px;opacity:.85;font-weight:600;margin-top:2px;}
+  .delta-text{font-size:13px;line-height:1.55;background:rgba(255,255,255,0.12);padding:12px 15px;border-radius:11px;}
+
+  .slider-box{margin-top:18px;background:#fff;border-radius:13px;padding:18px 22px;border:1.5px solid var(--border);}
+  .slider-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:14px;}
+  .slider-top .pct{font-size:22px;font-weight:800;color:var(--blue);letter-spacing:-0.02em;}
+  .suggested-pill{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:800;color:var(--blue-deep);background:rgba(25,104,240,0.1);padding:4px 10px;border-radius:7px;letter-spacing:.02em;margin-top:6px;}
+  input[type=range]{width:100%;accent-color:var(--blue);height:6px;cursor:pointer;}
+  .proj-note{font-size:12px;color:var(--text-grey);margin-top:14px;display:flex;align-items:center;gap:7px;line-height:1.5;}
+
+  /* Confirmação */
+  .summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:4px 0 16px;}
+  .summary-item{background:#F7F9FE;border:1px solid var(--border-soft);border-radius:11px;padding:13px 15px;}
+  .summary-item .lbl{font-size:11px;color:var(--text-soft);font-weight:600;margin-bottom:4px;text-transform:uppercase;letter-spacing:.03em;}
+  .summary-item .val{font-size:14.5px;font-weight:700;}
+  .compliance-note{display:flex;gap:10px;align-items:flex-start;background:#F6F8FC;border:1px solid var(--border-soft);border-radius:11px;padding:13px 15px;font-size:12.5px;color:var(--text-soft);line-height:1.55;}
+  .launching-anim{display:flex;flex-direction:column;align-items:center;gap:16px;padding:50px 0;}
+
+  /* Modal */
+  .modal-overlay{position:fixed;inset:0;background:rgba(10,10,26,0.45);display:flex;align-items:center;justify-content:center;z-index:60;animation:fadeIn .15s;}
+  .modal{background:#fff;border-radius:18px;padding:26px;max-width:430px;width:90%;box-shadow:var(--shadow-lg);animation:popIn .18s ease;}
+  .modal h3{margin:0 0 8px;font-size:18px;font-weight:800;letter-spacing:-0.01em;}
+  .modal p{margin:0;font-size:13.5px;color:var(--text-soft);line-height:1.55;}
+  .modal-actions{display:flex;flex-direction:column;gap:9px;margin-top:22px;}
+  @keyframes popIn{from{opacity:0;transform:scale(.96);}to{opacity:1;transform:scale(1);}}
+
+  /* Dashboard */
+  .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:22px;}
+  .kpi-card{display:flex;flex-direction:column;background:#fff;border-radius:15px;padding:18px;border:1px solid var(--border-soft);box-shadow:var(--shadow-sm);min-width:0;transition:box-shadow .16s,transform .16s;}
+  .kpi-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+  .kpi-card.primary{border-color:rgba(25,104,240,0.35);background:linear-gradient(180deg,rgba(25,104,240,0.04),rgba(25,104,240,0.01));}
+  .kpi-lbl{font-size:10.5px;color:var(--text-soft);font-weight:700;margin-bottom:10px;line-height:1.3;letter-spacing:.04em;text-transform:uppercase;}
+  .kpi-val{margin-top:auto;font-size:25px;font-weight:800;letter-spacing:-0.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .kpi-val.green{color:var(--green);}
+  .kpi-badge{display:inline-block;font-size:9.5px;font-weight:800;color:var(--blue-deep);background:rgba(25,104,240,0.1);padding:2px 7px;border-radius:5px;margin-left:6px;letter-spacing:.03em;vertical-align:middle;}
+
+  .filters-bar{display:flex;align-items:flex-end;gap:14px;margin-bottom:18px;flex-wrap:wrap;padding:18px 22px;}
+  .filter-field{display:flex;flex-direction:column;min-width:150px;flex:1;}
+  .filter-field .field-label{margin-bottom:7px;}
+  .filter-field select,.filter-field input{font-size:13px;padding:9px 12px;}
+
+  .dash-row{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(270px,1fr);gap:14px;margin-bottom:22px;}
+  .chart-card{overflow-x:auto;}
+  .ai-card{background:linear-gradient(180deg,rgba(25,104,240,0.035),#fff 55%);border:1px solid var(--border-soft);border-radius:15px;padding:18px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;}
+  .ai-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+  .ai-badge{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;color:var(--blue-deep);background:rgba(25,104,240,0.1);padding:5px 11px;border-radius:8px;letter-spacing:.02em;}
+  .ai-dot{width:7px;height:7px;border-radius:50%;background:var(--blue);animation:pulse 1.6s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.35;transform:scale(.75);}}
+  .ai-title{font-size:13.5px;font-weight:700;margin:0 0 9px;letter-spacing:-0.01em;}
+  .ai-insight{font-size:12.5px;line-height:1.55;color:var(--text-soft);}
+  .ai-insight p{margin:0 0 9px;}
+  .ai-insight b{color:var(--text);font-weight:700;}
+  .ai-reco{margin-top:auto;background:#fff;border:1px solid rgba(25,104,240,0.18);border-radius:11px;padding:12px 13px;font-size:12.5px;color:var(--text);font-weight:600;line-height:1.5;display:flex;gap:8px;}
+  .ai-reco .ico{color:var(--blue);}
+  .table-scroll{overflow-x:auto;}
+  @media(max-width:1080px){.dash-row{grid-template-columns:1fr;}}
+  table.camp-table{width:100%;border-collapse:collapse;font-size:12.5px;}
+  table.camp-table th{text-align:left;font-size:10.5px;color:var(--text-grey);font-weight:700;letter-spacing:.04em;padding:11px 12px;border-bottom:1.5px solid var(--border);text-transform:uppercase;white-space:nowrap;}
+  table.camp-table td{padding:12px;border-bottom:1px solid var(--border-soft);white-space:nowrap;}
+  table.camp-table tbody tr{transition:background .14s;}
+  table.camp-table tbody tr:hover{background:#FAFBFE;}
+  table.camp-table tr:last-child td{border-bottom:none;}
+  tr.draft-row{cursor:pointer;}
+  .status-pill{font-size:10.5px;font-weight:700;padding:4px 10px;border-radius:7px;white-space:nowrap;}
+  .status-new{background:rgba(25,104,240,0.12);color:var(--blue-deep);}
+  .status-running{background:rgba(22,179,100,0.12);color:var(--green);}
+  .status-done{background:#EDEFF7;color:var(--text-soft);}
+  .status-draft{background:#EDEFF7;color:var(--text-soft);}
+  .roi-cell.pos{color:var(--green);font-weight:700;}
+  .roi-cell.neg{color:var(--red);font-weight:700;}
+
+  .empty-state{text-align:center;padding:56px 20px;color:var(--text-soft);}
+  .empty-state .ico{font-size:36px;margin-bottom:12px;}
+  .empty-state h3{margin:0 0 6px;color:var(--text);}
+
+  .fade-in{animation:fadeIn .22s ease;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  @media(max-width:900px){.t3-layout{grid-template-columns:1fr;} .seg-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+const { useState, useMemo, useEffect, useRef } = React;
+
+/* ===== Formatação ===== */
+const fmtBRL = (n) => 'R$ ' + (n||0).toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2});
+const fmtBRL0 = (n) => 'R$ ' + Math.round(n||0).toLocaleString('pt-BR');
+const fmtInt = (n) => Math.round(n||0).toLocaleString('pt-BR');
+const fmtPct = (n, d=1) => (n||0).toLocaleString('pt-BR', {minimumFractionDigits:d, maximumFractionDigits:d}) + '%';
+
+/* ===== Geração de base sintética ===== */
+const FIRST_NAMES = ["Maria","José","Ana","João","Antônio","Francisco","Paulo","Carlos","Lucas","Marcos","Pedro","Gabriel","Rafael","Daniel","Bruno","Felipe","Rodrigo","Eduardo","Fernanda","Juliana","Patrícia","Aline","Camila","Bruna","Letícia","Amanda","Larissa","Mariana","Beatriz","Vanessa","Renata","Tatiane","Cláudia","Sandra","Adriana","Roberto","Sérgio","Luiz","André","Fábio","Diego","Thiago","Vinícius","Gustavo","Leandro","Márcio","Wesley","Caio","Igor","Otávio","Sabrina"];
+const LAST_NAMES = ["Silva","Souza","Oliveira","Santos","Pereira","Ferreira","Costa","Rodrigues","Almeida","Lima","Araújo","Carvalho","Gomes","Martins","Ribeiro","Barbosa","Cardoso","Nascimento","Rocha","Dias","Monteiro","Mendes","Freitas","Barros","Pinto","Teixeira","Moreira","Correia","Cavalcanti","Castro"];
+const UF_WEIGHTS = [["SP",21],["MG",10],["RJ",8.5],["BA",7],["RS",6],["PR",5.5],["PE",4.5],["CE",4],["PA",4],["SC",3.5],["GO",3.3],["MA",3],["PB",2],["ES",2],["AM",1.9],["RN",1.7],["MT",1.7],["AL",1.7],["PI",1.6],["DF",1.5],["MS",1.4],["SE",1.1],["RO",0.9],["TO",0.8],["AC",0.5],["AP",0.4],["RR",0.4]];
+const PRODUTOS = ["Empréstimo pessoal","Cartão de crédito","Conta digital","Cartão de débito","Seguro","Investimento","Financiamento"];
+
+function weightedPick(pairs){
+  const total = pairs.reduce((s,[,w])=>s+w,0);
+  let r = Math.random()*total;
+  for(const [v,w] of pairs){ if(r<w) return v; r-=w; }
+  return pairs[0][0];
+}
+function pickUF(){ return weightedPick(UF_WEIGHTS); }
+function lognormal(median, sigma, min, max){
+  const v = Math.exp(Math.log(median) + sigma*(Math.sqrt(-2*Math.log(Math.random()||1e-9))*Math.cos(2*Math.PI*Math.random())));
+  return Math.min(max, Math.max(min, v));
+}
+function pickIdade(){
+  const r = Math.random();
+  if(r<0.60) return 30 + Math.floor(Math.random()*20);
+  if(r<0.80) return 18 + Math.floor(Math.random()*12);
+  return 50 + Math.floor(Math.random()*26);
+}
+const CSV_COLUMNS = ["nome","cpf","uf","idade","renda_estimada","ticket_credito","situacao","score_faixa","dias_para_vencimento","produtos_ativos","ultimo_produto_adquirido","status_atividade","canal_preferido"];
+
+function makeClient(){
+  const fn = FIRST_NAMES[Math.floor(Math.random()*FIRST_NAMES.length)];
+  const ln = LAST_NAMES[Math.floor(Math.random()*LAST_NAMES.length)];
+  const situacao = weightedPick([["adimplente",70],["restrito",30]]);
+  const status_atividade = weightedPick([["ativo",80],["inativo",20]]);
+  const produtos_ativos = weightedPick([[1,35],[2,30],[3,20],[4,15]]);
+  const score_faixa = situacao==='restrito'
+    ? weightedPick([["Baixo",70],["Médio",25],["Alto",5]])
+    : weightedPick([["Alto",45],["Médio",45],["Baixo",10]]);
+  const dias = situacao==='restrito' ? 0 : Math.floor(Math.random()*366);
+  return {
+    nome: fn + " " + ln,
+    cpf: "***."+String(Math.floor(Math.random()*900+100))+"."+String(Math.floor(Math.random()*900+100))+"-"+String(Math.floor(Math.random()*90+10)),
+    uf: pickUF(),
+    idade: pickIdade(),
+    renda_estimada: Math.round(lognormal(3400, 0.6, 1200, 28000)/10)*10,
+    ticket_credito: Math.round(lognormal(620, 0.55, 150, 3000)*100)/100,
+    situacao, score_faixa,
+    dias_para_vencimento: dias,
+    produtos_ativos,
+    ultimo_produto_adquirido: PRODUTOS[Math.floor(Math.random()*PRODUTOS.length)],
+    status_atividade,
+    canal_preferido: weightedPick([["WhatsApp",55],["App",25],["Agência",10],["Telefone",10]]),
+  };
+}
+function generateMockBase(n=10000){
+  const arr = new Array(n);
+  for(let i=0;i<n;i++) arr[i] = makeClient();
+  return arr;
+}
+
+/* ===== Parse de CSV ===== */
+function splitCSVLine(line){
+  const out=[]; let cur=''; let q=false;
+  for(let i=0;i<line.length;i++){
+    const ch=line[i];
+    if(q){ if(ch==='"'){ if(line[i+1]==='"'){cur+='"';i++;} else q=false; } else cur+=ch; }
+    else { if(ch==='"') q=true; else if(ch===',') {out.push(cur);cur='';} else cur+=ch; }
+  }
+  out.push(cur); return out;
+}
+function parseCSVGeneric(text){
+  const lines = text.split(/\r?\n/).filter(l=>l.trim().length>0);
+  if(lines.length<2) return {error:"O arquivo está vazio ou só tem o cabeçalho."};
+  const header = splitCSVLine(lines[0]).map(h=>h.trim());
+  const rows = [];
+  for(let i=1;i<lines.length;i++){
+    const cols = splitCSVLine(lines[i]);
+    if(cols.length < header.length) continue;
+    const obj = {};
+    header.forEach((h,idx)=> obj[h.toLowerCase()] = (cols[idx]||'').trim());
+    rows.push(obj);
+  }
+  if(rows.length===0) return {error:"Não encontramos linhas de dados no arquivo."};
+  return {header, rows};
+}
+function coerceClients(rows){
+  return rows.map(r=>({
+    nome:r.nome, cpf:r.cpf, uf:(r.uf||'').toUpperCase(),
+    idade: parseInt(r.idade)||0,
+    renda_estimada: parseFloat(r.renda_estimada)||0,
+    ticket_credito: parseFloat(r.ticket_credito)||0,
+    situacao:(r.situacao||'').toLowerCase(),
+    score_faixa:r.score_faixa||'',
+    dias_para_vencimento: parseInt(r.dias_para_vencimento)||0,
+    produtos_ativos: parseInt(r.produtos_ativos)||1,
+    ultimo_produto_adquirido:r.ultimo_produto_adquirido||'',
+    status_atividade:(r.status_atividade||'ativo').toLowerCase(),
+    canal_preferido:r.canal_preferido||'',
+  }));
+}
+const SEG_REQUIRED = ["nome","situacao","dias_para_vencimento","produtos_ativos","status_atividade"];
+function validateForSegmentation(header){
+  const h = header.map(x=>x.toLowerCase());
+  return SEG_REQUIRED.filter(c=>!h.includes(c));
+}
+
+/* ===== Segmentos ===== */
+const SEGMENTS = [
+  {key:'vencendo',   nome:'Contrato perto do fim',           objetivo:'Renovar empréstimo',                 propensao:'Alta',  criterio:'O contrato está chegando ao fim. Bom momento para renovar.'},
+  {key:'premium',    nome:'Cliente de casa',                 objetivo:'Aumentar limite de crédito',         propensao:'Alta',  criterio:'Usa vários produtos e tem um bom relacionamento com você.'},
+  {key:'bompagador', nome:'Bom pagador com espaço para mais',objetivo:'Oferecer novo empréstimo',           propensao:'Alta',  criterio:'Paga em dia e ainda usa pouco. Dá para oferecer mais.'},
+  {key:'restrito',   nome:'Crédito restrito no momento',     objetivo:'Produto complementar - não crédito', propensao:'Média', criterio:'Está com o crédito restrito agora. Ofereça conta, cartão de débito, seguro ou investimento.'},
+  {key:'inativo',    nome:'Sumiu faz tempo',                 objetivo:'Reativar cliente inativo',           propensao:'Média', criterio:'Não interage faz um tempo. Vale a pena chamar de volta.'},
+];
+function assignSegment(c){
+  if(c.status_atividade === 'inativo') return 'inativo';
+  if(c.situacao === 'restrito') return 'restrito';
+  if(c.situacao === 'adimplente' && c.produtos_ativos >= 3) return 'premium';
+  if(c.situacao === 'adimplente' && c.dias_para_vencimento <= 60) return 'vencendo';
+  if(c.situacao === 'adimplente' && c.produtos_ativos === 1 && c.dias_para_vencimento > 60) return 'bompagador';
+  return 'bompagador';
+}
+function computeSegments(base){
+  const buckets = {vencendo:[],premium:[],bompagador:[],restrito:[],inativo:[]};
+  base.forEach(c=> buckets[assignSegment(c)].push(c));
+  return SEGMENTS.map(s=>({...s, clientes:buckets[s.key]}));
+}
+
+/* ===== Coeficientes ===== */
+const TARIFA_META = 0.34, TAXA_ENTREGA = 0.97;
+const COEF = {
+  'Renovar empréstimo':                 {taxaResposta:0.17, convFull:0.050, convCluster:0.085, contribuicao:95},
+  'Oferecer novo empréstimo':           {taxaResposta:0.16, convFull:0.048, convCluster:0.082, contribuicao:90},
+  'Produto complementar - não crédito': {taxaResposta:0.14, convFull:0.040, convCluster:0.070, contribuicao:72},
+  'Reativar cliente inativo':           {taxaResposta:0.11, convFull:0.030, convCluster:0.060, contribuicao:50},
+  'Aumentar limite de crédito':         {taxaResposta:0.18, convFull:0.055, convCluster:0.090, contribuicao:110},
+};
+const OBJETIVOS = ['Renovar empréstimo','Oferecer novo empréstimo','Produto complementar - não crédito','Reativar cliente inativo','Aumentar limite de crédito'];
+
+function calcScenario(n, taxaResposta, taxaConv, contribuicao){
+  const entregues = n * TAXA_ENTREGA;
+  const custo = entregues * TARIFA_META;
+  const respostas = entregues * taxaResposta;
+  const conversoes = respostas * taxaConv;
+  const receita = conversoes * contribuicao;
+  const roi = custo>0 ? ((receita-custo)/custo)*100 : 0;
+  const custoPorResposta = respostas>0 ? custo/respostas : 0;
+  return {n, entregues, custo, respostas, conversoes, receita, roi, custoPorResposta};
+}
+
+/* ===== Templates ===== */
+const TEMPLATES = {
+  'Renovar empréstimo': [
+    {id:'ren1', nome:'Renovação com condição especial', body:"Olá {{nome}}, seu contrato vence em {{dias}} dias. Renove agora com {{condicao}} e mantenha seu limite de {{valor}}.", vars:['nome','dias','condicao','valor']},
+    {id:'ren2', nome:'Renovação antecipada', body:"{{nome}}, antecipe a renovação do seu empréstimo e garanta {{condicao}}. Seu limite atual é {{valor}}. Responda SIM para simular.", vars:['nome','condicao','valor']},
+  ],
+  'Oferecer novo empréstimo': [
+    {id:'cross1', nome:'Empréstimo pré-aprovado', body:"{{nome}}, com seu bom histórico você tem um empréstimo de até {{valor}} pré-aprovado. {{condicao}}.", vars:['nome','valor','condicao']},
+    {id:'cross2', nome:'Crédito extra', body:"Olá {{nome}}! Você pode contratar um novo empréstimo com {{condicao}}. Quer simular?", vars:['nome','condicao']},
+  ],
+  'Produto complementar - não crédito': [
+    {id:'score1', nome:'Produto sem consulta de score', body:"{{nome}}, temos {{produto}} que não depende de consulta de score. {{condicao}}. Quer conhecer?", vars:['nome','produto','condicao']},
+    {id:'score2', nome:'Conta, cartão ou seguro', body:"Olá {{nome}}, mesmo com o crédito restrito você pode abrir {{produto}} com a gente. {{condicao}}.", vars:['nome','produto','condicao']},
+  ],
+  'Reativar cliente inativo': [
+    {id:'reat1', nome:'Convite de retorno', body:"{{nome}}, sentimos sua falta! Volte a usar sua conta e aproveite {{condicao}}.", vars:['nome','condicao']},
+    {id:'reat2', nome:'Condição de boas-vindas de volta', body:"Olá {{nome}}, preparamos uma condição de retorno só pra você: {{condicao}}. Vamos recomeçar?", vars:['nome','condicao']},
+  ],
+  'Aumentar limite de crédito': [
+    {id:'prem1', nome:'Aumento de limite', body:"{{nome}}, seu relacionamento merece mais. Aumente seu limite de crédito com {{condicao}}.", vars:['nome','condicao']},
+    {id:'prem2', nome:'Limite ampliado exclusivo', body:"Olá {{nome}}, você foi selecionado para ampliar seu limite de crédito. Benefícios: {{condicao}}.", vars:['nome','condicao']},
+  ],
+};
+const AUTO_VARS = ['nome','valor','dias'];
+
+/* ===== Download CSV ===== */
+function downloadCSV(filename, csvContent){
+  const blob = new Blob(["﻿"+csvContent], {type:'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+function downloadTemplateCSV(){
+  const sample = generateMockBase(3);
+  const lines = [CSV_COLUMNS.join(',')];
+  sample.forEach(r=> lines.push(CSV_COLUMNS.map(c=>r[c]).join(',')));
+  downloadCSV('modelo-base-pulse.csv', lines.join('\r\n'));
+}
+function exportCampaignCSV(c){
+  const linhas = [
+    ["Campo","Valor"],
+    ["Nome da campanha", c.nome],
+    ["Origem dos contatos", c.caminho==='A' ? 'Lista pronta' : 'Base segmentada'],
+    ["Objetivo", c.objetivo],
+    ["Data", c.data],
+    ["Status", statusLabel(c.status)],
+    ["Contatos", c.contatos],
+    ["Taxa de resposta (%)", c.taxaResposta.toFixed(2)],
+    ["Conversões", c.conversoes],
+    ["Custo da campanha (R$)", c.custo.toFixed(2)],
+    ["Receita estimada (R$)", c.receita.toFixed(2)],
+    ["ROI (%)", c.roi.toFixed(2)],
+  ];
+  const csv = linhas.map(l=>l.map(v=>`"${String(v).replaceAll('"','""')}"`).join(',')).join('\r\n');
+  downloadCSV(`campanha-${c.nome.toLowerCase().replace(/[^a-z0-9]+/g,'-')}.csv`, csv);
+}
+
+/* ===== Campanhas ===== */
+function withFinance(c){
+  const entregues = c.contatos * TAXA_ENTREGA;
+  const custo = entregues * TARIFA_META;
+  const contrib = (COEF[c.objetivo] && COEF[c.objetivo].contribuicao) || 80;
+  const receita = c.conversoes * contrib;
+  return {...c, custo, receita};
+}
+function generateHistoricalCampaigns(){
+  return [
+    {id:'h1', nome:'Renovação de contratos — Maio', caminho:'B', objetivo:'Renovar empréstimo', contatos:18400, taxaResposta:16.8, conversoes:133, roi:228, status:'done', data:'2026-05-15'},
+    {id:'h2', nome:'Mais crédito para bons pagadores — Abril', caminho:'B', objetivo:'Oferecer novo empréstimo', contatos:12600, taxaResposta:15.9, conversoes:81, roi:176, status:'done', data:'2026-04-18'},
+    {id:'h3', nome:'Volta dos clientes parados — Março', caminho:'A', objetivo:'Reativar cliente inativo', contatos:9300, taxaResposta:10.8, conversoes:29, roi:42, status:'done', data:'2026-03-22'},
+    {id:'h4', nome:'Aumento de limite — Fevereiro', caminho:'B', objetivo:'Aumentar limite de crédito', contatos:5200, taxaResposta:18.2, conversoes:46, roi:312, status:'done', data:'2026-02-10'},
+  ].map(withFinance);
+}
+function statusLabel(s){ return s==='draft'?'Rascunho':s==='new'?'Recém-criada':s==='running'?'Em andamento':'Concluída'; }
+function statusClass(s){ return s==='draft'?'status-draft':s==='new'?'status-new':s==='running'?'status-running':'status-done'; }
+
+function generateTimeSeries(days, peakResp, peakConv){
+  const arr = [];
+  for(let i=1;i<=days;i++){
+    const decay = Math.exp(-i/(days*0.55));
+    const noise = 0.85 + Math.random()*0.3;
+    arr.push({dia:i, respostas:Math.max(2,Math.round(peakResp*decay*noise/days*3)), conversoes:Math.max(0,Math.round(peakConv*decay*noise/days*3))});
+  }
+  return arr;
+}
+
+/* ===== Sidebar ===== */
+function Sidebar({page, go}){
+  const items = [
+    {key:'campanhas', label:'Campanhas', icon:'📣'},
+    {key:'base', label:'Base de clientes', icon:'👥'},
+    {key:'dashboard', label:'Dashboard', icon:'📊'},
+  ];
+  return (
+    <div className="sidebar">
+      <div className="brand"><span className="brand-dot"></span>Pulse</div>
+      <button className={"btn-newcampaign"+(page==='nova'?" active":"")} onClick={()=>go('nova')}>
+        <span className="nc-plus">+</span> Nova campanha
+      </button>
+      <div className="nav-section">Menu</div>
+      <div className="nav">
+        {items.map(it=>(
+          <div key={it.key} className={"nav-item"+(page===it.key?" active":"")} onClick={()=>go(it.key)}>
+            <span className="nav-icon">{it.icon}</span>{it.label}
+          </div>
+        ))}
+      </div>
+      <div className="sidebar-footer">
+        <div className="user">
+          <div className="avatar">VB</div>
+          <div className="userinfo"><strong>Vinicius Bonacorse</strong>Staff Product Manager</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ===== Stepper ===== */
+const STEP_LABELS = ["Objetivo","Base","Mensagem","Estimativa","Confirmação"];
+function Stepper({current}){
+  return (
+    <div className="stepper">
+      {STEP_LABELS.map((lbl,i)=>{
+        const idx=i+1;
+        const cls = idx<current ? "done" : idx===current ? "active":"";
+        return (
+          <div key={lbl} className={"step "+cls}>
+            <div className="step-circle">{idx<current?'✓':idx}</div>
+            <div className="step-label">{lbl}</div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+/* ===== Passo 1 ===== */
+function Step1Body({draft, setDraft}){
+  function pick(caminho){
+    setDraft(d=>({...d, caminho, base:null, baseSource:null, header:null, segments:null, segmentKey:null, objetivo:'', templateId:null, varValues:{}, estimativa:null}));
+  }
+  return (
+    <div className="fade-in card">
+      <label className="field-label">Nome da campanha</label>
+      <input type="text" placeholder="Ex: Renovação de contratos — Outubro"
+        value={draft.nome} onChange={e=>setDraft({...draft, nome:e.target.value})} />
+      <div style={{marginTop:22}}>
+        <label className="field-label">De onde vêm seus contatos?</label>
+        <div className="path-grid">
+          <div className={"path-card"+(draft.caminho==='A'?" selected":"")} onClick={()=>pick('A')}>
+            <div className="path-check">✓</div>
+            <div className="path-icon">🎯</div>
+            <h4 className="path-title">Já tenho minha lista</h4>
+            <p className="path-sub">Você sobe um arquivo com os contatos que já escolheu atingir.</p>
+          </div>
+          <div className={"path-card"+(draft.caminho==='B'?" selected":"")} onClick={()=>pick('B')}>
+            <div className="path-check">✓</div>
+            <div className="path-icon">🧠</div>
+            <h4 className="path-title">Quero segmentar minha base</h4>
+            <p className="path-sub">Você sobe sua base e o Pulse encontra os melhores grupos para falar com cada um.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ===== Passo 2A — lista pronta ===== */
+function Step2ABody({draft, setDraft}){
+  const fileRef = useRef(null);
+  const [error, setError] = useState(null);
+  function handleFile(e){
+    const file = e.target.files[0]; if(!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev)=>{
+      const res = parseCSVGeneric(ev.target.result);
+      if(res.error){ setError(res.error); setDraft(d=>({...d, base:null, header:null})); return; }
+      setError(null);
+      setDraft(d=>({...d, base:coerceClients(res.rows), header:res.header, baseSource:'csv-audiencia'}));
+    };
+    reader.readAsText(file);
+  }
+  const sample = draft.base ? draft.base.slice(0,5) : [];
+  return (
+    <div className="fade-in card">
+      {!draft.base && (
+        <div className="upload-box">
+          <div className="icon">📄</div>
+          <h4>Suba seu arquivo</h4>
+          <p>Aceitamos CSV. Seus contatos já entram prontos para a campanha.</p>
+          <button className="btn btn-secondary" onClick={()=>fileRef.current.click()}>Escolher arquivo CSV</button>
+          <input ref={fileRef} type="file" accept=".csv" className="hidden-input" onChange={handleFile} />
+          {error && <div className="warning-box">{error}</div>}
+        </div>
+      )}
+      {draft.base && (
+        <div className="fade-in">
+          <div className="success-box" style={{marginBottom:16}}>
+            <span>Tudo certo com sua lista</span>
+            <button className="link-btn" onClick={()=>setDraft(d=>({...d, base:null, header:null}))}>Trocar arquivo</button>
+          </div>
+          <p className="section-sub" style={{marginBottom:10}}>
+            <b>{fmtInt(draft.base.length)} contatos</b> prontos. Reconhecemos as colunas:
+          </p>
+          <div className="chips" style={{marginBottom:16}}>{draft.header.map(h=> <span key={h} className="chip">{h}</span>)}</div>
+          <div className="bs-lbl" style={{marginBottom:8}}>Amostra dos 5 primeiros</div>
+          <div className="table-scroll">
+            <table className="camp-table">
+              <thead><tr>{draft.header.map(h=> <th key={h}>{h}</th>)}</tr></thead>
+              <tbody>
+                {sample.map((c,i)=>(
+                  <tr key={i}>{draft.header.map(h=> <td key={h}>{String(c[h.toLowerCase()] ?? '—')}</td>)}</tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ===== Passo 2B — segmentar ===== */
+function Step2BBody({draft, setDraft}){
+  const fileRef = useRef(null);
+  const [error, setError] = useState(null);
+  const [loadingMock, setLoadingMock] = useState(false);
+  const [processing, setProcessing] = useState(false);
+
+  function loadBase(base, source){
+    setError(null);
+    setDraft(d=>({...d, base, baseSource:source, segments:null, segmentKey:null, objetivo:'', templateId:null, varValues:{}}));
+  }
+  function handleFile(e){
+    const file = e.target.files[0]; if(!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev)=>{
+      const res = parseCSVGeneric(ev.target.result);
+      if(res.error){ setError(res.error); return; }
+      const missing = validateForSegmentation(res.header);
+      if(missing.length){ setError("Para encontrar os grupos, o arquivo precisa ter estas colunas: "+missing.join(", ")+". Baixe o modelo para ver o formato certo."); return; }
+      loadBase(coerceClients(res.rows), 'csv');
+    };
+    reader.readAsText(file);
+  }
+  function useMock(){ setLoadingMock(true); setTimeout(()=>{ loadBase(generateMockBase(10000), 'mock'); setLoadingMock(false); }, 700); }
+  function readBase(){ setProcessing(true); setTimeout(()=>{ setDraft(d=>({...d, segments:computeSegments(draft.base)})); setProcessing(false); }, 1300); }
+  function selectSegment(seg){ setDraft(d=>({...d, segmentKey:seg.key, objetivo:seg.objetivo, templateId:null, varValues:{}})); }
+
+  const total = draft.base ? draft.base.length : 0;
+  return (
+    <div className="fade-in card">
+      {!draft.base && (
+        <div className="upload-grid">
+          <div className="upload-box">
+            <div className="icon">📄</div>
+            <h4>Suba sua base</h4>
+            <p>Use o modelo padrão com 13 colunas. <button className="link-btn" onClick={downloadTemplateCSV}>Baixar modelo</button></p>
+            <button className="btn btn-secondary" onClick={()=>fileRef.current.click()}>Escolher arquivo CSV</button>
+            <input ref={fileRef} type="file" accept=".csv" className="hidden-input" onChange={handleFile} />
+          </div>
+          <div className="upload-box">
+            <div className="icon">🧪</div>
+            <h4>Sem uma base agora?</h4>
+            <p>Use uma base de exemplo com 10.000 clientes para conhecer o fluxo.</p>
+            <button className="btn btn-primary" onClick={useMock} disabled={loadingMock}>
+              {loadingMock ? <><span className="spinner spinner-sm"></span> Gerando…</> : "Usar base de exemplo"}
+            </button>
+          </div>
+        </div>
+      )}
+      {error && <div className="warning-box">{error}</div>}
+
+      {draft.base && !draft.segments && !processing && (
+        <div className="fade-in">
+          <div className="success-box">
+            <span>Base carregada com {fmtInt(total)} clientes.</span>
+            <button className="link-btn" onClick={()=>setDraft(d=>({...d, base:null, segments:null, segmentKey:null}))}>Trocar base</button>
+          </div>
+          <div style={{textAlign:'center', padding:'24px 0 6px'}}>
+            <button className="btn btn-primary btn-big" onClick={readBase}>Analisar base e sugerir grupos</button>
+            <p className="section-sub" style={{marginTop:12}}>O Pulse olha situação de crédito, atividade, vencimentos e produtos de cada cliente.</p>
+          </div>
+        </div>
+      )}
+
+      {processing && (
+        <div className="processing">
+          <div className="spinner"></div>
+          <div style={{fontWeight:700, fontSize:15}}>Lendo sua base e encontrando padrões…</div>
+        </div>
+      )}
+
+      {draft.segments && (
+        <div className="fade-in">
+          <h3 className="section-title">Encontramos estes grupos na sua base</h3>
+          <p className="section-sub">Escolha um grupo para esta campanha. Cada um tem uma oferta que faz sentido para o momento dele.</p>
+          <div className="seg-grid">
+            {draft.segments.map(seg=>{
+              const pct = total>0 ? seg.clientes.length/total*100 : 0;
+              const sel = draft.segmentKey===seg.key;
+              return (
+                <div key={seg.key} className={"seg-card"+(sel?" selected":"")} onClick={()=>selectSegment(seg)}>
+                  <div className="seg-top">
+                    <span className={"prop-tag prop-"+(seg.propensao==='Alta'?'alta':seg.propensao==='Média'?'media':'baixa')}>{seg.propensao}</span>
+                    <div className="seg-radio"></div>
+                  </div>
+                  <p className="seg-name">{seg.nome}</p>
+                  <p className="seg-size-line"><b>{fmtInt(seg.clientes.length)}</b> clientes · {fmtPct(pct)} da base</p>
+                  <p className="seg-criteria">{seg.criterio}</p>
+                  <p className="seg-obj">Indicado para: {seg.objetivo}</p>
+                </div>
+              );
+            })}
+          </div>
+          {draft.segmentKey && (
+            <div className="total-banner fade-in">
+              <div>
+                <div className="lbl">Grupo escolhido</div>
+                <div className="num">{draft.segments.find(s=>s.key===draft.segmentKey).nome}</div>
+              </div>
+              <div style={{textAlign:'right'}}>
+                <div className="lbl">{fmtInt(draft.segments.find(s=>s.key===draft.segmentKey).clientes.length)} clientes · objetivo</div>
+                <div style={{fontWeight:700, fontSize:15}}>{draft.objetivo}</div>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ===== Passo 3 — Mensagem ===== */
+function highlightVars(text){
+  const parts = text.split(/(\{\{\w+\}\})/g);
+  return parts.map((p,i)=> /\{\{\w+\}\}/.test(p) ? <span key={i} className="var-highlight">{p}</span> : <span key={i}>{p}</span>);
+}
+function Step3Body({draft, setDraft}){
+  const isA = draft.caminho==='A';
+  const templates = TEMPLATES[draft.objetivo] || [];
+  const selectedTpl = templates.find(t=>t.id===draft.templateId);
+
+  function selectObjetivo(o){ setDraft(d=>({...d, objetivo:o, templateId:null, varValues:{}})); }
+  function selectTpl(t){
+    const initVars = {}; t.vars.forEach(v=>{ initVars[v] = draft.varValues?.[v] || ''; });
+    setDraft(d=>({...d, templateId:t.id, varValues:initVars}));
+  }
+  function setVar(k,v){ setDraft(d=>({...d, varValues:{...d.varValues, [k]:v}})); }
+
+  const sampleClient = useMemo(()=>{
+    if(!isA && draft.segments && draft.segmentKey){
+      const seg = draft.segments.find(s=>s.key===draft.segmentKey);
+      if(seg && seg.clientes.length>0) return seg.clientes[0];
+    }
+    return draft.base && draft.base.length ? draft.base[0] : null;
+  }, [draft.segments, draft.segmentKey, draft.base, isA]);
+
+  function autoVal(v){
+    if(v==='nome') return sampleClient && sampleClient.nome ? sampleClient.nome.split(' ')[0] : 'Cliente';
+    if(v==='valor') return sampleClient && sampleClient.ticket_credito ? fmtBRL(sampleClient.ticket_credito) : 'R$ 682,00';
+    if(v==='dias') return sampleClient && sampleClient.dias_para_vencimento ? sampleClient.dias_para_vencimento : '30';
+    return '';
+  }
+  function renderPreview(){
+    if(!selectedTpl) return "Escolha um modelo para ver a prévia.";
+    let text = selectedTpl.body;
+    selectedTpl.vars.forEach(v=>{
+      const val = (draft.varValues && draft.varValues[v]) || autoVal(v) || `{{${v}}}`;
+      text = text.replaceAll(`{{${v}}}`, val);
+    });
+    return text;
+  }
+  const now = new Date();
+  const timeStr = now.getHours().toString().padStart(2,'0')+':'+now.getMinutes().toString().padStart(2,'0');
+
+  return (
+    <div className="fade-in t3-layout">
+      <div>
+        {isA && (
+          <div className="card" style={{marginBottom:14}}>
+            <h3 className="section-title">Qual o objetivo desta campanha?</h3>
+            <p className="section-sub">Sua lista já veio pronta. Escolha o objetivo para ver os modelos certos.</p>
+            <div className="obj-grid">
+              {OBJETIVOS.map(o=>(
+                <div key={o} className={"obj-card"+(draft.objetivo===o?" selected":"")} onClick={()=>selectObjetivo(o)}>{o}</div>
+              ))}
+            </div>
+          </div>
+        )}
+        {(!isA || draft.objetivo) && (
+          <div className="card" style={{marginBottom:14}}>
+            <h3 className="section-title">Modelos aprovados para este objetivo</h3>
+            <p className="section-sub">No WhatsApp, a mensagem precisa usar um modelo já aprovado. Escolha um abaixo.</p>
+            <div className="template-list">
+              {templates.map(t=>(
+                <div key={t.id} className={"template-card"+(draft.templateId===t.id?" selected":"")} onClick={()=>selectTpl(t)}>
+                  <div className="template-head">
+                    <span className="template-name">{t.nome}</span>
+                    <span className="pill pill-meta">Aprovado pela Meta</span>
+                    <span className="pill pill-cat">Marketing</span>
+                  </div>
+                  <div className="template-body">{highlightVars(t.body)}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        {selectedTpl && (
+          <div className="card fade-in">
+            <h3 className="section-title">Complete os dados da mensagem</h3>
+            <p className="section-sub">Alguns campos vêm da sua base. Os outros você preenche aqui.</p>
+            <div className="var-fields">
+              {selectedTpl.vars.map(v=>(
+                <div className="var-field-row" key={v}>
+                  <label className="field-label">{`{{${v}}}`}</label>
+                  {AUTO_VARS.includes(v) ? (
+                    <div>
+                      <input type="text" disabled value={v==='dias' ? autoVal(v)+' dias' : autoVal(v)} style={{background:'#F4F6FB', color:'var(--text-soft)'}} />
+                      <div className="var-source">Vem da sua base, preenchido para cada cliente.</div>
+                    </div>
+                  ) : (
+                    <input type="text" placeholder={`Escreva ${v}`} value={draft.varValues?.[v]||''} onChange={e=>setVar(v,e.target.value)} />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+      <div className="t3-right">
+        <div className="wa-caption">Prévia · é assim que seu cliente vê</div>
+        <div className="wa-phone">
+          <div className="wa-header">
+            <div className="wa-avatar">{sampleClient && sampleClient.nome ? sampleClient.nome.trim()[0] : '🏦'}</div>
+            <div>
+              <div className="wa-name">Sua Instituição Financeira</div>
+              <div className="wa-status">conta verificada</div>
+            </div>
+          </div>
+          <div className="wa-body">
+            <div className="wa-bubble">
+              {renderPreview()}
+              <span className="wa-time">{timeStr} <span style={{color:'#3993E0'}}>✓✓</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ===== Passo 4 — Estimativa ===== */
+function ScenarioCard({label, badge, scenario, highlight, selectable, selected, onSelect, best}){
+  const roiPos = scenario.roi >= 0;
+  return (
+    <div
+      className={"scenario-card"+(highlight?" cluster":"")+(selectable?" selectable":"")+(selected?" selected":"")}
+      onClick={selectable?onSelect:undefined}
+      role={selectable?"radio":undefined}
+      aria-checked={selectable?selected:undefined}
+    >
+      {best && <span className="scenario-best-badge">★ Seleção otimizada</span>}
+      <div className="scenario-head">
+        <div style={{display:'flex', alignItems:'center', gap:9}}>
+          {selectable && <span className="scenario-radio"></span>}
+          <span className="scenario-label">{label}</span>
+        </div>
+        <span className={"scenario-badge"+(highlight?" blue":"")}>{badge}</span>
+      </div>
+      {selectable && <div className={"scenario-chosen"+(selected?"":" hidden")}>Escolhido para esta campanha</div>}
+      <div className="metric-row"><span className="lbl">Mensagens entregues</span><span className="val">{fmtInt(scenario.entregues)}</span></div>
+      <div className="metric-row"><span className="lbl">Custo da campanha</span><span className="val">{fmtBRL(scenario.custo)}</span></div>
+      <div className="metric-row"><span className="lbl">Respostas estimadas</span><span className="val">{fmtInt(scenario.respostas)}</span></div>
+      <div className="metric-row"><span className="lbl">Conversões estimadas</span><span className="val">{fmtInt(scenario.conversoes)}</span></div>
+      <div className="metric-row"><span className="lbl">Receita estimada</span><span className="val">{fmtBRL(scenario.receita)}</span></div>
+      <div className="metric-row"><span className="lbl">Custo por resposta</span><span className="val">{fmtBRL(scenario.custoPorResposta)}</span></div>
+      <div className="roi-display">
+        <div className={"roi-num "+(roiPos?'pos':'neg')}>{roiPos?'+':''}{fmtPct(scenario.roi)}</div>
+        <div className="roi-lbl">retorno sobre o investimento</div>
+      </div>
+    </div>
+  );
+}
+function Step4ABody({draft, setDraft}){
+  const coef = COEF[draft.objetivo];
+  const n = draft.base.length;
+  const proj = calcScenario(n, coef.taxaResposta, coef.convFull, coef.contribuicao);
+  useEffect(()=>{ setDraft(d=>({...d, estimativa:{final:proj, contatos:n, full:null, clusterN:n, pct:100}})); }, [n]);
+  return (
+    <div className="fade-in card">
+      <div className="scenario-grid single">
+        <ScenarioCard label="Sua lista" badge={`${fmtInt(n)} contatos`} scenario={proj} highlight={true} />
+      </div>
+      <div className="proj-note">Calculado para a lista que você subiu. Como ela já veio pronta, não há grupos para concentrar nem comparação.</div>
+    </div>
+  );
+}
+const SUGGESTED_PCT = 35;
+function Step4BBody({draft, setDraft}){
+  const coef = COEF[draft.objetivo];
+  const seg = draft.segments.find(s=>s.key===draft.segmentKey);
+  const fullBaseN = seg.clientes.length;
+  const [pct, setPct] = useState(SUGGESTED_PCT);
+  const [choice, setChoice] = useState('cluster'); // 'cluster' (sua seleção) vem escolhido por padrão
+  const clusterN = Math.round(fullBaseN * (pct/100));
+
+  const fullScenario = calcScenario(fullBaseN, coef.taxaResposta, coef.convFull, coef.contribuicao);
+  const clusterScenario = calcScenario(clusterN, coef.taxaResposta, coef.convCluster, coef.contribuicao);
+
+  const custoEconomia = fullScenario.custo - clusterScenario.custo;
+  const custoEconomiaPct = fullScenario.custo>0 ? (custoEconomia/fullScenario.custo)*100 : 0;
+  const roiGainPts = clusterScenario.roi - fullScenario.roi;
+
+  const chosenScenario = choice==='full' ? fullScenario : clusterScenario;
+  const chosenN = choice==='full' ? fullBaseN : clusterN;
+
+  useEffect(()=>{
+    setDraft(d=>({...d, estimativa:{final:chosenScenario, full:fullScenario, cluster:clusterScenario, contatos:chosenN, clusterN, pct, choice}}));
+  }, [pct, fullBaseN, choice]);
+
+  return (
+    <div className="fade-in card">
+      <p className="section-sub" style={{marginTop:-4}}>Escolha qual cenário vai para esta campanha. Você pode falar com o grupo inteiro ou só com quem tem mais chance de responder.</p>
+      <div className="scenario-grid">
+        <ScenarioCard label="Grupo inteiro" badge={`${fmtInt(fullBaseN)} clientes`} scenario={fullScenario}
+          selectable selected={choice==='full'} onSelect={()=>setChoice('full')} best={fullScenario.roi>clusterScenario.roi} />
+        <ScenarioCard label="Sua seleção" badge={`${fmtInt(clusterN)} clientes`} scenario={clusterScenario} highlight
+          selectable selected={choice==='cluster'} onSelect={()=>setChoice('cluster')} best={clusterScenario.roi>=fullScenario.roi} />
+      </div>
+
+      <div className="delta-banner">
+        <div className="delta-grid">
+          <div className="delta-item"><div className="num">{fmtBRL0(custoEconomia)} ({fmtPct(custoEconomiaPct)})</div><div className="lbl">Você economiza ao focar</div></div>
+          <div className="delta-item"><div className="num">+{fmtPct(roiGainPts)} p.p.</div><div className="lbl">A mais de retorno ao focar</div></div>
+        </div>
+        <div className="delta-text">
+          Ao falar só com os clientes de maior chance, você gasta {fmtPct(Math.abs(custoEconomiaPct))} {custoEconomia>=0?'menos':'a mais'} e ganha {fmtPct(Math.abs(roiGainPts))} pontos {roiGainPts>=0?'a mais':'a menos'} de retorno.
+        </div>
+      </div>
+
+      <div className="slider-box">
+        <div className="slider-top">
+          <div>
+            <div style={{fontWeight:700, fontSize:14}}>Quer focar nos clientes com mais chance de responder?</div>
+            <div style={{fontSize:12, color:'var(--text-soft)', marginTop:3}}>Sugerimos começar pelos grupos de maior propensão. Você ajusta o alcance e vê o efeito na hora.</div>
+            {pct===SUGGESTED_PCT
+              ? <span className="suggested-pill">★ Sugerido pelo Pulse</span>
+              : <span className="suggested-pill" style={{cursor:'pointer'}} onClick={()=>setPct(SUGGESTED_PCT)}>↺ Voltar para o sugerido ({SUGGESTED_PCT}%)</span>}
+          </div>
+          <div className="pct">{pct}%</div>
+        </div>
+        <input type="range" min="10" max="100" value={pct} onChange={e=>setPct(parseInt(e.target.value))} />
+        <div style={{display:'flex', justifyContent:'space-between', fontSize:11, color:'var(--text-grey)', marginTop:6}}>
+          <span>10% · só os melhores</span>
+          <span>100% · grupo inteiro</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ===== Passo 5 — Confirmação ===== */
+function Step5Body({draft}){
+  const tpl = (TEMPLATES[draft.objetivo]||[]).find(t=>t.id===draft.templateId);
+  const est = draft.estimativa;
+  const seg = (draft.caminho==='B' && draft.segments) ? draft.segments.find(s=>s.key===draft.segmentKey) : null;
+  return (
+    <div className="fade-in card">
+      <div className="summary-grid">
+        <div className="summary-item"><div className="lbl">Campanha</div><div className="val">{draft.nome||'Sem nome'}</div></div>
+        <div className="summary-item"><div className="lbl">Contatos vêm de</div><div className="val">{draft.caminho==='A'?'Lista pronta':'Base segmentada'}</div></div>
+        <div className="summary-item"><div className="lbl">{seg?'Grupo':'Objetivo'}</div><div className="val">{seg?seg.nome:draft.objetivo}</div></div>
+        <div className="summary-item"><div className="lbl">Objetivo</div><div className="val">{draft.objetivo}</div></div>
+        <div className="summary-item"><div className="lbl">Modelo</div><div className="val">{tpl?tpl.nome:'—'}</div></div>
+        <div className="summary-item"><div className="lbl">Quantos clientes</div><div className="val">{fmtInt(est.contatos)}</div></div>
+        <div className="summary-item"><div className="lbl">Custo estimado</div><div className="val">{fmtBRL(est.final.custo)}</div></div>
+        <div className="summary-item"><div className="lbl">Retorno projetado</div><div className="val" style={{color:est.final.roi>=0?'var(--green)':'var(--red)'}}>{est.final.roi>=0?'+':''}{fmtPct(est.final.roi)}</div></div>
+      </div>
+      <div className="compliance-note">
+        <span>🔒</span>
+        <span>Enviamos apenas para clientes com opt-in válido, seguindo a LGPD e as regras da Meta.</span>
+      </div>
+    </div>
+  );
+}
+function LaunchingBody({draft}){
+  return (
+    <div className="card fade-in">
+      <div className="launching-anim">
+        <div className="spinner"></div>
+        <div style={{fontWeight:700, fontSize:16}}>Disparando sua campanha…</div>
+        <div className="section-sub" style={{margin:0}}>Enviando para {fmtInt(draft.estimativa.contatos)} clientes pelo WhatsApp.</div>
+      </div>
+    </div>
+  );
+}
+
+/* ===== Meta de cada passo ===== */
+function stepMeta(step, draft){
+  const caminho = draft.caminho;
+  if(step===1) return {title:'Vamos criar sua campanha', subtitle:'Comece dando um nome e escolhendo de onde vêm seus contatos.', nextLabel:'Continuar', canNext: draft.nome.trim().length>0 && !!caminho};
+  if(step===2){
+    if(caminho==='A') return {title:'Suba sua lista de contatos', subtitle:'Aceitamos arquivos CSV. Seus contatos já entram prontos para a campanha.', nextLabel:'Continuar para a mensagem', canNext: !!draft.base};
+    return {title:'Suba sua base de clientes', subtitle:'O Pulse lê sua base e sugere grupos com mais chance de responder.', nextLabel:'Continuar para a mensagem', canNext: !!draft.segmentKey};
+  }
+  if(step===3) return {title:'Escreva sua mensagem', subtitle:'Escolha um modelo aprovado e preencha com os dados de cada cliente. A prévia mostra como vai chegar.', nextLabel:'Ver resultado esperado', canNext: !!draft.templateId};
+  if(step===4) return {title:'Veja o resultado esperado', subtitle:'Calculamos com base no seu grupo, no modelo e no preço atual do WhatsApp.', nextLabel:'Revisar e disparar', canNext:true};
+  return {title:'Pronto para disparar?', subtitle:'Revise os detalhes. Você ainda pode voltar e ajustar.', nextLabel:'Disparar campanha', canNext:true};
+}
+
+/* ===== Flow shell (topo fixo / meio rolável / rodapé fixo) ===== */
+function CreateFlow({step, setStep, draft, setDraft, onLaunch}){
+  const [launching, setLaunching] = useState(false);
+  const meta = stepMeta(step, draft);
+  const caminho = draft.caminho;
+
+  function launch(){ setLaunching(true); setTimeout(()=>onLaunch(), 2000); }
+
+  let body;
+  if(launching) body = <LaunchingBody draft={draft} />;
+  else if(step===1) body = <Step1Body draft={draft} setDraft={setDraft} />;
+  else if(step===2) body = caminho==='A' ? <Step2ABody draft={draft} setDraft={setDraft} /> : <Step2BBody draft={draft} setDraft={setDraft} />;
+  else if(step===3) body = <Step3Body draft={draft} setDraft={setDraft} />;
+  else if(step===4) body = caminho==='A' ? <Step4ABody draft={draft} setDraft={setDraft} /> : <Step4BBody draft={draft} setDraft={setDraft} />;
+  else body = <Step5Body draft={draft} />;
+
+  return (
+    <div className="flow">
+      <div className="flow-header">
+        <div className="flow-eyebrow">Nova campanha</div>
+        <Stepper current={step} />
+        <h2 className="flow-title">{meta.title}</h2>
+        <p className="flow-subtitle">{meta.subtitle}</p>
+      </div>
+      <div className="flow-body" key={step+(caminho||'')+(launching?'-l':'')}>{body}</div>
+      {!launching && (
+        <div className="flow-footer">
+          {step>1 ? <button className="btn btn-secondary" onClick={()=>setStep(s=>s-1)}>Voltar</button> : <span></span>}
+          {step<5
+            ? <button className="btn btn-primary" disabled={!meta.canNext} onClick={()=>setStep(s=>s+1)}>{meta.nextLabel}</button>
+            : <button className="btn btn-primary" onClick={launch}>Disparar campanha</button>}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ===== Gráfico ===== */
+function LineChartSVG({data}){
+  const w=720, h=240, pad=40;
+  const maxVal = Math.max(...data.map(d=>Math.max(d.respostas, d.conversoes)), 1);
+  const xStep = (w - pad*2) / (data.length-1 || 1);
+  const yScale = (v) => h - pad - (v/maxVal)*(h-pad*2);
+  const pathFor = (key) => data.map((d,i)=> `${i===0?'M':'L'} ${pad+i*xStep} ${yScale(d[key])}`).join(' ');
+  return (
+    <svg viewBox={`0 0 ${w} ${h}`} width="100%" style={{maxWidth:760}}>
+      {[0,0.25,0.5,0.75,1].map((f,i)=>(<line key={i} x1={pad} x2={w-pad} y1={pad+f*(h-pad*2)} y2={pad+f*(h-pad*2)} stroke="#ECEEF6" strokeWidth="1" />))}
+      <path d={pathFor('respostas')} fill="none" stroke="#1968F0" strokeWidth="2.5" />
+      <path d={pathFor('conversoes')} fill="none" stroke="#16B364" strokeWidth="2.5" />
+      <text x={pad} y={16} fontSize="11" fill="#51546A" fontWeight="700">Respostas e conversões por dia da campanha</text>
+      <g>
+        <circle cx={pad+10} cy={h-12} r="4" fill="#1968F0" /><text x={pad+20} y={h-8} fontSize="11" fill="#51546A">Respostas</text>
+        <circle cx={pad+110} cy={h-12} r="4" fill="#16B364" /><text x={pad+120} y={h-8} fontSize="11" fill="#51546A">Conversões</text>
+      </g>
+    </svg>
+  );
+}
+
+/* ===== Dashboard ===== */
+const FILTERS_EMPTY = {campanha:'todas', objetivo:'todos', dataInicio:'', dataFim:''};
+function DashboardFilters({campaigns, filters, setFilters}){
+  const objetivos = useMemo(()=>[...new Set(campaigns.map(c=>c.objetivo))].sort(), [campaigns]);
+  return (
+    <div className="card filters-bar">
+      <div className="filter-field">
+        <label className="field-label">Campanha</label>
+        <select value={filters.campanha} onChange={e=>setFilters({...filters, campanha:e.target.value})}>
+          <option value="todas">Todas as campanhas</option>
+          {campaigns.map(c=> <option key={c.id} value={c.id}>{c.nome}</option>)}
+        </select>
+      </div>
+      <div className="filter-field">
+        <label className="field-label">Objetivo</label>
+        <select value={filters.objetivo} onChange={e=>setFilters({...filters, objetivo:e.target.value})}>
+          <option value="todos">Todos</option>
+          {objetivos.map(o=> <option key={o} value={o}>{o}</option>)}
+        </select>
+      </div>
+      <div className="filter-field">
+        <label className="field-label">De</label>
+        <input type="date" value={filters.dataInicio} onChange={e=>setFilters({...filters, dataInicio:e.target.value})} />
+      </div>
+      <div className="filter-field">
+        <label className="field-label">Até</label>
+        <input type="date" value={filters.dataFim} onChange={e=>setFilters({...filters, dataFim:e.target.value})} />
+      </div>
+      <button className="btn btn-ghost" style={{alignSelf:'flex-end'}} onClick={()=>setFilters(FILTERS_EMPTY)}>Limpar filtros</button>
+    </div>
+  );
+}
+function Dashboard({campaigns}){
+  const real = useMemo(()=> campaigns.filter(c=>c.status!=='draft'), [campaigns]);
+  const [filters, setFilters] = useState(FILTERS_EMPTY);
+  const filtered = useMemo(()=> real.filter(c=>{
+    if(filters.campanha!=='todas' && c.id!==filters.campanha) return false;
+    if(filters.objetivo!=='todos' && c.objetivo!==filters.objetivo) return false;
+    if(filters.dataInicio && c.data < filters.dataInicio) return false;
+    if(filters.dataFim && c.data > filters.dataFim) return false;
+    return true;
+  }), [real, filters]);
+
+  if(real.length===0){
+    return (<div className="card empty-state"><div className="ico">📊</div><h3>Nenhuma campanha disparada ainda</h3><p style={{margin:0}}>Crie sua primeira campanha para ver os resultados aqui.</p></div>);
+  }
+  return (
+    <div className="fade-in">
+      <DashboardFilters campaigns={real} filters={filters} setFilters={setFilters} />
+      {filtered.length===0
+        ? <div className="card empty-state"><div className="ico">🔍</div><h3>Nada por aqui</h3><p style={{margin:0}}>Ajuste os filtros para ver resultados.</p></div>
+        : <DashboardResults campaigns={filtered} />}
+    </div>
+  );
+}
+function buildInsight(series, campaigns){
+  let peakI=0; series.forEach((d,i)=>{ if(d.respostas>series[peakI].respostas) peakI=i; });
+  const peakDay = peakI+1;
+  const last3 = series.slice(-3).reduce((s,d)=>s+d.respostas,0)/3;
+  const prevSlice = series.slice(-6,-3);
+  const prev3 = prevSlice.length ? prevSlice.reduce((s,d)=>s+d.respostas,0)/prevSlice.length : last3;
+  const diff = prev3>0 ? (last3-prev3)/prev3 : 0;
+  const trend = diff>0.08 ? 'subindo' : diff<-0.08 ? 'caindo' : 'estável';
+  const best = campaigns.reduce((a,b)=> b.roi>a.roi?b:a, campaigns[0]);
+  return {peakDay, trend, best};
+}
+function AiInsightCard({series, campaigns}){
+  const {peakDay, trend, best} = useMemo(()=>buildInsight(series, campaigns), [series, campaigns]);
+  const trendFrase = trend==='subindo'
+    ? 'A taxa de resposta vem subindo nos últimos dias. Bom momento para manter o ritmo.'
+    : trend==='caindo'
+    ? 'A taxa de resposta caiu um pouco nos últimos dias. Vale revisar o modelo ou o horário do envio.'
+    : 'A taxa de resposta está estável nos últimos dias.';
+  return (
+    <div className="ai-card">
+      <div className="ai-head">
+        <span className="ai-badge"><span className="ai-spark">✦</span> Pulse IA <span className="ai-dot"></span></span>
+      </div>
+      <h3 className="ai-title">O que seus dados estão dizendo</h3>
+      <div className="ai-insight">
+        <p>As respostas tiveram pico no <b>dia {peakDay}</b> da campanha. É quando seus clientes mais interagiram.</p>
+        <p>{trendFrase}</p>
+        <p>A campanha <b>{best.nome}</b> trouxe o melhor retorno até agora, com <b>+{fmtPct(best.roi)}</b>.</p>
+      </div>
+      <div className="ai-reco"><span className="ico">→</span><span>Campanhas de {best.objetivo} estão convertendo acima da média. Vale repetir esse modelo na próxima.</span></div>
+    </div>
+  );
+}
+function DashboardResults({campaigns}){
+  const n = campaigns.length;
+  const totalMensagens = campaigns.reduce((s,c)=>s+c.contatos,0);
+  const avgResposta = campaigns.reduce((s,c)=>s+c.taxaResposta,0)/n;
+  const avgConv = campaigns.reduce((s,c)=> s + (c.conversoes/c.contatos*100), 0)/n;
+  const avgRoi = campaigns.reduce((s,c)=>s+c.roi,0)/n;
+  const totalReceita = campaigns.reduce((s,c)=> s + c.receita, 0);
+  const newest = campaigns[0];
+  const series = useMemo(()=>generateTimeSeries(14, newest.contatos*newest.taxaResposta/100, newest.conversoes), [newest.id]);
+  return (
+    <>
+      <div className="kpi-grid">
+        <div className="kpi-card primary"><div className="kpi-lbl">Taxa de resposta média<span className="kpi-badge">OPERACIONAL</span></div><div className="kpi-val">{fmtPct(avgResposta)}</div></div>
+        <div className="kpi-card primary"><div className="kpi-lbl">Taxa de conversão média<span className="kpi-badge">NEGÓCIO</span></div><div className="kpi-val">{fmtPct(avgConv)}</div></div>
+        <div className="kpi-card"><div className="kpi-lbl">Retorno médio</div><div className="kpi-val green">+{fmtPct(avgRoi)}</div></div>
+        <div className="kpi-card"><div className="kpi-lbl">Receita gerada</div><div className="kpi-val">{fmtBRL0(totalReceita)}</div></div>
+        <div className="kpi-card"><div className="kpi-lbl">Mensagens enviadas</div><div className="kpi-val">{fmtInt(totalMensagens)}</div></div>
+        <div className="kpi-card"><div className="kpi-lbl">Campanhas</div><div className="kpi-val">{n}</div></div>
+      </div>
+      <div className="dash-row">
+        <div className="card chart-card"><LineChartSVG data={series} /></div>
+        <AiInsightCard series={series} campaigns={campaigns} />
+      </div>
+      <div className="card">
+        <h3 className="section-title" style={{marginBottom:14}}>Campanhas</h3>
+        <div className="table-scroll">
+          <table className="camp-table">
+            <thead><tr><th>Nome</th><th>Objetivo</th><th>Data</th><th>Contatos</th><th>Resposta</th><th>Conversões</th><th>Retorno</th><th>Status</th><th></th></tr></thead>
+            <tbody>
+              {campaigns.map(c=>(
+                <tr key={c.id}>
+                  <td style={{fontWeight:600}}>{c.nome}</td><td>{c.objetivo}</td><td>{c.data}</td>
+                  <td>{fmtInt(c.contatos)}</td><td>{fmtPct(c.taxaResposta)}</td><td>{fmtInt(c.conversoes)}</td>
+                  <td className={"roi-cell "+(c.roi>=0?'pos':'neg')}>{c.roi>=0?'+':''}{fmtPct(c.roi)}</td>
+                  <td><span className={"status-pill "+statusClass(c.status)}>{statusLabel(c.status)}</span></td>
+                  <td><button className="btn btn-ghost btn-sm" onClick={()=>exportCampaignCSV(c)}>⬇ CSV</button></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </>
+  );
+}
+
+/* ===== Campanhas ===== */
+function CampanhasPage({campaigns, onNew, onOpenDraft}){
+  return (
+    <div className="card fade-in">
+      <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:16}}>
+        <div>
+          <h3 className="section-title" style={{margin:0}}>Todas as campanhas</h3>
+          <p className="section-sub" style={{margin:'4px 0 0'}}>Veja o histórico, retome rascunhos e baixe o relatório de cada campanha.</p>
+        </div>
+        <button className="btn btn-primary" onClick={onNew}>+ Nova Campanha</button>
+      </div>
+      {campaigns.length===0 ? (
+        <div className="empty-state"><div className="ico">📣</div><p>Você ainda não criou nenhuma campanha.</p></div>
+      ) : (
+        <div className="table-scroll">
+          <table className="camp-table">
+            <thead><tr><th>Nome</th><th>Objetivo</th><th>Data</th><th>Contatos</th><th>Resposta</th><th>Conversões</th><th>Retorno</th><th>Status</th><th></th></tr></thead>
+            <tbody>
+              {campaigns.map(c=>{
+                const isDraft = c.status==='draft';
+                return (
+                  <tr key={c.id} className={isDraft?'draft-row':''} onClick={isDraft?()=>onOpenDraft(c):undefined}>
+                    <td style={{fontWeight:600}}>{c.nome}</td><td>{c.objetivo}</td><td>{c.data}</td>
+                    <td>{c.contatos?fmtInt(c.contatos):'—'}</td>
+                    <td>{isDraft?'—':fmtPct(c.taxaResposta)}</td>
+                    <td>{isDraft?'—':fmtInt(c.conversoes)}</td>
+                    <td className={"roi-cell "+(c.roi>=0?'pos':'neg')}>{isDraft?'—':(c.roi>=0?'+':'')+fmtPct(c.roi)}</td>
+                    <td><span className={"status-pill "+statusClass(c.status)}>{statusLabel(c.status)}</span></td>
+                    <td>{isDraft
+                      ? <button className="btn btn-ghost btn-sm" onClick={(e)=>{e.stopPropagation();onOpenDraft(c);}}>Continuar</button>
+                      : <button className="btn btn-ghost btn-sm" onClick={()=>exportCampaignCSV(c)}>⬇ CSV</button>}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ===== Base de Clientes ===== */
+function BasePage({draft}){
+  if(!draft.base){
+    return (<div className="card empty-state"><div className="ico">👥</div><h3>Nenhuma base carregada</h3><p style={{margin:0}}>Carregue uma base na etapa "Base" da Nova Campanha.</p></div>);
+  }
+  const cols = ["nome","cpf","uf","idade","renda_estimada","ticket_credito","situacao","score_faixa","dias_para_vencimento","produtos_ativos","status_atividade","canal_preferido"];
+  const present = cols.filter(c=> draft.base[0] && draft.base[0][c]!==undefined);
+  const sample = draft.base.slice(0,15);
+  return (
+    <div className="card fade-in">
+      <h3 className="section-title">Base de clientes carregada</h3>
+      <p className="section-sub">{fmtInt(draft.base.length)} clientes • origem: {draft.baseSource==='mock'?'base de exemplo':'arquivo enviado'}</p>
+      <div className="table-scroll">
+        <table className="camp-table">
+          <thead><tr>{present.map(c=> <th key={c}>{c}</th>)}</tr></thead>
+          <tbody>
+            {sample.map((c,i)=>(<tr key={i}>{present.map(col=>(<td key={col}>{col==='renda_estimada'||col==='ticket_credito' ? fmtBRL(c[col]) : String(c[col] ?? '—')}</td>))}</tr>))}
+          </tbody>
+        </table>
+      </div>
+      <p style={{fontSize:12, color:'var(--text-grey)', marginTop:12}}>Mostrando {sample.length} de {fmtInt(draft.base.length)} clientes.</p>
+    </div>
+  );
+}
+
+/* ===== Modal de saída ===== */
+function LeaveModal({onSave, onDiscard, onContinue}){
+  return (
+    <div className="modal-overlay" onClick={onContinue}>
+      <div className="modal" onClick={e=>e.stopPropagation()}>
+        <h3>Quer sair sem perder o progresso?</h3>
+        <p>Sua campanha ainda não foi disparada. Você pode salvar como rascunho e voltar quando quiser.</p>
+        <div className="modal-actions">
+          <button className="btn btn-primary" onClick={onSave}>Salvar rascunho e sair</button>
+          <button className="btn btn-secondary" onClick={onDiscard}>Sair sem salvar</button>
+          <button className="btn btn-ghost" onClick={onContinue}>Continuar editando</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ===== App ===== */
+const emptyDraft = {
+  nome:'', caminho:null, base:null, baseSource:null, header:null,
+  segments:null, segmentKey:null, objetivo:'', templateId:null, varValues:{}, estimativa:null,
+};
+function makeDraftCampaign(draft){
+  return {
+    id:'d'+Date.now(),
+    nome: draft.nome.trim() || 'Campanha sem nome',
+    caminho: draft.caminho,
+    objetivo: draft.objetivo || '—',
+    contatos: draft.estimativa ? draft.estimativa.contatos : 0,
+    taxaResposta:0, conversoes:0, custo:0, receita:0, roi:0,
+    status:'draft', data: new Date().toISOString().slice(0,10),
+    draftData: draft,
+  };
+}
+
+function App(){
+  const [page, setPage] = useState('dashboard');
+  const [step, setStep] = useState(1);
+  const [draft, setDraft] = useState(emptyDraft);
+  const [campaigns, setCampaigns] = useState(generateHistoricalCampaigns());
+  const [pendingNav, setPendingNav] = useState(null);
+
+  function navigate(target){
+    if(target==='nova'){ setDraft(emptyDraft); setStep(1); setPage('nova'); }
+    else setPage(target);
+  }
+  function go(target){
+    const dirty = page==='nova' && (draft.nome.trim().length>0 || draft.caminho);
+    if(dirty) setPendingNav(target);
+    else navigate(target);
+  }
+  function finishNav(save){
+    const t = pendingNav;
+    if(save) setCampaigns(prev=>[makeDraftCampaign(draft), ...prev]);
+    setPendingNav(null);
+    navigate(t);
+  }
+  function openDraft(c){
+    setCampaigns(prev=>prev.filter(x=>x.id!==c.id));
+    setDraft(c.draftData);
+    setStep(1);
+    setPage('nova');
+  }
+  function handleLaunch(){
+    const est = draft.estimativa;
+    const newCampaign = withFinance({
+      id:'c'+Date.now(), nome:draft.nome.trim()||'Campanha sem nome', caminho:draft.caminho, objetivo:draft.objetivo,
+      contatos:est.contatos, taxaResposta:COEF[draft.objetivo].taxaResposta*100,
+      conversoes:Math.round(est.final.conversoes), roi:Math.round(est.final.roi*10)/10,
+      status:'new', data:new Date().toISOString().slice(0,10),
+    });
+    setCampaigns(prev=>[newCampaign, ...prev]);
+    setDraft(emptyDraft); setStep(1);
+    setPage('dashboard');
+  }
+
+  if(page==='nova'){
+    return (
+      <div className="app">
+        <Sidebar page={page} go={go} />
+        <CreateFlow step={step} setStep={setStep} draft={draft} setDraft={setDraft} onLaunch={handleLaunch} />
+        {pendingNav && <LeaveModal onSave={()=>finishNav(true)} onDiscard={()=>finishNav(false)} onContinue={()=>setPendingNav(null)} />}
+      </div>
+    );
+  }
+
+  let content;
+  if(page==='dashboard'){
+    content = (<><div className="page-header"><h1 className="page-title">Dashboard</h1><p className="page-subtitle">Acompanhe o desempenho das suas campanhas no WhatsApp.</p></div><Dashboard campaigns={campaigns} /></>);
+  } else if(page==='campanhas'){
+    content = (<><div className="page-header"><h1 className="page-title">Campanhas</h1><p className="page-subtitle">Gerencie suas campanhas e retome rascunhos de onde parou.</p></div><CampanhasPage campaigns={campaigns} onNew={()=>navigate('nova')} onOpenDraft={openDraft} /></>);
+  } else if(page==='base'){
+    content = (<><div className="page-header"><h1 className="page-title">Base de Clientes</h1><p className="page-subtitle">Veja a base usada na criação da campanha.</p></div><BasePage draft={draft} /></>);
+  }
+  return (
+    <div className="app">
+      <Sidebar page={page} go={go} />
+      <div className="main">{content}</div>
+      {pendingNav && <LeaveModal onSave={()=>finishNav(true)} onDiscard={()=>finishNav(false)} onContinue={()=>setPendingNav(null)} />}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

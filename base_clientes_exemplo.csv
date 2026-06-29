@@ -1,0 +1,1001 @@
+nome,cpf,uf,idade,renda_estimada,ticket_credito,situacao,score_faixa,dias_para_vencimento,produtos_ativos,ultimo_produto_adquirido,status_atividade,canal_preferido
+Patricia Ferreira,***.973.503-46,AL,36,5390,899.79,adimplente,Alto,354,1,Seguro,ativo,Agencia
+Wesley Almeida,***.599.906-84,MG,39,1660,381.40,adimplente,Medio,302,4,Cartao de debito,inativo,App
+Antonio Pereira,***.678.515-41,MG,22,2250,1096.11,restrito,Baixo,0,1,Financiamento,inativo,App
+Tatiane Barbosa,***.501.765-35,RJ,22,5690,380.78,adimplente,Alto,19,2,Emprestimo pessoal,ativo,WhatsApp
+Vanessa Monteiro,***.426.270-85,RS,36,2260,483.54,restrito,Baixo,0,1,Financiamento,ativo,WhatsApp
+Renata Pinto,***.681.999-31,AL,62,1440,609.09,restrito,Baixo,0,2,Conta digital,inativo,WhatsApp
+Sandra Rodrigues,***.327.800-34,GO,28,2270,1382.55,adimplente,Alto,224,1,Conta digital,ativo,WhatsApp
+Luiz Barbosa,***.822.859-15,PR,44,3280,380.31,adimplente,Medio,7,4,Seguro,ativo,WhatsApp
+Marcio Freitas,***.484.991-29,MT,50,1930,620.15,restrito,Baixo,0,1,Conta digital,ativo,App
+Mariana Cavalcanti,***.469.515-57,PA,32,2330,635.74,adimplente,Medio,237,1,Cartao de debito,inativo,WhatsApp
+Daniel Costa,***.871.467-94,AL,39,5680,511.55,adimplente,Medio,132,4,Financiamento,ativo,App
+Felipe Moreira,***.885.229-12,MG,33,2610,2042.00,adimplente,Baixo,42,2,Cartao de debito,ativo,WhatsApp
+Gabriel Dias,***.970.718-53,MG,27,5200,715.43,restrito,Baixo,0,2,Seguro,ativo,App
+Carlos Teixeira,***.992.439-67,PE,42,1200,1223.58,restrito,Baixo,0,1,Cartao de debito,ativo,Agencia
+Thiago Pinto,***.464.446-29,PR,49,3280,864.82,adimplente,Medio,53,1,Cartao de debito,inativo,WhatsApp
+Sergio Moreira,***.292.994-92,PE,63,3060,361.93,restrito,Baixo,0,1,Cartao de credito,ativo,WhatsApp
+Roberto Gomes,***.753.763-86,PE,34,3010,492.95,adimplente,Alto,299,3,Conta digital,inativo,WhatsApp
+Adriana Rocha,***.123.516-71,SP,36,2870,557.68,adimplente,Medio,61,3,Emprestimo pessoal,ativo,WhatsApp
+Camila Barros,***.530.572-86,RJ,43,2800,1782.63,restrito,Baixo,0,2,Cartao de debito,ativo,App
+Leandro Cavalcanti,***.532.336-65,AP,75,4120,645.56,adimplente,Medio,312,1,Financiamento,ativo,App
+Aline Monteiro,***.592.912-49,RS,67,1660,307.06,adimplente,Alto,48,1,Investimento,ativo,WhatsApp
+Carlos Rodrigues,***.415.160-72,PA,19,1930,431.67,adimplente,Medio,136,2,Cartao de debito,ativo,WhatsApp
+Sandra Nascimento,***.355.445-61,AL,46,2630,641.30,adimplente,Alto,1,1,Emprestimo pessoal,inativo,WhatsApp
+Juliana Santos,***.854.903-58,PR,43,13780,448.78,adimplente,Medio,292,3,Cartao de credito,ativo,WhatsApp
+Bruno Pinto,***.744.152-40,SC,24,6250,348.13,adimplente,Medio,326,4,Seguro,ativo,WhatsApp
+Renata Costa,***.303.343-62,GO,22,7290,442.31,restrito,Medio,0,1,Cartao de debito,ativo,WhatsApp
+Mariana Almeida,***.663.631-73,PB,27,3860,2263.92,adimplente,Medio,234,1,Cartao de debito,ativo,WhatsApp
+Mariana Silva,***.472.819-55,RJ,45,2750,959.36,adimplente,Medio,35,1,Cartao de debito,ativo,WhatsApp
+Igor Lima,***.753.754-90,SP,74,3990,479.21,restrito,Baixo,0,3,Seguro,ativo,WhatsApp
+Beatriz Freitas,***.342.640-46,BA,37,4250,688.09,adimplente,Alto,24,1,Financiamento,ativo,WhatsApp
+Eduardo Costa,***.168.368-99,RJ,32,2880,1005.00,adimplente,Medio,99,1,Cartao de credito,ativo,Agencia
+Aline Pinto,***.272.114-63,MG,64,2740,833.49,adimplente,Medio,206,1,Financiamento,ativo,WhatsApp
+Bruno Araujo,***.469.326-35,SC,27,3770,562.13,adimplente,Alto,103,2,Cartao de debito,inativo,Agencia
+Sabrina Ferreira,***.887.500-21,SP,30,3550,651.01,adimplente,Medio,265,4,Emprestimo pessoal,ativo,WhatsApp
+Bruno Mendes,***.303.506-15,SP,37,6750,2218.46,restrito,Medio,0,1,Cartao de debito,ativo,Telefone
+Larissa Santos,***.875.879-19,AL,39,5050,498.13,restrito,Medio,0,1,Investimento,ativo,Agencia
+Sergio Cavalcanti,***.819.735-46,MG,45,5200,784.10,adimplente,Medio,289,2,Seguro,ativo,WhatsApp
+Amanda Barbosa,***.559.535-65,MS,32,2570,492.54,adimplente,Medio,19,2,Investimento,inativo,App
+Mariana Rocha,***.626.863-76,RS,38,3070,1014.14,adimplente,Alto,224,1,Cartao de debito,inativo,WhatsApp
+Bruna Carvalho,***.430.628-97,MG,28,4060,721.06,adimplente,Baixo,315,2,Cartao de debito,ativo,Agencia
+Vinicius Souza,***.306.873-61,CE,33,6210,1628.52,adimplente,Baixo,195,2,Cartao de credito,ativo,Agencia
+Maria Teixeira,***.799.741-90,SP,45,3450,766.69,adimplente,Alto,190,1,Investimento,ativo,WhatsApp
+Bruno Ferreira,***.305.361-14,PE,22,2390,768.95,adimplente,Medio,31,1,Financiamento,inativo,WhatsApp
+Jose Barros,***.456.522-71,PI,38,2200,438.37,adimplente,Alto,317,1,Cartao de credito,ativo,Agencia
+Rodrigo Moreira,***.261.904-97,MA,23,5430,300.44,restrito,Baixo,0,1,Conta digital,ativo,WhatsApp
+Rodrigo Freitas,***.461.720-93,SP,46,12770,856.90,restrito,Medio,0,1,Investimento,ativo,App
+Lucas Monteiro,***.462.562-70,PE,45,1810,462.49,adimplente,Medio,364,2,Financiamento,ativo,WhatsApp
+Paulo Cavalcanti,***.448.793-50,RS,18,4740,519.79,adimplente,Medio,160,1,Conta digital,inativo,App
+Daniel Ferreira,***.826.772-61,PE,21,3300,315.96,restrito,Baixo,0,2,Investimento,ativo,WhatsApp
+Carlos Correia,***.930.994-23,RN,46,4030,253.97,adimplente,Medio,181,3,Cartao de credito,ativo,WhatsApp
+Gustavo Nascimento,***.469.690-85,SP,23,3910,276.90,adimplente,Alto,2,3,Cartao de debito,ativo,WhatsApp
+Vinicius Mendes,***.153.631-51,RJ,37,1350,1096.81,adimplente,Medio,99,3,Financiamento,ativo,WhatsApp
+Andre Almeida,***.470.958-32,RS,22,5090,387.12,adimplente,Medio,146,4,Seguro,ativo,App
+Renata Santos,***.545.421-89,SP,37,4660,188.97,adimplente,Medio,195,4,Cartao de credito,ativo,App
+Marcio Correia,***.143.764-64,SP,68,2710,399.34,restrito,Baixo,0,3,Conta digital,ativo,App
+Larissa Ferreira,***.343.863-49,AM,48,1690,594.75,restrito,Baixo,0,2,Cartao de debito,ativo,WhatsApp
+Andre Pinto,***.939.859-19,SP,27,1200,1168.66,restrito,Baixo,0,4,Cartao de debito,ativo,WhatsApp
+Mariana Correia,***.966.532-30,PA,40,3800,1548.37,adimplente,Medio,288,4,Investimento,ativo,WhatsApp
+Lucas Costa,***.545.535-75,RJ,57,1200,344.70,adimplente,Alto,293,2,Seguro,ativo,App
+Wesley Silva,***.536.798-48,MG,50,5200,450.21,restrito,Baixo,0,2,Seguro,ativo,WhatsApp
+Claudia Monteiro,***.601.917-99,MA,29,6490,339.76,adimplente,Alto,23,1,Conta digital,ativo,Telefone
+Thiago Correia,***.312.250-36,SP,27,3300,966.91,restrito,Medio,0,3,Seguro,ativo,WhatsApp
+Bruno Araujo,***.506.344-60,SP,26,1380,390.54,adimplente,Baixo,34,2,Conta digital,ativo,WhatsApp
+Camila Pinto,***.947.736-44,MG,58,4290,387.84,adimplente,Alto,176,1,Investimento,ativo,WhatsApp
+Otavio Freitas,***.242.684-84,SP,40,3180,541.99,restrito,Baixo,0,3,Investimento,ativo,App
+Otavio Moreira,***.137.505-78,PR,30,2000,324.75,adimplente,Medio,131,1,Seguro,ativo,Telefone
+Rodrigo Martins,***.183.762-56,GO,25,3380,613.81,restrito,Medio,0,3,Emprestimo pessoal,ativo,WhatsApp
+Jose Ferreira,***.127.547-54,PR,43,2000,229.22,adimplente,Alto,351,1,Conta digital,inativo,WhatsApp
+Vinicius Barbosa,***.519.360-56,CE,37,8170,813.46,adimplente,Alto,27,1,Emprestimo pessoal,ativo,WhatsApp
+Otavio Oliveira,***.862.340-24,PR,64,6130,344.32,adimplente,Alto,108,1,Financiamento,ativo,WhatsApp
+Luiz Moreira,***.590.363-94,RJ,46,3580,446.41,restrito,Medio,0,3,Conta digital,inativo,WhatsApp
+Fernanda Nascimento,***.859.236-63,SP,52,3800,654.75,adimplente,Medio,166,3,Emprestimo pessoal,ativo,Telefone
+Lucas Barbosa,***.964.570-40,BA,35,3260,538.72,restrito,Medio,0,4,Cartao de credito,ativo,App
+Vanessa Freitas,***.638.362-48,RS,41,4330,1698.96,adimplente,Medio,220,1,Investimento,ativo,App
+Ana Almeida,***.307.410-80,RN,49,2440,1574.06,adimplente,Alto,145,2,Seguro,inativo,WhatsApp
+Sergio Oliveira,***.929.960-38,PA,20,1200,301.69,adimplente,Alto,159,2,Investimento,ativo,WhatsApp
+Eduardo Moreira,***.885.789-32,RJ,47,5030,779.93,restrito,Baixo,0,2,Financiamento,ativo,WhatsApp
+Aline Rocha,***.139.867-80,DF,26,3320,513.02,restrito,Medio,0,4,Emprestimo pessoal,ativo,WhatsApp
+Igor Correia,***.874.686-32,RJ,64,6740,856.14,adimplente,Alto,325,1,Financiamento,inativo,WhatsApp
+Gabriel Santos,***.607.458-25,SC,45,4800,304.29,restrito,Baixo,0,2,Emprestimo pessoal,inativo,WhatsApp
+Marcio Freitas,***.883.143-81,PE,42,8400,876.00,restrito,Baixo,0,1,Investimento,inativo,WhatsApp
+Gabriel Rodrigues,***.574.648-54,RR,65,7560,426.21,adimplente,Medio,236,4,Investimento,ativo,Agencia
+Patricia Silva,***.680.898-85,RR,47,6730,181.12,restrito,Baixo,0,1,Investimento,ativo,Telefone
+Wesley Correia,***.628.956-66,PR,37,1790,327.77,restrito,Baixo,0,2,Investimento,ativo,WhatsApp
+Claudia Rodrigues,***.473.296-81,PE,25,5840,1380.85,adimplente,Medio,229,1,Emprestimo pessoal,ativo,WhatsApp
+Tatiane Freitas,***.985.865-73,MG,18,2370,502.26,restrito,Medio,0,4,Investimento,ativo,Telefone
+Gabriel Santos,***.509.667-62,PA,26,1430,1369.77,adimplente,Medio,39,1,Cartao de debito,ativo,WhatsApp
+Marcos Castro,***.724.218-55,MG,35,1280,237.62,adimplente,Medio,268,3,Seguro,ativo,App
+Daniel Pereira,***.842.227-64,SC,26,8460,498.20,restrito,Medio,0,4,Emprestimo pessoal,ativo,Telefone
+Leandro Barros,***.358.963-14,PA,46,7320,283.60,restrito,Medio,0,2,Financiamento,ativo,App
+Marcio Nascimento,***.648.186-99,SP,22,2990,475.44,adimplente,Medio,43,3,Seguro,ativo,WhatsApp
+Pedro Moreira,***.231.186-52,MG,53,3320,3000.00,adimplente,Baixo,96,2,Conta digital,inativo,WhatsApp
+Camila Lima,***.429.665-54,PR,33,6630,276.14,adimplente,Baixo,42,3,Financiamento,inativo,WhatsApp
+Patricia Oliveira,***.675.243-35,RN,55,12230,904.53,restrito,Baixo,0,1,Investimento,ativo,App
+Antonio Gomes,***.734.255-34,SP,32,4040,484.03,adimplente,Medio,336,2,Investimento,ativo,WhatsApp
+Leandro Freitas,***.203.510-33,MA,30,3210,644.55,adimplente,Alto,114,4,Cartao de debito,ativo,WhatsApp
+Luiz Mendes,***.185.722-49,RS,46,1510,778.77,adimplente,Medio,102,3,Investimento,ativo,WhatsApp
+Marcio Gomes,***.372.506-54,SP,35,1950,675.87,adimplente,Alto,219,4,Conta digital,ativo,WhatsApp
+Tatiane Ferreira,***.815.243-53,DF,44,2710,649.96,adimplente,Medio,247,3,Seguro,ativo,App
+Diego Teixeira,***.774.850-22,AP,43,1200,605.47,adimplente,Baixo,133,2,Emprestimo pessoal,ativo,App
+Eduardo Rodrigues,***.683.995-64,SP,43,4730,761.42,adimplente,Medio,103,4,Cartao de debito,ativo,WhatsApp
+Larissa Pinto,***.254.836-57,SP,20,8680,680.72,adimplente,Alto,57,2,Cartao de debito,ativo,App
+Francisco Almeida,***.227.988-10,DF,49,3320,615.56,adimplente,Medio,18,1,Cartao de debito,ativo,WhatsApp
+Juliana Santos,***.686.957-34,RS,19,3260,348.97,adimplente,Baixo,297,2,Emprestimo pessoal,inativo,WhatsApp
+Amanda Lima,***.775.962-83,PI,42,4450,384.75,restrito,Baixo,0,4,Cartao de debito,ativo,WhatsApp
+Caio Pereira,***.508.286-26,GO,45,5310,316.65,adimplente,Medio,358,4,Financiamento,inativo,App
+Felipe Cardoso,***.220.100-52,DF,33,3600,616.73,restrito,Baixo,0,3,Seguro,ativo,Agencia
+Daniel Rocha,***.750.234-37,SP,42,2780,268.63,adimplente,Alto,168,1,Investimento,ativo,WhatsApp
+Sandra Monteiro,***.357.807-89,RS,48,4500,791.38,restrito,Baixo,0,2,Emprestimo pessoal,ativo,App
+Pedro Oliveira,***.954.716-61,MG,75,6360,1334.84,adimplente,Alto,65,2,Emprestimo pessoal,ativo,WhatsApp
+Mariana Moreira,***.864.914-94,CE,22,1620,775.91,restrito,Medio,0,4,Financiamento,ativo,Agencia
+Felipe Ferreira,***.503.915-53,SP,36,3130,1145.42,adimplente,Alto,57,1,Investimento,ativo,Telefone
+Felipe Lima,***.367.304-15,MT,67,1200,554.94,adimplente,Baixo,142,1,Cartao de credito,ativo,WhatsApp
+Leticia Moreira,***.714.332-51,AL,36,1810,464.53,adimplente,Alto,137,3,Seguro,inativo,Agencia
+Maria Pereira,***.665.358-28,SP,47,3470,202.62,adimplente,Medio,140,4,Cartao de debito,ativo,WhatsApp
+Marcos Costa,***.184.101-68,ES,35,5130,348.67,adimplente,Alto,246,4,Seguro,ativo,WhatsApp
+Juliana Rodrigues,***.737.348-45,SP,72,7790,1132.61,adimplente,Alto,75,1,Cartao de credito,ativo,App
+Felipe Cardoso,***.632.486-34,SC,46,2660,329.89,adimplente,Medio,16,3,Seguro,ativo,WhatsApp
+Otavio Moreira,***.422.464-12,MA,47,7550,525.32,adimplente,Medio,273,4,Financiamento,ativo,WhatsApp
+Beatriz Lima,***.814.961-58,PE,46,2070,490.14,adimplente,Medio,216,1,Emprestimo pessoal,inativo,WhatsApp
+Antonio Santos,***.427.877-35,GO,43,1710,901.64,restrito,Alto,0,3,Cartao de debito,ativo,WhatsApp
+Juliana Dias,***.321.216-17,RJ,31,1200,1760.16,adimplente,Medio,8,4,Financiamento,ativo,WhatsApp
+Maria Barros,***.546.238-68,SP,25,4570,334.32,adimplente,Medio,8,2,Cartao de debito,ativo,Agencia
+Lucas Barros,***.588.786-57,CE,32,2490,1633.58,adimplente,Alto,307,2,Seguro,ativo,WhatsApp
+Wesley Carvalho,***.485.129-60,MT,39,2150,351.25,adimplente,Alto,10,2,Financiamento,ativo,WhatsApp
+Sergio Barbosa,***.802.143-85,SP,32,6820,887.99,restrito,Baixo,0,2,Cartao de credito,ativo,Telefone
+Andre Oliveira,***.947.692-49,RN,38,7850,1019.16,adimplente,Medio,244,1,Conta digital,ativo,WhatsApp
+Maria Almeida,***.267.951-50,MG,24,3720,341.01,adimplente,Alto,131,3,Cartao de credito,ativo,Agencia
+Francisco Araujo,***.338.856-55,SP,36,1860,971.98,restrito,Medio,0,2,Cartao de credito,ativo,Telefone
+Vinicius Correia,***.904.632-65,RJ,37,1800,690.26,adimplente,Alto,198,2,Seguro,ativo,WhatsApp
+Juliana Silva,***.333.762-26,RJ,32,2630,655.55,restrito,Medio,0,3,Seguro,ativo,WhatsApp
+Mariana Rodrigues,***.507.367-46,SP,40,3250,407.15,restrito,Baixo,0,3,Financiamento,ativo,WhatsApp
+Paulo Monteiro,***.116.785-44,RJ,35,6840,921.64,adimplente,Alto,88,4,Financiamento,ativo,WhatsApp
+Pedro Ribeiro,***.149.867-77,MA,31,3740,364.60,adimplente,Medio,165,1,Financiamento,ativo,WhatsApp
+Sandra Martins,***.590.126-46,AL,66,4230,1100.42,adimplente,Medio,163,1,Emprestimo pessoal,inativo,WhatsApp
+Amanda Oliveira,***.460.110-67,PR,37,1990,433.06,adimplente,Medio,44,1,Financiamento,ativo,App
+Sergio Araujo,***.897.936-61,BA,47,2720,640.79,adimplente,Medio,127,3,Financiamento,inativo,WhatsApp
+Otavio Lima,***.276.719-30,SP,41,5120,294.67,restrito,Medio,0,3,Emprestimo pessoal,ativo,App
+Gustavo Carvalho,***.489.461-94,MG,36,6940,522.13,adimplente,Medio,92,2,Cartao de debito,ativo,WhatsApp
+Maria Lima,***.879.498-54,AM,38,4150,381.80,adimplente,Alto,257,1,Investimento,ativo,App
+Renata Castro,***.159.929-85,BA,72,2560,1524.94,adimplente,Medio,26,4,Cartao de credito,ativo,WhatsApp
+Fabio Dias,***.825.398-69,RJ,25,1500,822.13,restrito,Baixo,0,2,Conta digital,ativo,WhatsApp
+Juliana Cavalcanti,***.210.870-27,MG,51,2260,386.26,adimplente,Medio,145,4,Seguro,ativo,WhatsApp
+Sandra Rocha,***.495.672-48,PI,65,6590,672.74,adimplente,Baixo,111,4,Financiamento,ativo,WhatsApp
+Larissa Ferreira,***.633.871-45,PR,22,2470,614.59,restrito,Baixo,0,1,Cartao de debito,ativo,App
+Thiago Carvalho,***.622.237-55,MG,33,3280,1374.12,adimplente,Alto,105,1,Cartao de credito,inativo,WhatsApp
+Sabrina Pinto,***.579.966-38,SP,55,4570,206.56,adimplente,Alto,204,3,Conta digital,ativo,App
+Aline Gomes,***.206.654-61,CE,23,1200,655.59,adimplente,Alto,228,1,Cartao de debito,inativo,Agencia
+Carlos Barbosa,***.362.287-15,SP,28,4720,842.91,adimplente,Medio,193,1,Emprestimo pessoal,ativo,WhatsApp
+Lucas Cardoso,***.498.307-95,MG,67,2940,468.08,adimplente,Alto,75,1,Cartao de debito,ativo,App
+Thiago Oliveira,***.308.255-53,MG,19,4230,781.64,adimplente,Alto,235,3,Conta digital,inativo,WhatsApp
+Daniel Pereira,***.935.732-89,PR,46,2380,508.76,adimplente,Alto,104,3,Cartao de credito,inativo,Telefone
+Claudia Ribeiro,***.362.684-97,BA,34,3880,288.53,adimplente,Alto,106,1,Investimento,ativo,WhatsApp
+Larissa Nascimento,***.635.964-98,MG,40,1540,744.96,restrito,Alto,0,4,Cartao de debito,ativo,App
+Beatriz Monteiro,***.422.140-31,MG,19,3130,888.77,restrito,Medio,0,2,Conta digital,ativo,WhatsApp
+Fabio Pereira,***.684.784-39,RS,63,6640,1127.12,adimplente,Medio,79,2,Conta digital,inativo,WhatsApp
+Pedro Souza,***.482.647-82,SP,23,2660,306.63,adimplente,Alto,295,1,Seguro,inativo,Telefone
+Fabio Ribeiro,***.657.310-75,SP,20,5100,572.88,restrito,Baixo,0,3,Conta digital,inativo,WhatsApp
+Antonio Santos,***.605.709-83,MT,24,3870,1561.91,adimplente,Alto,264,1,Financiamento,ativo,WhatsApp
+Bruna Ribeiro,***.446.452-94,SP,21,5970,547.31,adimplente,Alto,326,2,Cartao de debito,ativo,WhatsApp
+Beatriz Cavalcanti,***.854.241-32,PA,49,5840,161.10,adimplente,Alto,107,3,Financiamento,ativo,WhatsApp
+Jose Cavalcanti,***.756.649-16,SP,46,2560,747.65,restrito,Baixo,0,2,Cartao de credito,ativo,WhatsApp
+Mariana Rodrigues,***.563.531-56,SP,21,2920,702.85,adimplente,Alto,340,2,Cartao de credito,inativo,WhatsApp
+Tatiane Araujo,***.105.919-42,PE,43,2590,876.29,adimplente,Medio,194,3,Financiamento,ativo,WhatsApp
+Beatriz Silva,***.517.895-82,GO,45,3240,665.62,adimplente,Alto,15,3,Cartao de debito,inativo,WhatsApp
+Marcio Rocha,***.239.166-41,PB,42,1870,487.14,adimplente,Alto,209,2,Cartao de debito,ativo,WhatsApp
+Ana Martins,***.889.577-51,BA,33,7520,381.39,adimplente,Alto,70,3,Seguro,ativo,WhatsApp
+Adriana Lima,***.159.509-43,SP,36,5180,358.61,adimplente,Alto,86,1,Seguro,ativo,WhatsApp
+Pedro Moreira,***.923.623-31,SP,30,3880,609.55,restrito,Baixo,0,3,Cartao de debito,ativo,App
+Gustavo Moreira,***.854.456-53,PR,32,4750,1012.16,adimplente,Medio,287,3,Conta digital,inativo,WhatsApp
+Amanda Mendes,***.504.632-49,RS,69,10680,558.43,restrito,Baixo,0,4,Conta digital,ativo,WhatsApp
+Fabio Pinto,***.639.423-39,SP,29,2990,934.43,adimplente,Medio,131,1,Emprestimo pessoal,ativo,WhatsApp
+Felipe Pinto,***.716.619-56,BA,27,3980,741.80,adimplente,Medio,346,1,Cartao de credito,ativo,WhatsApp
+Andre Dias,***.144.807-12,RN,35,1220,1855.14,restrito,Baixo,0,2,Cartao de debito,ativo,Agencia
+Marcos Ferreira,***.514.785-88,SP,62,5960,182.73,adimplente,Alto,300,2,Financiamento,ativo,WhatsApp
+Tatiane Rocha,***.592.966-24,MG,24,5940,866.43,adimplente,Medio,331,2,Investimento,ativo,App
+Marcio Rocha,***.826.745-88,SC,46,2470,572.78,adimplente,Medio,349,1,Investimento,ativo,Agencia
+Felipe Nascimento,***.824.901-50,DF,40,10540,580.11,adimplente,Alto,346,2,Seguro,ativo,WhatsApp
+Diego Barbosa,***.914.777-71,BA,44,1260,369.31,adimplente,Alto,235,1,Conta digital,ativo,WhatsApp
+Renata Teixeira,***.903.570-69,RS,34,5080,993.43,restrito,Baixo,0,1,Emprestimo pessoal,ativo,App
+Gabriel Pereira,***.316.364-37,BA,63,2280,624.15,adimplente,Alto,89,3,Investimento,inativo,Telefone
+Maria Barbosa,***.994.315-89,SP,63,5640,805.77,adimplente,Medio,193,1,Cartao de debito,ativo,WhatsApp
+Camila Araujo,***.287.840-25,MG,41,5850,342.46,adimplente,Medio,155,2,Financiamento,ativo,App
+Gustavo Ferreira,***.447.224-18,DF,30,3910,550.18,adimplente,Alto,316,1,Investimento,ativo,WhatsApp
+Camila Almeida,***.122.508-80,SP,35,1450,717.72,adimplente,Medio,286,3,Financiamento,ativo,WhatsApp
+Paulo Correia,***.543.442-81,GO,31,1390,451.70,restrito,Medio,0,1,Seguro,ativo,App
+Joao Monteiro,***.900.411-60,SP,31,9070,941.99,adimplente,Medio,236,2,Conta digital,ativo,Telefone
+Marcio Cardoso,***.867.851-74,AC,30,5810,648.08,adimplente,Medio,329,2,Cartao de debito,ativo,WhatsApp
+Claudia Moreira,***.786.900-55,DF,30,2740,300.31,adimplente,Alto,231,1,Financiamento,ativo,WhatsApp
+Sergio Martins,***.459.224-77,PA,40,4130,528.44,adimplente,Medio,97,1,Conta digital,ativo,WhatsApp
+Antonio Oliveira,***.296.397-22,CE,37,5020,602.96,adimplente,Alto,131,1,Cartao de debito,ativo,WhatsApp
+Aline Lima,***.420.499-83,SP,36,4980,442.80,restrito,Medio,0,1,Investimento,inativo,App
+Adriana Pereira,***.879.375-15,PE,28,3950,278.91,adimplente,Medio,239,1,Financiamento,ativo,WhatsApp
+Caio Pereira,***.381.879-38,DF,45,4270,550.00,adimplente,Alto,217,2,Cartao de credito,ativo,WhatsApp
+Andre Souza,***.323.444-83,BA,36,6300,490.71,adimplente,Medio,268,2,Investimento,ativo,App
+Maria Cardoso,***.667.771-43,SP,72,4760,452.44,adimplente,Medio,176,1,Investimento,inativo,WhatsApp
+Ana Rocha,***.684.164-72,SC,32,1740,894.45,adimplente,Baixo,60,1,Seguro,ativo,WhatsApp
+Eduardo Costa,***.883.610-38,RJ,67,5200,545.39,adimplente,Alto,34,1,Investimento,ativo,Telefone
+Sandra Pinto,***.341.272-73,AL,47,4260,291.54,adimplente,Baixo,362,3,Financiamento,ativo,App
+Adriana Gomes,***.567.803-19,PE,27,3220,852.19,adimplente,Alto,201,1,Cartao de debito,ativo,WhatsApp
+Jose Cardoso,***.317.286-49,SP,19,1200,732.00,adimplente,Medio,42,4,Emprestimo pessoal,ativo,WhatsApp
+Igor Nascimento,***.581.485-53,PA,34,6520,712.23,adimplente,Alto,129,1,Cartao de credito,ativo,WhatsApp
+Fernanda Monteiro,***.483.407-86,SP,33,3400,1252.42,restrito,Baixo,0,3,Seguro,ativo,WhatsApp
+Gabriel Ferreira,***.529.365-81,AL,59,2330,616.45,adimplente,Alto,272,1,Conta digital,ativo,WhatsApp
+Francisco Pereira,***.361.118-29,RS,72,5080,1138.86,adimplente,Alto,209,1,Seguro,ativo,Telefone
+Gabriel Costa,***.264.472-18,RJ,20,4150,605.90,adimplente,Medio,64,3,Conta digital,inativo,Telefone
+Sandra Ferreira,***.839.733-16,SP,50,2090,909.93,restrito,Baixo,0,1,Emprestimo pessoal,inativo,WhatsApp
+Eduardo Correia,***.436.623-54,SP,48,4250,644.56,adimplente,Alto,351,1,Financiamento,ativo,WhatsApp
+Vinicius Cardoso,***.631.670-83,SC,37,2160,655.76,adimplente,Medio,315,4,Emprestimo pessoal,ativo,App
+Lucas Teixeira,***.310.344-51,RS,21,1200,250.75,adimplente,Baixo,201,3,Seguro,ativo,App
+Igor Lima,***.554.623-83,PA,46,5290,310.68,adimplente,Alto,361,4,Financiamento,ativo,App
+Claudia Oliveira,***.626.657-17,RJ,42,1870,1627.00,restrito,Medio,0,3,Conta digital,ativo,WhatsApp
+Camila Araujo,***.111.749-37,SE,18,13040,971.32,restrito,Baixo,0,4,Emprestimo pessoal,ativo,WhatsApp
+Roberto Pinto,***.740.228-35,PR,72,4000,522.87,adimplente,Alto,192,2,Financiamento,inativo,WhatsApp
+Tatiane Costa,***.641.384-28,BA,49,3300,956.13,restrito,Baixo,0,2,Cartao de credito,ativo,WhatsApp
+Roberto Cardoso,***.493.550-45,RJ,19,2940,419.68,adimplente,Alto,37,1,Conta digital,ativo,App
+Roberto Mendes,***.762.940-99,SP,28,3690,1329.92,restrito,Medio,0,1,Emprestimo pessoal,ativo,Telefone
+Sandra Silva,***.656.662-90,CE,38,5210,1012.18,adimplente,Medio,15,1,Seguro,inativo,WhatsApp
+Gabriel Monteiro,***.861.184-69,DF,64,2040,595.98,restrito,Baixo,0,4,Financiamento,inativo,WhatsApp
+Marcos Barbosa,***.714.482-28,BA,44,1200,220.93,adimplente,Medio,145,3,Cartao de debito,inativo,App
+Ana Castro,***.825.114-15,SP,69,9520,1660.73,adimplente,Alto,322,2,Financiamento,ativo,WhatsApp
+Igor Moreira,***.518.432-15,MT,39,6400,494.27,restrito,Baixo,0,3,Seguro,ativo,WhatsApp
+Patricia Rodrigues,***.918.886-32,MG,34,2630,759.93,adimplente,Medio,217,2,Emprestimo pessoal,ativo,Telefone
+Beatriz Mendes,***.379.963-41,SP,33,12920,447.35,restrito,Baixo,0,1,Cartao de credito,inativo,Agencia
+Renata Rocha,***.841.829-64,PA,39,15360,1840.80,adimplente,Baixo,23,3,Financiamento,ativo,WhatsApp
+Gustavo Moreira,***.995.638-92,MG,21,3780,1484.99,adimplente,Medio,318,2,Conta digital,ativo,WhatsApp
+Marcio Dias,***.839.263-41,PE,45,1420,1325.61,restrito,Medio,0,1,Seguro,ativo,WhatsApp
+Carlos Gomes,***.122.159-85,SP,46,5440,1064.49,adimplente,Alto,256,2,Conta digital,ativo,App
+Claudia Silva,***.296.787-33,SC,39,11260,453.51,adimplente,Alto,126,3,Investimento,ativo,Telefone
+Joao Martins,***.818.115-33,PR,64,2700,568.57,adimplente,Baixo,322,4,Conta digital,ativo,Telefone
+Wesley Barros,***.242.843-99,SP,47,2860,963.28,adimplente,Medio,230,2,Seguro,ativo,App
+Sandra Dias,***.630.203-57,RS,49,3560,426.63,adimplente,Medio,243,3,Cartao de debito,ativo,Telefone
+Maria Nascimento,***.180.138-71,CE,68,2330,1487.57,adimplente,Medio,114,1,Cartao de credito,inativo,WhatsApp
+Diego Rocha,***.167.360-29,SC,61,7200,757.86,adimplente,Alto,237,2,Investimento,ativo,WhatsApp
+Tatiane Silva,***.209.928-10,BA,49,4320,460.13,adimplente,Alto,102,1,Conta digital,ativo,App
+Roberto Rocha,***.537.445-56,SP,25,4390,495.43,restrito,Baixo,0,1,Cartao de credito,ativo,Telefone
+Diego Freitas,***.427.499-81,ES,38,1570,848.21,adimplente,Medio,153,1,Conta digital,ativo,Telefone
+Tatiane Oliveira,***.546.796-26,BA,69,1870,661.28,adimplente,Medio,352,3,Cartao de debito,ativo,WhatsApp
+Camila Pinto,***.211.490-57,MA,41,6060,411.58,restrito,Medio,0,2,Conta digital,ativo,App
+Joao Barros,***.867.647-19,SP,26,3940,796.83,adimplente,Alto,250,2,Cartao de credito,ativo,WhatsApp
+Caio Pereira,***.705.275-90,SP,36,4300,329.94,adimplente,Medio,195,2,Financiamento,ativo,Agencia
+Caio Ferreira,***.850.345-20,MA,30,3570,1795.36,adimplente,Medio,244,2,Seguro,ativo,WhatsApp
+Wesley Souza,***.747.551-23,SP,33,3840,150.00,adimplente,Alto,270,2,Cartao de credito,ativo,App
+Igor Souza,***.113.607-67,GO,41,4190,532.50,restrito,Baixo,0,1,Seguro,ativo,WhatsApp
+Vinicius Monteiro,***.486.558-81,MA,46,8040,1106.15,adimplente,Alto,145,2,Cartao de credito,ativo,WhatsApp
+Diego Mendes,***.760.891-64,SP,50,4230,847.24,adimplente,Baixo,335,2,Cartao de debito,ativo,Telefone
+Maria Dias,***.547.785-33,SP,44,3680,2438.98,adimplente,Medio,332,2,Seguro,ativo,App
+Lucas Lima,***.407.540-76,RO,61,1200,1049.31,restrito,Baixo,0,2,Emprestimo pessoal,ativo,WhatsApp
+Igor Monteiro,***.263.554-38,MG,58,2760,429.07,adimplente,Alto,139,1,Investimento,ativo,WhatsApp
+Aline Castro,***.296.795-50,MG,74,2270,741.87,adimplente,Medio,140,2,Cartao de credito,ativo,Agencia
+Juliana Souza,***.829.227-34,SP,28,2950,680.44,restrito,Baixo,0,1,Conta digital,ativo,WhatsApp
+Renata Cavalcanti,***.138.616-88,RJ,46,5390,770.55,adimplente,Medio,123,2,Financiamento,ativo,App
+Camila Castro,***.426.105-74,SP,49,3790,916.76,adimplente,Alto,127,1,Emprestimo pessoal,ativo,App
+Vinicius Ferreira,***.360.854-99,SP,68,1230,1384.25,adimplente,Medio,57,2,Investimento,inativo,App
+Adriana Ferreira,***.804.362-57,MG,33,1840,1465.40,adimplente,Medio,318,3,Conta digital,ativo,Telefone
+Gustavo Freitas,***.385.252-61,SE,25,6190,578.06,adimplente,Alto,34,2,Financiamento,ativo,WhatsApp
+Sandra Correia,***.775.237-73,MG,48,3800,284.35,restrito,Baixo,0,3,Conta digital,inativo,WhatsApp
+Sandra Correia,***.184.924-64,AM,49,1520,832.52,adimplente,Alto,62,4,Cartao de credito,inativo,Telefone
+Maria Pereira,***.649.301-27,BA,35,4460,1220.53,adimplente,Medio,302,2,Financiamento,inativo,WhatsApp
+Adriana Castro,***.356.445-23,SP,28,3080,279.82,adimplente,Alto,292,3,Investimento,ativo,Agencia
+Claudia Rocha,***.177.321-70,RJ,29,1700,699.26,adimplente,Alto,93,1,Seguro,ativo,App
+Otavio Lima,***.722.955-74,SP,31,3670,740.64,restrito,Medio,0,3,Financiamento,inativo,WhatsApp
+Bruna Ferreira,***.171.308-33,MA,33,4010,442.37,adimplente,Medio,223,4,Cartao de debito,ativo,WhatsApp
+Leticia Silva,***.460.941-27,CE,47,3410,3000.00,adimplente,Medio,182,1,Investimento,inativo,WhatsApp
+Lucas Gomes,***.887.959-44,SC,34,11300,962.53,restrito,Baixo,0,3,Cartao de credito,inativo,WhatsApp
+Carlos Carvalho,***.648.283-42,PA,45,3410,348.00,adimplente,Medio,213,1,Investimento,ativo,WhatsApp
+Bruna Almeida,***.903.436-43,SP,27,6340,757.99,restrito,Baixo,0,3,Emprestimo pessoal,ativo,WhatsApp
+Sabrina Cavalcanti,***.683.437-39,SP,67,1350,1201.34,restrito,Baixo,0,2,Financiamento,ativo,WhatsApp
+Marcio Monteiro,***.827.352-14,SP,32,4490,348.31,restrito,Baixo,0,1,Investimento,inativo,WhatsApp
+Igor Barros,***.403.418-25,MG,44,7110,745.19,adimplente,Medio,269,3,Conta digital,ativo,Agencia
+Beatriz Araujo,***.206.935-44,SP,36,7960,309.45,adimplente,Medio,355,4,Conta digital,ativo,App
+Marcio Silva,***.259.846-28,SP,71,2850,501.75,adimplente,Medio,96,2,Cartao de credito,ativo,Agencia
+Otavio Nascimento,***.329.291-23,PR,34,3050,724.85,adimplente,Alto,57,2,Cartao de credito,ativo,WhatsApp
+Tatiane Martins,***.113.307-49,MG,38,2820,441.86,adimplente,Medio,271,1,Conta digital,ativo,WhatsApp
+Camila Rodrigues,***.454.557-71,PR,43,4740,446.22,restrito,Baixo,0,1,Cartao de credito,ativo,App
+Carlos Souza,***.613.220-52,RR,27,9630,721.20,restrito,Baixo,0,4,Conta digital,ativo,WhatsApp
+Gabriel Mendes,***.256.955-32,MG,18,1390,503.19,adimplente,Medio,132,3,Cartao de credito,ativo,WhatsApp
+Mariana Nascimento,***.635.253-24,RJ,49,7290,552.28,adimplente,Medio,99,2,Emprestimo pessoal,ativo,App
+Bruno Ferreira,***.390.885-22,MA,36,7430,307.36,adimplente,Alto,86,2,Emprestimo pessoal,ativo,Agencia
+Thiago Costa,***.477.873-48,PA,35,8700,518.96,adimplente,Alto,15,2,Emprestimo pessoal,ativo,Telefone
+Sandra Rocha,***.405.867-87,MG,35,7880,1138.62,adimplente,Alto,12,1,Emprestimo pessoal,ativo,WhatsApp
+Bruno Carvalho,***.818.337-38,SP,42,2160,601.43,adimplente,Baixo,301,1,Conta digital,ativo,App
+Ana Carvalho,***.763.554-32,RJ,41,1480,774.87,adimplente,Baixo,8,2,Cartao de debito,inativo,WhatsApp
+Camila Rodrigues,***.985.842-56,SP,38,1200,401.09,adimplente,Alto,250,3,Financiamento,inativo,WhatsApp
+Eduardo Oliveira,***.601.265-81,SP,48,2990,225.12,adimplente,Medio,335,1,Cartao de credito,ativo,WhatsApp
+Daniel Correia,***.970.830-11,PE,30,4880,572.61,adimplente,Alto,105,1,Cartao de credito,ativo,Telefone
+Adriana Araujo,***.248.446-54,PB,41,3500,648.29,adimplente,Alto,117,2,Seguro,ativo,Agencia
+Andre Gomes,***.905.842-84,BA,49,4240,1457.27,restrito,Baixo,0,2,Conta digital,inativo,WhatsApp
+Gustavo Ferreira,***.274.450-18,MS,32,4850,594.79,restrito,Baixo,0,1,Conta digital,ativo,WhatsApp
+Marcio Rocha,***.403.700-77,ES,64,2550,394.19,adimplente,Alto,84,2,Seguro,ativo,WhatsApp
+Lucas Monteiro,***.924.732-25,DF,19,7680,488.99,adimplente,Medio,77,4,Investimento,ativo,WhatsApp
+Sandra Santos,***.187.201-91,SP,36,1930,541.52,restrito,Baixo,0,4,Financiamento,inativo,App
+Vanessa Rocha,***.751.698-45,BA,24,1950,706.00,adimplente,Medio,277,2,Conta digital,ativo,WhatsApp
+Fabio Carvalho,***.666.144-46,AM,34,1620,733.97,adimplente,Baixo,330,2,Emprestimo pessoal,ativo,WhatsApp
+Vinicius Araujo,***.151.752-89,PR,30,2210,699.78,restrito,Baixo,0,1,Cartao de debito,inativo,App
+Andre Souza,***.279.585-40,SP,52,4180,539.30,restrito,Baixo,0,1,Investimento,ativo,WhatsApp
+Aline Pereira,***.627.278-64,SP,27,5870,1381.19,adimplente,Medio,204,1,Seguro,ativo,WhatsApp
+Gustavo Dias,***.885.540-58,MA,49,5070,1081.02,adimplente,Baixo,28,3,Investimento,inativo,App
+Maria Pereira,***.714.397-67,RJ,54,3030,437.14,adimplente,Alto,227,1,Cartao de credito,ativo,WhatsApp
+Thiago Mendes,***.168.594-82,BA,31,6480,858.79,restrito,Baixo,0,3,Financiamento,ativo,WhatsApp
+Andre Barros,***.514.221-72,RJ,46,9090,1568.51,adimplente,Alto,288,1,Conta digital,ativo,WhatsApp
+Larissa Monteiro,***.565.467-80,PR,23,1730,1181.75,restrito,Medio,0,1,Conta digital,ativo,Telefone
+Jose Cardoso,***.665.180-45,SP,34,4350,342.69,adimplente,Alto,176,1,Seguro,ativo,App
+Pedro Moreira,***.232.765-89,BA,63,4250,464.60,adimplente,Medio,97,3,Financiamento,ativo,App
+Maria Nascimento,***.848.452-68,ES,64,4290,150.00,adimplente,Alto,283,1,Emprestimo pessoal,ativo,Telefone
+Adriana Santos,***.629.444-99,TO,35,1200,883.06,adimplente,Medio,288,1,Cartao de debito,inativo,WhatsApp
+Lucas Souza,***.862.273-63,SP,29,2630,476.79,adimplente,Medio,149,3,Financiamento,ativo,App
+Renata Gomes,***.613.436-99,DF,29,4860,661.78,restrito,Baixo,0,2,Cartao de credito,ativo,WhatsApp
+Rafael Costa,***.394.880-66,SC,48,1590,649.23,restrito,Baixo,0,1,Emprestimo pessoal,inativo,WhatsApp
+Larissa Pinto,***.467.856-77,BA,43,5540,392.60,restrito,Alto,0,2,Conta digital,ativo,WhatsApp
+Claudia Moreira,***.144.895-81,BA,71,5720,1300.48,restrito,Medio,0,1,Emprestimo pessoal,inativo,WhatsApp
+Andre Ferreira,***.218.270-10,MA,42,2230,547.04,restrito,Baixo,0,3,Financiamento,ativo,App
+Marcio Cardoso,***.615.111-34,RN,60,7720,485.30,adimplente,Alto,296,1,Financiamento,ativo,WhatsApp
+Fabio Silva,***.589.888-18,AM,53,2750,1771.93,adimplente,Alto,90,3,Seguro,ativo,WhatsApp
+Pedro Dias,***.680.489-26,BA,22,5990,1244.19,adimplente,Medio,175,3,Cartao de credito,ativo,WhatsApp
+Carlos Souza,***.714.667-85,BA,27,1690,1027.71,restrito,Baixo,0,2,Cartao de credito,ativo,App
+Camila Castro,***.882.663-13,SC,42,4070,295.22,adimplente,Medio,116,3,Financiamento,ativo,App
+Pedro Carvalho,***.846.872-42,SP,39,6170,1381.10,adimplente,Alto,29,3,Emprestimo pessoal,ativo,WhatsApp
+Patricia Rocha,***.598.461-43,RJ,24,1640,519.83,adimplente,Alto,182,3,Investimento,ativo,WhatsApp
+Marcos Rodrigues,***.721.350-62,RS,46,3090,932.96,adimplente,Medio,140,4,Conta digital,ativo,WhatsApp
+Eduardo Costa,***.487.775-83,BA,38,2950,1044.16,adimplente,Alto,204,2,Conta digital,ativo,WhatsApp
+Sergio Barros,***.622.414-35,RS,40,3550,525.68,adimplente,Alto,335,1,Conta digital,inativo,WhatsApp
+Sergio Rocha,***.617.688-67,SP,49,2650,424.22,restrito,Medio,0,4,Cartao de debito,inativo,WhatsApp
+Marcos Santos,***.374.266-78,MG,20,1220,623.27,adimplente,Medio,65,1,Cartao de debito,inativo,Agencia
+Diego Cardoso,***.732.802-62,SP,34,4810,1583.65,adimplente,Medio,200,2,Conta digital,ativo,WhatsApp
+Larissa Rodrigues,***.810.162-28,PR,53,2710,388.62,restrito,Baixo,0,1,Seguro,ativo,WhatsApp
+Caio Santos,***.242.138-66,BA,31,2620,308.32,adimplente,Medio,32,1,Investimento,ativo,Agencia
+Amanda Costa,***.288.757-30,BA,42,1800,794.24,adimplente,Alto,267,1,Financiamento,ativo,Telefone
+Sandra Souza,***.152.212-61,SP,59,2540,410.85,adimplente,Alto,363,1,Investimento,ativo,Telefone
+Caio Teixeira,***.708.369-38,PA,27,5340,330.28,adimplente,Medio,350,4,Cartao de debito,ativo,WhatsApp
+Rafael Monteiro,***.492.404-25,RR,46,1200,299.58,restrito,Baixo,0,2,Cartao de credito,ativo,Agencia
+Andre Barros,***.347.341-10,CE,37,8320,782.99,adimplente,Baixo,198,2,Conta digital,ativo,WhatsApp
+Antonio Lima,***.273.596-46,RR,58,3560,1623.29,adimplente,Medio,234,2,Seguro,inativo,WhatsApp
+Mariana Barbosa,***.485.671-59,RS,55,1410,990.66,adimplente,Alto,74,1,Investimento,ativo,WhatsApp
+Sergio Monteiro,***.716.236-87,PA,42,3840,1071.36,adimplente,Alto,151,1,Emprestimo pessoal,ativo,WhatsApp
+Amanda Carvalho,***.958.996-38,RJ,32,4700,198.35,adimplente,Alto,337,3,Conta digital,ativo,WhatsApp
+Juliana Carvalho,***.965.862-35,SP,44,3220,729.29,adimplente,Baixo,325,3,Cartao de credito,ativo,Telefone
+Eduardo Costa,***.912.869-57,SP,56,3020,883.12,adimplente,Alto,205,1,Financiamento,ativo,WhatsApp
+Claudia Santos,***.530.165-49,PE,20,4140,646.74,adimplente,Alto,145,3,Financiamento,ativo,WhatsApp
+Renata Almeida,***.226.463-26,SP,30,1660,189.73,adimplente,Baixo,99,1,Financiamento,ativo,App
+Bruna Lima,***.201.612-88,GO,38,2080,1045.61,adimplente,Alto,314,1,Financiamento,ativo,WhatsApp
+Beatriz Santos,***.585.587-89,MG,72,1380,1100.83,restrito,Alto,0,2,Investimento,ativo,Agencia
+Andre Pereira,***.866.256-39,BA,32,3980,728.04,restrito,Baixo,0,2,Emprestimo pessoal,ativo,WhatsApp
+Joao Costa,***.692.233-69,PR,27,4800,207.69,restrito,Medio,0,3,Conta digital,ativo,App
+Mariana Rodrigues,***.536.668-15,BA,26,2320,406.27,adimplente,Medio,303,4,Investimento,ativo,App
+Bruno Ribeiro,***.506.813-87,RJ,35,1540,307.99,restrito,Baixo,0,1,Emprestimo pessoal,ativo,WhatsApp
+Joao Barros,***.617.380-39,BA,74,6000,503.86,adimplente,Medio,186,2,Seguro,ativo,App
+Carlos Cavalcanti,***.931.869-22,PA,36,3510,434.35,restrito,Baixo,0,1,Cartao de debito,ativo,WhatsApp
+Marcos Pereira,***.204.625-25,RS,51,8300,926.92,restrito,Baixo,0,3,Emprestimo pessoal,ativo,Telefone
+Ana Barbosa,***.801.493-81,SC,47,3430,653.02,adimplente,Medio,18,1,Emprestimo pessoal,ativo,Telefone
+Felipe Castro,***.212.237-78,BA,35,2250,397.93,adimplente,Alto,98,4,Cartao de debito,ativo,WhatsApp
+Antonio Costa,***.264.895-59,PA,47,1200,488.01,adimplente,Medio,266,3,Emprestimo pessoal,ativo,Agencia
+Maria Almeida,***.347.617-16,SP,49,1570,566.76,adimplente,Alto,328,2,Cartao de credito,ativo,WhatsApp
+Rodrigo Freitas,***.521.586-35,MA,43,1850,778.36,restrito,Baixo,0,3,Financiamento,ativo,Agencia
+Jose Cardoso,***.348.298-43,PA,34,2620,516.89,adimplente,Medio,357,4,Cartao de credito,ativo,WhatsApp
+Aline Martins,***.905.257-18,SP,68,7290,988.36,adimplente,Medio,355,1,Financiamento,ativo,WhatsApp
+Francisco Castro,***.829.776-67,PR,19,2060,282.51,adimplente,Medio,31,1,Investimento,ativo,WhatsApp
+Maria Cardoso,***.263.675-67,PR,26,1200,333.10,restrito,Baixo,0,3,Cartao de credito,inativo,App
+Eduardo Cavalcanti,***.793.604-44,AL,53,4170,863.26,restrito,Baixo,0,1,Emprestimo pessoal,inativo,Agencia
+Francisco Almeida,***.215.996-88,PR,40,3470,1265.10,adimplente,Medio,126,1,Financiamento,ativo,WhatsApp
+Antonio Almeida,***.244.820-86,SP,48,2450,1003.00,restrito,Baixo,0,1,Cartao de debito,ativo,WhatsApp
+Lucas Araujo,***.401.157-95,SP,37,8840,552.15,restrito,Baixo,0,2,Investimento,ativo,WhatsApp
+Marcos Barros,***.687.354-42,RJ,48,1260,720.25,adimplente,Baixo,219,2,Emprestimo pessoal,ativo,WhatsApp
+Wesley Castro,***.274.216-53,AM,48,3300,1203.96,adimplente,Alto,189,4,Conta digital,inativo,App
+Andre Almeida,***.261.618-36,PE,66,3050,325.70,restrito,Medio,0,4,Cartao de debito,ativo,App
+Paulo Costa,***.291.744-55,SP,39,4080,353.88,adimplente,Medio,298,4,Seguro,inativo,Agencia
+Camila Carvalho,***.691.775-64,SP,27,9330,215.71,adimplente,Alto,134,2,Investimento,ativo,WhatsApp
+Beatriz Ferreira,***.564.843-55,SP,33,3380,615.65,adimplente,Alto,119,2,Investimento,ativo,WhatsApp
+Gustavo Lima,***.302.877-74,MG,45,4180,899.85,adimplente,Alto,208,3,Seguro,ativo,WhatsApp
+Pedro Gomes,***.267.910-26,PE,20,1860,1049.84,restrito,Medio,0,1,Cartao de credito,ativo,App
+Jose Oliveira,***.269.302-48,PA,32,3780,660.03,adimplente,Medio,363,4,Seguro,ativo,App
+Joao Santos,***.135.186-18,PR,21,1710,670.35,adimplente,Alto,127,1,Conta digital,ativo,WhatsApp
+Bruna Mendes,***.657.122-19,SP,39,1970,389.91,adimplente,Alto,278,2,Cartao de debito,ativo,WhatsApp
+Sandra Lima,***.190.321-28,RS,39,2320,1014.80,adimplente,Medio,350,4,Cartao de debito,ativo,WhatsApp
+Lucas Oliveira,***.812.140-89,MG,42,4790,437.71,restrito,Medio,0,1,Financiamento,inativo,App
+Felipe Cavalcanti,***.398.185-13,PE,35,3210,480.30,adimplente,Baixo,167,3,Seguro,ativo,Telefone
+Larissa Mendes,***.716.246-94,SP,27,1210,642.65,adimplente,Alto,212,1,Conta digital,ativo,Agencia
+Gustavo Freitas,***.252.864-85,MG,49,3160,1033.57,restrito,Baixo,0,1,Financiamento,ativo,WhatsApp
+Sergio Araujo,***.170.420-31,MS,45,2580,437.67,adimplente,Medio,17,2,Financiamento,ativo,WhatsApp
+Patricia Barbosa,***.702.421-54,PR,41,5010,818.39,adimplente,Baixo,352,4,Seguro,ativo,WhatsApp
+Carlos Oliveira,***.583.160-89,MG,38,1590,893.14,adimplente,Alto,10,1,Seguro,ativo,WhatsApp
+Francisco Cardoso,***.876.232-21,MT,38,22620,619.56,adimplente,Medio,23,1,Conta digital,ativo,WhatsApp
+Bruna Lima,***.333.278-65,RS,51,3330,521.29,adimplente,Medio,213,3,Investimento,ativo,WhatsApp
+Tatiane Oliveira,***.762.865-47,RJ,29,1840,324.74,adimplente,Medio,354,3,Cartao de debito,ativo,App
+Bruno Barbosa,***.893.781-97,CE,54,1940,417.93,adimplente,Medio,211,3,Investimento,ativo,WhatsApp
+Adriana Gomes,***.221.959-62,SC,45,1340,1283.17,adimplente,Medio,4,1,Emprestimo pessoal,ativo,App
+Lucas Moreira,***.142.629-55,SP,36,4890,1254.50,adimplente,Alto,83,2,Financiamento,ativo,WhatsApp
+Claudia Ribeiro,***.927.695-39,SC,48,2380,254.97,restrito,Medio,0,2,Investimento,ativo,WhatsApp
+Caio Ribeiro,***.886.672-84,SP,48,1340,497.43,adimplente,Medio,337,1,Financiamento,ativo,WhatsApp
+Bruno Barros,***.811.639-46,RJ,44,1530,1680.52,adimplente,Medio,89,3,Cartao de debito,inativo,App
+Pedro Barros,***.531.720-69,PE,20,4220,852.56,restrito,Baixo,0,3,Seguro,ativo,WhatsApp
+Aline Nascimento,***.334.901-50,SE,45,7270,305.46,adimplente,Medio,8,1,Cartao de credito,ativo,WhatsApp
+Gustavo Souza,***.664.139-17,PR,65,5240,549.79,adimplente,Medio,280,1,Financiamento,inativo,WhatsApp
+Felipe Oliveira,***.818.478-57,PR,51,5570,919.61,adimplente,Medio,13,4,Emprestimo pessoal,inativo,WhatsApp
+Daniel Carvalho,***.412.261-96,SP,30,3580,1195.70,restrito,Baixo,0,3,Financiamento,ativo,WhatsApp
+Marcio Gomes,***.821.765-57,BA,59,2250,1231.54,restrito,Medio,0,3,Conta digital,ativo,WhatsApp
+Roberto Barros,***.445.844-82,MG,70,3340,617.92,adimplente,Medio,137,4,Conta digital,ativo,App
+Roberto Rocha,***.723.706-52,PR,41,1270,462.82,adimplente,Alto,153,2,Conta digital,ativo,WhatsApp
+Pedro Mendes,***.756.317-82,RJ,47,4060,643.56,adimplente,Medio,113,1,Investimento,ativo,WhatsApp
+Renata Rocha,***.682.904-21,AL,42,10780,449.82,adimplente,Alto,358,4,Cartao de debito,ativo,WhatsApp
+Joao Oliveira,***.443.247-48,PE,36,5700,502.22,adimplente,Medio,350,2,Emprestimo pessoal,inativo,WhatsApp
+Sabrina Cardoso,***.869.260-54,MG,51,2740,534.09,restrito,Baixo,0,2,Emprestimo pessoal,inativo,App
+Wesley Dias,***.113.965-72,PE,32,6560,955.47,adimplente,Alto,74,3,Cartao de credito,ativo,WhatsApp
+Caio Barros,***.587.274-40,AM,41,5900,703.03,adimplente,Alto,31,3,Cartao de debito,ativo,WhatsApp
+Carlos Souza,***.844.639-83,SP,43,2440,290.63,restrito,Medio,0,3,Conta digital,inativo,App
+Adriana Araujo,***.607.527-12,PA,54,2410,454.21,adimplente,Alto,5,4,Seguro,ativo,App
+Beatriz Mendes,***.700.637-50,BA,49,2470,247.10,adimplente,Alto,274,2,Investimento,inativo,WhatsApp
+Gustavo Freitas,***.891.982-13,RS,47,3880,1190.54,adimplente,Medio,303,2,Cartao de credito,ativo,WhatsApp
+Patricia Rodrigues,***.925.843-20,CE,24,1460,386.49,adimplente,Alto,31,3,Conta digital,ativo,Telefone
+Camila Mendes,***.445.584-97,BA,30,3330,335.12,adimplente,Alto,173,2,Investimento,ativo,Telefone
+Sergio Teixeira,***.922.984-71,SP,45,7800,514.20,restrito,Baixo,0,4,Seguro,ativo,WhatsApp
+Carlos Nascimento,***.947.848-54,MT,27,3600,721.11,adimplente,Medio,120,2,Investimento,ativo,WhatsApp
+Sabrina Rodrigues,***.544.429-44,PA,56,5200,853.79,adimplente,Medio,131,3,Conta digital,inativo,App
+Igor Almeida,***.205.443-34,CE,35,3800,1156.52,adimplente,Alto,120,4,Financiamento,ativo,WhatsApp
+Paulo Correia,***.861.918-22,MG,33,8800,241.27,adimplente,Medio,211,4,Conta digital,ativo,WhatsApp
+Rafael Cardoso,***.899.760-43,SP,35,2510,237.95,adimplente,Alto,318,2,Cartao de credito,ativo,Telefone
+Fabio Martins,***.918.695-41,SP,62,3730,458.85,restrito,Baixo,0,4,Seguro,ativo,WhatsApp
+Maria Nascimento,***.159.992-63,PR,27,4570,1099.13,restrito,Baixo,0,1,Financiamento,ativo,App
+Renata Barros,***.984.793-46,SP,46,8630,348.79,restrito,Baixo,0,2,Financiamento,inativo,App
+Wesley Santos,***.127.564-55,MA,42,4570,814.41,adimplente,Alto,240,1,Cartao de credito,ativo,WhatsApp
+Sandra Mendes,***.849.110-75,PB,61,5200,705.50,restrito,Baixo,0,3,Seguro,inativo,Telefone
+Beatriz Souza,***.697.769-78,SC,53,5790,1154.85,adimplente,Alto,272,1,Investimento,ativo,WhatsApp
+Mariana Silva,***.763.801-22,CE,67,2560,713.04,adimplente,Medio,210,1,Conta digital,ativo,WhatsApp
+Eduardo Carvalho,***.682.278-97,SP,33,6040,582.98,adimplente,Alto,205,1,Financiamento,ativo,WhatsApp
+Felipe Nascimento,***.935.212-40,SC,46,1910,289.68,adimplente,Medio,232,4,Financiamento,inativo,Telefone
+Rafael Martins,***.128.800-40,GO,43,6590,1904.68,adimplente,Medio,80,1,Emprestimo pessoal,ativo,WhatsApp
+Fabio Barros,***.906.863-36,MG,59,3470,629.58,restrito,Medio,0,1,Cartao de debito,ativo,WhatsApp
+Leticia Barros,***.747.303-30,MA,21,1290,1041.47,adimplente,Medio,25,3,Emprestimo pessoal,ativo,WhatsApp
+Leandro Teixeira,***.172.519-31,BA,60,1680,1271.32,restrito,Medio,0,3,Seguro,ativo,WhatsApp
+Camila Cavalcanti,***.219.345-24,SP,33,5060,350.35,adimplente,Medio,248,4,Investimento,ativo,App
+Carlos Mendes,***.488.335-77,SP,70,1970,795.21,restrito,Baixo,0,1,Cartao de debito,ativo,WhatsApp
+Jose Teixeira,***.951.787-90,SP,44,3220,447.83,adimplente,Medio,115,2,Cartao de credito,ativo,App
+Adriana Rodrigues,***.498.302-10,GO,27,1200,510.97,adimplente,Medio,135,1,Emprestimo pessoal,ativo,WhatsApp
+Paulo Rocha,***.766.191-82,RJ,39,7270,267.81,adimplente,Baixo,110,2,Emprestimo pessoal,ativo,App
+Daniel Ferreira,***.628.189-61,SP,35,1690,503.30,adimplente,Medio,143,2,Seguro,ativo,WhatsApp
+Adriana Oliveira,***.280.601-93,MG,36,4520,1184.59,adimplente,Alto,114,3,Cartao de debito,ativo,App
+Aline Souza,***.260.340-83,RS,48,1200,530.45,adimplente,Baixo,225,2,Financiamento,ativo,WhatsApp
+Fabio Lima,***.784.649-21,BA,44,2530,378.76,restrito,Baixo,0,1,Seguro,ativo,WhatsApp
+Claudia Dias,***.871.239-36,PE,42,1540,811.90,restrito,Medio,0,3,Financiamento,ativo,App
+Francisco Rocha,***.389.531-64,SP,49,2280,277.99,adimplente,Medio,122,1,Financiamento,ativo,App
+Igor Pereira,***.802.277-40,SP,44,2150,649.67,restrito,Baixo,0,4,Conta digital,ativo,App
+Carlos Mendes,***.904.273-63,AM,45,1850,1619.78,adimplente,Medio,234,2,Seguro,inativo,App
+Bruno Martins,***.813.174-89,MG,64,1200,488.58,adimplente,Medio,229,2,Seguro,ativo,WhatsApp
+Jose Monteiro,***.908.726-65,PR,74,1970,345.95,adimplente,Baixo,340,4,Cartao de debito,ativo,Agencia
+Lucas Moreira,***.500.142-44,CE,42,4160,1003.19,adimplente,Medio,331,4,Conta digital,ativo,WhatsApp
+Maria Carvalho,***.479.825-77,AM,33,5290,829.35,restrito,Baixo,0,3,Financiamento,ativo,App
+Rafael Silva,***.221.223-33,SP,27,7720,872.27,adimplente,Alto,135,1,Emprestimo pessoal,ativo,WhatsApp
+Gustavo Ferreira,***.826.806-16,PA,34,3980,666.40,adimplente,Alto,1,3,Conta digital,inativo,Telefone
+Diego Pinto,***.336.971-33,BA,54,6710,1897.93,restrito,Baixo,0,3,Seguro,ativo,WhatsApp
+Leticia Martins,***.652.428-41,RN,37,3330,370.81,adimplente,Medio,175,3,Investimento,ativo,WhatsApp
+Luiz Freitas,***.695.643-91,RJ,72,5180,208.24,restrito,Baixo,0,1,Emprestimo pessoal,ativo,Agencia
+Thiago Oliveira,***.992.450-66,PE,40,1390,933.12,adimplente,Alto,50,4,Conta digital,inativo,WhatsApp
+Wesley Ribeiro,***.693.497-11,SP,65,2790,478.08,adimplente,Alto,302,1,Cartao de debito,inativo,Telefone
+Renata Silva,***.350.217-52,PA,61,1620,1989.06,restrito,Medio,0,3,Conta digital,ativo,Telefone
+Jose Araujo,***.544.673-67,MG,38,1690,1014.40,adimplente,Baixo,103,1,Investimento,inativo,App
+Sandra Araujo,***.415.361-28,PR,35,5800,301.98,restrito,Baixo,0,2,Cartao de credito,inativo,WhatsApp
+Rafael Pinto,***.318.323-39,MG,30,3520,602.59,adimplente,Medio,56,4,Seguro,inativo,Agencia
+Leticia Costa,***.816.869-98,MT,20,9170,1560.33,adimplente,Alto,0,2,Conta digital,ativo,App
+Leticia Pinto,***.499.238-22,SP,46,6900,782.22,adimplente,Alto,45,1,Cartao de debito,ativo,WhatsApp
+Renata Dias,***.139.108-93,MG,39,4960,341.13,adimplente,Medio,4,4,Cartao de debito,ativo,WhatsApp
+Claudia Ribeiro,***.357.372-74,RN,38,2100,1018.60,adimplente,Alto,56,4,Emprestimo pessoal,ativo,WhatsApp
+Paulo Monteiro,***.112.266-72,AL,45,7060,403.80,restrito,Baixo,0,1,Seguro,inativo,WhatsApp
+Renata Teixeira,***.231.721-79,BA,43,1200,552.76,adimplente,Medio,189,3,Conta digital,ativo,App
+Claudia Pereira,***.303.948-29,BA,18,6640,462.00,adimplente,Medio,95,2,Seguro,ativo,WhatsApp
+Renata Araujo,***.958.901-45,AC,42,1890,782.67,adimplente,Medio,97,1,Cartao de credito,ativo,WhatsApp
+Sabrina Pereira,***.905.668-27,DF,20,5360,1056.58,adimplente,Alto,184,3,Financiamento,ativo,Agencia
+Beatriz Souza,***.205.140-82,RJ,54,11090,813.90,adimplente,Medio,314,2,Emprestimo pessoal,ativo,App
+Carlos Mendes,***.914.477-31,RS,64,4600,1092.69,adimplente,Medio,23,2,Seguro,ativo,Telefone
+Pedro Mendes,***.693.187-23,CE,18,2490,509.39,restrito,Baixo,0,1,Conta digital,ativo,WhatsApp
+Adriana Costa,***.607.608-38,DF,43,3080,1162.78,adimplente,Medio,274,3,Cartao de credito,ativo,WhatsApp
+Vinicius Barros,***.126.187-54,PB,46,2090,1387.87,restrito,Baixo,0,1,Emprestimo pessoal,inativo,Telefone
+Roberto Teixeira,***.773.956-18,MG,73,3360,561.58,adimplente,Medio,177,3,Financiamento,ativo,App
+Andre Dias,***.288.808-34,MA,35,9820,381.18,adimplente,Alto,126,1,Investimento,ativo,WhatsApp
+Felipe Rocha,***.648.762-24,RJ,19,3960,590.08,adimplente,Alto,125,4,Cartao de debito,ativo,WhatsApp
+Sergio Nascimento,***.825.718-40,CE,30,3230,2113.59,restrito,Baixo,0,1,Investimento,ativo,Telefone
+Eduardo Correia,***.990.819-79,RN,31,2590,468.35,adimplente,Baixo,178,1,Seguro,ativo,WhatsApp
+Vinicius Nascimento,***.717.712-16,MG,31,7910,784.11,restrito,Baixo,0,1,Financiamento,ativo,Telefone
+Fernanda Souza,***.392.702-16,BA,28,3930,827.16,restrito,Alto,0,1,Cartao de credito,ativo,WhatsApp
+Gabriel Nascimento,***.380.695-27,RS,73,2290,848.06,adimplente,Medio,277,3,Investimento,ativo,Telefone
+Renata Barros,***.847.848-83,SP,51,5950,2712.64,adimplente,Medio,157,2,Seguro,ativo,WhatsApp
+Ana Oliveira,***.870.347-86,AP,36,4770,955.81,adimplente,Medio,318,4,Cartao de credito,inativo,App
+Marcos Castro,***.587.349-37,CE,32,1200,504.73,adimplente,Medio,46,3,Cartao de credito,ativo,WhatsApp
+Thiago Martins,***.751.580-90,GO,19,3110,607.94,adimplente,Medio,5,4,Cartao de debito,ativo,App
+Bruno Monteiro,***.617.610-70,PE,72,6180,504.01,restrito,Baixo,0,1,Cartao de credito,ativo,WhatsApp
+Wesley Carvalho,***.953.214-74,RN,56,2350,952.12,restrito,Baixo,0,1,Cartao de credito,ativo,WhatsApp
+Sergio Santos,***.212.302-30,SP,32,10400,1624.40,adimplente,Alto,97,1,Emprestimo pessoal,ativo,App
+Gabriel Dias,***.290.933-71,RS,25,7020,418.83,adimplente,Alto,93,2,Conta digital,ativo,App
+Joao Silva,***.722.251-96,RJ,34,3880,389.37,adimplente,Alto,284,1,Seguro,ativo,WhatsApp
+Joao Rodrigues,***.640.575-22,MG,41,2380,543.97,adimplente,Medio,355,1,Seguro,inativo,App
+Rodrigo Souza,***.842.558-82,RJ,52,3840,242.50,adimplente,Alto,109,1,Financiamento,inativo,Agencia
+Gabriel Monteiro,***.862.979-92,RJ,48,1830,1155.99,restrito,Baixo,0,1,Financiamento,ativo,WhatsApp
+Amanda Rocha,***.224.349-93,SP,33,3350,1502.87,adimplente,Medio,274,2,Conta digital,inativo,Telefone
+Bruno Lima,***.406.748-18,RO,30,2830,296.76,restrito,Baixo,0,4,Conta digital,inativo,WhatsApp
+Amanda Almeida,***.386.527-80,SP,44,1710,524.88,restrito,Medio,0,3,Seguro,ativo,Telefone
+Bruna Ferreira,***.929.221-14,MG,33,5010,386.21,adimplente,Alto,132,4,Investimento,inativo,WhatsApp
+Aline Cavalcanti,***.757.175-81,SP,34,2910,514.36,adimplente,Medio,223,2,Cartao de debito,ativo,WhatsApp
+Gustavo Correia,***.746.509-90,PA,31,1870,483.35,adimplente,Alto,18,1,Investimento,ativo,App
+Eduardo Silva,***.911.753-71,SP,30,2170,473.35,adimplente,Alto,328,3,Cartao de debito,ativo,Agencia
+Igor Pinto,***.231.666-15,MG,65,2730,384.57,adimplente,Alto,353,1,Seguro,ativo,WhatsApp
+Adriana Freitas,***.298.130-15,BA,39,1200,625.75,restrito,Baixo,0,2,Conta digital,inativo,WhatsApp
+Felipe Monteiro,***.519.286-25,PR,65,8410,348.82,adimplente,Medio,244,2,Financiamento,ativo,Telefone
+Bruno Mendes,***.194.597-19,GO,28,1200,422.21,restrito,Baixo,0,1,Investimento,ativo,Agencia
+Paulo Moreira,***.102.844-97,MG,30,5390,237.09,restrito,Baixo,0,4,Cartao de debito,ativo,WhatsApp
+Ana Araujo,***.416.986-45,SP,29,1860,1119.54,adimplente,Alto,131,2,Cartao de debito,ativo,WhatsApp
+Marcio Silva,***.126.360-38,MG,33,7600,644.01,adimplente,Medio,304,1,Cartao de debito,inativo,WhatsApp
+Maria Mendes,***.618.279-71,SP,48,2400,640.01,adimplente,Medio,92,1,Cartao de credito,ativo,WhatsApp
+Igor Monteiro,***.453.499-88,PB,44,5350,341.85,adimplente,Baixo,201,2,Emprestimo pessoal,ativo,WhatsApp
+Diego Pereira,***.383.874-31,PB,22,2110,528.19,restrito,Medio,0,2,Conta digital,ativo,WhatsApp
+Fabio Rodrigues,***.343.176-55,BA,21,3780,371.60,adimplente,Alto,91,4,Investimento,ativo,Telefone
+Andre Araujo,***.813.324-27,RS,20,3030,722.42,restrito,Baixo,0,2,Emprestimo pessoal,ativo,WhatsApp
+Paulo Barbosa,***.301.791-34,PR,29,5760,1007.45,adimplente,Baixo,262,2,Investimento,ativo,Agencia
+Joao Ferreira,***.821.141-67,SP,48,8460,870.26,restrito,Baixo,0,1,Emprestimo pessoal,inativo,WhatsApp
+Tatiane Araujo,***.125.755-67,MT,28,4670,965.89,adimplente,Alto,64,3,Cartao de credito,ativo,WhatsApp
+Francisco Ferreira,***.806.739-28,PI,25,2280,902.53,adimplente,Alto,349,3,Seguro,ativo,App
+Paulo Cavalcanti,***.788.753-11,MG,62,2410,1238.88,restrito,Baixo,0,1,Seguro,ativo,WhatsApp
+Paulo Souza,***.438.132-11,MG,30,2980,1324.57,adimplente,Alto,337,1,Cartao de credito,inativo,WhatsApp
+Lucas Correia,***.438.385-78,RJ,41,2360,477.02,adimplente,Alto,116,4,Seguro,inativo,WhatsApp
+Sergio Castro,***.574.442-61,SC,37,16370,361.71,adimplente,Alto,144,4,Cartao de credito,ativo,Telefone
+Bruna Ribeiro,***.690.847-93,SP,71,9200,1428.96,restrito,Baixo,0,2,Seguro,ativo,Agencia
+Rodrigo Nascimento,***.907.283-58,PA,60,1950,480.37,adimplente,Alto,357,1,Seguro,ativo,WhatsApp
+Aline Martins,***.832.389-32,SP,20,1200,302.65,adimplente,Medio,225,1,Seguro,ativo,WhatsApp
+Fernanda Gomes,***.909.404-31,SP,22,2020,355.37,adimplente,Medio,209,4,Emprestimo pessoal,ativo,WhatsApp
+Fernanda Rodrigues,***.813.101-73,SP,42,3090,382.03,restrito,Baixo,0,2,Cartao de credito,inativo,Telefone
+Sergio Martins,***.815.481-16,SP,33,2240,1260.72,adimplente,Alto,103,2,Financiamento,ativo,Agencia
+Ana Souza,***.988.486-31,SP,36,1950,703.89,adimplente,Medio,346,4,Conta digital,ativo,Telefone
+Igor Carvalho,***.724.496-43,SP,27,3000,1151.49,adimplente,Medio,305,3,Seguro,ativo,Agencia
+Juliana Oliveira,***.592.429-75,MG,35,2850,509.04,adimplente,Baixo,354,2,Seguro,ativo,WhatsApp
+Gustavo Gomes,***.296.310-75,SE,19,2200,957.71,restrito,Medio,0,4,Emprestimo pessoal,ativo,App
+Amanda Carvalho,***.537.827-91,AM,35,4600,336.85,adimplente,Medio,94,1,Conta digital,ativo,WhatsApp
+Leandro Teixeira,***.789.830-60,SP,51,13690,584.57,restrito,Baixo,0,1,Investimento,ativo,App
+Pedro Pinto,***.836.509-81,PB,74,2770,403.33,adimplente,Alto,263,3,Conta digital,ativo,WhatsApp
+Thiago Teixeira,***.692.978-64,SP,32,2660,2025.88,adimplente,Alto,330,3,Investimento,ativo,Agencia
+Juliana Cavalcanti,***.116.677-53,RJ,53,1200,574.81,adimplente,Alto,155,3,Emprestimo pessoal,ativo,Agencia
+Carlos Gomes,***.804.693-33,SP,42,1750,261.45,restrito,Baixo,0,2,Cartao de debito,inativo,App
+Beatriz Araujo,***.174.887-31,BA,53,3460,491.56,restrito,Baixo,0,1,Cartao de debito,ativo,App
+Vinicius Cardoso,***.920.246-19,ES,60,3130,700.67,restrito,Baixo,0,1,Emprestimo pessoal,ativo,WhatsApp
+Beatriz Lima,***.544.413-89,BA,21,4490,398.79,adimplente,Medio,62,1,Emprestimo pessoal,ativo,WhatsApp
+Claudia Carvalho,***.526.559-95,SP,31,2780,688.59,adimplente,Alto,204,2,Cartao de debito,ativo,Agencia
+Sabrina Castro,***.436.372-46,AP,25,6830,850.53,restrito,Baixo,0,1,Cartao de credito,ativo,WhatsApp
+Thiago Correia,***.230.189-41,RJ,56,3160,364.24,adimplente,Medio,8,4,Conta digital,ativo,WhatsApp
+Antonio Dias,***.119.470-47,CE,63,2050,280.53,adimplente,Baixo,26,3,Seguro,ativo,WhatsApp
+Mariana Moreira,***.521.765-93,SP,73,3890,528.10,adimplente,Alto,251,3,Emprestimo pessoal,ativo,App
+Igor Pinto,***.702.517-26,GO,37,15120,474.34,restrito,Baixo,0,1,Seguro,ativo,WhatsApp
+Patricia Araujo,***.977.724-29,SE,67,1200,253.90,restrito,Baixo,0,1,Investimento,ativo,WhatsApp
+Daniel Lima,***.329.293-40,MA,25,2900,509.30,adimplente,Medio,151,2,Conta digital,ativo,WhatsApp
+Caio Martins,***.572.361-35,SP,56,1380,974.64,restrito,Medio,0,4,Investimento,inativo,WhatsApp
+Luiz Monteiro,***.602.503-51,MG,35,2730,769.57,restrito,Medio,0,2,Conta digital,ativo,App
+Caio Mendes,***.316.196-32,SP,36,4340,452.57,adimplente,Alto,230,1,Financiamento,ativo,Telefone
+Carlos Correia,***.223.499-16,MT,41,2210,1305.04,adimplente,Baixo,330,1,Investimento,ativo,WhatsApp
+Jose Teixeira,***.352.346-83,PE,51,2960,1334.12,adimplente,Alto,253,1,Emprestimo pessoal,inativo,WhatsApp
+Adriana Cardoso,***.681.136-92,PR,29,2260,445.05,restrito,Baixo,0,2,Emprestimo pessoal,ativo,WhatsApp
+Carlos Moreira,***.388.604-99,RJ,44,3250,291.04,adimplente,Medio,321,1,Cartao de credito,ativo,WhatsApp
+Bruno Ribeiro,***.574.229-30,CE,29,3180,691.26,adimplente,Medio,98,3,Financiamento,inativo,Agencia
+Diego Gomes,***.754.862-39,SP,39,5040,1275.43,adimplente,Medio,133,1,Investimento,ativo,Telefone
+Renata Ribeiro,***.710.721-71,PI,31,2140,452.47,adimplente,Alto,101,3,Seguro,ativo,WhatsApp
+Igor Ribeiro,***.305.195-17,SP,34,7040,356.37,adimplente,Alto,27,2,Cartao de credito,inativo,WhatsApp
+Juliana Pinto,***.799.625-15,SP,74,7820,1050.75,adimplente,Medio,346,2,Cartao de credito,ativo,Telefone
+Gustavo Dias,***.597.172-95,MG,35,5110,451.85,adimplente,Alto,79,4,Cartao de credito,ativo,WhatsApp
+Caio Freitas,***.748.360-18,SP,31,1780,283.30,adimplente,Medio,197,1,Conta digital,ativo,Telefone
+Joao Castro,***.854.921-11,SP,49,1200,606.98,adimplente,Alto,207,1,Cartao de credito,ativo,WhatsApp
+Fernanda Costa,***.905.287-50,SP,39,1200,1047.76,restrito,Medio,0,3,Seguro,inativo,WhatsApp
+Beatriz Castro,***.533.662-40,MG,19,2760,1121.88,restrito,Baixo,0,3,Emprestimo pessoal,ativo,App
+Fabio Castro,***.241.156-62,MG,24,11660,694.69,adimplente,Medio,74,2,Financiamento,inativo,WhatsApp
+Eduardo Gomes,***.332.408-71,GO,22,4260,459.88,adimplente,Medio,249,4,Financiamento,ativo,Agencia
+Tatiane Gomes,***.750.714-92,PE,55,1900,442.69,restrito,Baixo,0,4,Cartao de credito,ativo,WhatsApp
+Wesley Cavalcanti,***.558.432-90,SC,49,4060,3000.00,restrito,Medio,0,4,Cartao de debito,ativo,App
+Andre Martins,***.249.362-28,AM,75,2910,598.53,adimplente,Medio,113,3,Cartao de credito,inativo,WhatsApp
+Aline Almeida,***.693.199-58,RS,49,4100,440.54,restrito,Baixo,0,3,Investimento,inativo,App
+Fernanda Araujo,***.694.250-66,SP,48,6860,840.64,adimplente,Medio,12,3,Seguro,ativo,Agencia
+Fabio Martins,***.168.419-78,RS,50,2510,1660.91,adimplente,Medio,205,4,Investimento,ativo,App
+Joao Ferreira,***.823.754-63,RS,20,3530,763.89,adimplente,Medio,271,1,Financiamento,ativo,WhatsApp
+Eduardo Martins,***.286.613-14,RS,40,4830,1818.16,adimplente,Medio,192,4,Conta digital,ativo,WhatsApp
+Tatiane Araujo,***.170.704-73,RJ,34,1200,572.02,adimplente,Alto,358,2,Conta digital,inativo,App
+Luiz Correia,***.181.203-22,RJ,41,5090,379.32,adimplente,Medio,46,2,Investimento,ativo,WhatsApp
+Sabrina Monteiro,***.871.925-40,MT,43,1730,620.91,adimplente,Medio,81,3,Financiamento,inativo,Agencia
+Aline Moreira,***.683.937-84,CE,71,8160,1994.04,restrito,Baixo,0,1,Financiamento,ativo,App
+Patricia Rocha,***.465.945-15,PR,49,1310,440.49,adimplente,Alto,215,1,Conta digital,inativo,WhatsApp
+Leandro Monteiro,***.220.881-97,PB,37,3480,291.69,restrito,Baixo,0,1,Financiamento,inativo,WhatsApp
+Igor Rocha,***.456.713-63,SP,37,1200,1420.26,adimplente,Alto,188,3,Seguro,ativo,WhatsApp
+Sabrina Nascimento,***.435.804-15,SP,42,1960,476.38,adimplente,Medio,145,3,Financiamento,ativo,WhatsApp
+Daniel Cavalcanti,***.777.823-49,BA,33,3100,524.14,adimplente,Medio,41,2,Seguro,ativo,App
+Sergio Barros,***.777.793-95,BA,70,6020,593.00,adimplente,Medio,351,1,Seguro,ativo,WhatsApp
+Aline Lima,***.643.803-50,RJ,41,1770,426.74,adimplente,Baixo,159,3,Emprestimo pessoal,ativo,WhatsApp
+Vanessa Pereira,***.179.818-26,MA,28,8160,678.54,adimplente,Medio,196,2,Financiamento,ativo,WhatsApp
+Thiago Mendes,***.491.566-14,SP,54,3160,634.09,adimplente,Medio,30,2,Cartao de credito,inativo,WhatsApp
+Otavio Teixeira,***.560.891-81,RJ,48,4170,491.43,adimplente,Medio,269,2,Emprestimo pessoal,ativo,WhatsApp
+Fernanda Santos,***.173.768-10,RR,36,1480,2392.77,adimplente,Medio,245,3,Conta digital,ativo,WhatsApp
+Gustavo Almeida,***.287.941-15,PE,40,4640,676.80,adimplente,Medio,309,2,Financiamento,inativo,WhatsApp
+Patricia Dias,***.506.882-86,RN,34,3260,597.44,adimplente,Medio,297,3,Investimento,ativo,WhatsApp
+Diego Monteiro,***.372.193-89,PB,66,1200,1404.91,restrito,Baixo,0,2,Cartao de debito,ativo,App
+Amanda Ferreira,***.837.235-18,MT,34,3300,874.26,adimplente,Alto,209,4,Seguro,ativo,WhatsApp
+Larissa Correia,***.658.871-55,BA,74,5560,786.19,adimplente,Alto,342,2,Investimento,ativo,WhatsApp
+Larissa Dias,***.152.344-76,MG,48,2140,371.86,restrito,Baixo,0,2,Cartao de credito,ativo,App
+Camila Moreira,***.388.944-39,MG,37,9750,658.12,adimplente,Medio,49,2,Seguro,ativo,WhatsApp
+Adriana Correia,***.436.309-17,SP,36,4150,1336.57,adimplente,Alto,322,2,Cartao de credito,ativo,WhatsApp
+Sergio Araujo,***.661.478-37,SP,19,2190,701.57,adimplente,Alto,161,1,Cartao de credito,ativo,App
+Tatiane Castro,***.894.328-78,PB,18,3750,1230.74,adimplente,Alto,188,2,Emprestimo pessoal,ativo,WhatsApp
+Vinicius Silva,***.810.726-85,PB,48,2570,502.42,adimplente,Alto,57,2,Cartao de debito,ativo,WhatsApp
+Francisco Rodrigues,***.318.964-28,PR,69,2070,1860.97,adimplente,Alto,225,3,Investimento,ativo,WhatsApp
+Roberto Silva,***.158.112-55,BA,36,1880,1554.54,restrito,Medio,0,2,Financiamento,ativo,Agencia
+Gabriel Pinto,***.501.685-47,MG,49,12920,269.98,adimplente,Alto,313,2,Conta digital,ativo,WhatsApp
+Ana Martins,***.394.896-48,MA,59,1810,431.87,adimplente,Alto,344,1,Financiamento,inativo,WhatsApp
+Leandro Moreira,***.871.270-92,PE,68,7500,676.46,adimplente,Baixo,181,1,Cartao de debito,ativo,WhatsApp
+Sergio Rocha,***.825.365-97,MG,18,2930,908.17,adimplente,Alto,110,1,Investimento,ativo,Telefone
+Otavio Mendes,***.818.536-57,SC,45,2390,385.02,adimplente,Medio,70,4,Emprestimo pessoal,ativo,WhatsApp
+Aline Pereira,***.449.550-18,PR,42,2710,947.71,adimplente,Alto,146,1,Emprestimo pessoal,ativo,WhatsApp
+Patricia Oliveira,***.718.681-93,PI,47,1250,795.17,restrito,Baixo,0,2,Seguro,ativo,WhatsApp
+Vanessa Ribeiro,***.112.978-21,RJ,75,4720,177.62,adimplente,Alto,241,2,Emprestimo pessoal,ativo,WhatsApp
+Aline Lima,***.489.901-17,PA,72,2500,1628.11,adimplente,Alto,226,2,Conta digital,ativo,Telefone
+Joao Gomes,***.932.883-66,AM,38,15220,429.40,adimplente,Medio,341,2,Conta digital,inativo,WhatsApp
+Claudia Castro,***.234.409-27,CE,48,1660,417.13,adimplente,Medio,22,1,Seguro,inativo,Agencia
+Otavio Freitas,***.395.218-87,SP,36,4730,465.99,restrito,Baixo,0,2,Seguro,ativo,App
+Felipe Lima,***.575.216-83,SC,19,7310,296.38,adimplente,Medio,111,2,Cartao de debito,ativo,WhatsApp
+Juliana Castro,***.747.796-48,SP,37,1670,427.38,adimplente,Alto,328,4,Financiamento,ativo,WhatsApp
+Aline Dias,***.991.594-13,PE,43,3410,1004.32,restrito,Baixo,0,1,Emprestimo pessoal,ativo,Telefone
+Daniel Carvalho,***.497.646-32,PE,44,4600,738.07,adimplente,Alto,87,2,Investimento,ativo,App
+Leandro Costa,***.957.847-83,PR,53,3390,1086.24,adimplente,Alto,112,1,Emprestimo pessoal,ativo,Telefone
+Maria Correia,***.916.324-82,PR,62,2230,968.29,adimplente,Medio,94,1,Cartao de debito,inativo,App
+Juliana Nascimento,***.845.809-42,MA,50,12310,358.83,adimplente,Medio,231,4,Conta digital,ativo,WhatsApp
+Jose Lima,***.581.925-41,PR,48,4910,671.92,adimplente,Alto,140,4,Investimento,ativo,App
+Thiago Oliveira,***.423.253-33,SC,30,5790,450.96,adimplente,Alto,11,4,Emprestimo pessoal,ativo,Agencia
+Amanda Souza,***.676.380-11,MG,45,2090,277.04,restrito,Baixo,0,3,Cartao de credito,ativo,App
+Juliana Nascimento,***.656.208-89,RS,70,4960,564.12,adimplente,Medio,78,1,Conta digital,ativo,WhatsApp
+Carlos Barros,***.846.394-15,MG,43,7940,1215.38,adimplente,Alto,136,1,Cartao de debito,ativo,WhatsApp
+Andre Barbosa,***.836.887-29,SP,20,2530,761.13,adimplente,Alto,14,1,Emprestimo pessoal,ativo,WhatsApp
+Aline Monteiro,***.926.299-60,GO,35,7550,459.10,adimplente,Alto,86,1,Conta digital,inativo,WhatsApp
+Leticia Almeida,***.226.791-94,RS,38,3810,534.14,adimplente,Medio,277,3,Conta digital,ativo,WhatsApp
+Rodrigo Teixeira,***.295.549-71,BA,39,4210,694.55,adimplente,Medio,121,2,Cartao de credito,ativo,Agencia
+Otavio Silva,***.352.166-33,PR,48,3350,369.01,adimplente,Alto,321,1,Seguro,inativo,Telefone
+Francisco Ribeiro,***.812.259-96,AL,52,4510,840.46,adimplente,Medio,191,1,Investimento,ativo,WhatsApp
+Caio Pereira,***.571.958-22,PR,39,2760,510.15,adimplente,Alto,352,1,Seguro,ativo,App
+Patricia Teixeira,***.667.939-75,SP,54,5150,594.21,restrito,Baixo,0,3,Investimento,inativo,App
+Diego Ribeiro,***.619.772-21,MS,41,2210,437.90,adimplente,Alto,279,4,Conta digital,ativo,WhatsApp
+Patricia Freitas,***.887.788-66,RJ,38,8540,257.72,adimplente,Medio,268,4,Emprestimo pessoal,ativo,WhatsApp
+Diego Mendes,***.866.256-41,BA,29,3030,535.90,adimplente,Alto,302,3,Investimento,inativo,WhatsApp
+Larissa Araujo,***.933.807-97,PA,43,5030,278.47,adimplente,Medio,10,2,Investimento,ativo,Telefone
+Felipe Lima,***.284.964-31,RS,38,5710,414.76,adimplente,Alto,264,2,Cartao de credito,inativo,Telefone
+Juliana Teixeira,***.849.761-91,SP,43,2610,710.11,adimplente,Alto,132,2,Cartao de debito,inativo,WhatsApp
+Sandra Araujo,***.501.168-91,RJ,19,17450,1235.58,adimplente,Medio,267,3,Cartao de debito,inativo,WhatsApp
+Sandra Monteiro,***.248.125-29,RS,33,1900,635.91,adimplente,Alto,6,2,Investimento,ativo,Telefone
+Aline Silva,***.999.145-21,CE,44,5920,676.36,restrito,Baixo,0,3,Conta digital,ativo,WhatsApp
+Pedro Almeida,***.185.364-54,MG,29,2600,351.80,adimplente,Alto,362,3,Conta digital,ativo,Telefone
+Beatriz Cardoso,***.163.620-44,AM,25,8430,891.54,adimplente,Medio,237,1,Cartao de debito,ativo,WhatsApp
+Jose Almeida,***.646.730-66,PI,33,4600,1720.13,restrito,Baixo,0,4,Investimento,ativo,WhatsApp
+Sabrina Rodrigues,***.300.800-58,PE,31,2490,1295.46,restrito,Baixo,0,2,Investimento,ativo,App
+Marcos Pereira,***.139.192-70,GO,44,16400,591.42,adimplente,Alto,327,3,Financiamento,ativo,WhatsApp
+Maria Cavalcanti,***.733.758-41,BA,29,4670,700.61,restrito,Baixo,0,2,Financiamento,inativo,App
+Fernanda Moreira,***.444.466-40,RJ,44,4050,2861.99,adimplente,Alto,178,2,Financiamento,ativo,WhatsApp
+Rodrigo Araujo,***.820.982-50,MG,32,2530,880.80,adimplente,Medio,361,3,Financiamento,ativo,WhatsApp
+Ana Souza,***.300.721-15,RJ,59,1200,1083.88,adimplente,Medio,318,3,Cartao de debito,ativo,Telefone
+Amanda Cardoso,***.619.710-61,PE,34,5120,508.44,adimplente,Alto,176,2,Seguro,ativo,App
+Otavio Rocha,***.996.320-61,PI,22,1260,950.40,adimplente,Alto,299,2,Emprestimo pessoal,ativo,WhatsApp
+Mariana Moreira,***.440.516-43,PR,20,6300,752.26,adimplente,Alto,239,4,Conta digital,ativo,WhatsApp
+Gabriel Barros,***.648.221-75,RS,61,2270,1081.07,adimplente,Medio,90,2,Financiamento,inativo,Telefone
+Francisco Lima,***.471.956-56,RJ,28,3410,821.02,adimplente,Medio,208,4,Emprestimo pessoal,ativo,App
+Ana Dias,***.455.364-48,AM,58,1550,499.51,adimplente,Medio,146,3,Emprestimo pessoal,ativo,Agencia
+Patricia Teixeira,***.105.872-10,BA,67,2770,219.51,adimplente,Baixo,216,4,Financiamento,ativo,WhatsApp
+Jose Santos,***.399.648-44,PE,42,3700,716.17,adimplente,Medio,113,1,Conta digital,ativo,Agencia
+Leticia Castro,***.877.249-46,BA,51,13390,517.27,restrito,Baixo,0,3,Cartao de credito,ativo,WhatsApp
+Larissa Costa,***.348.883-17,SP,42,6940,901.87,adimplente,Alto,324,2,Cartao de credito,ativo,WhatsApp
+Camila Monteiro,***.321.897-26,PA,41,1510,648.32,adimplente,Alto,187,1,Conta digital,ativo,Agencia
+Gustavo Pereira,***.851.519-56,MG,44,6590,905.13,adimplente,Medio,16,2,Cartao de credito,ativo,Agencia
+Luiz Souza,***.268.211-43,BA,36,3470,233.17,adimplente,Alto,36,3,Financiamento,ativo,App
+Adriana Carvalho,***.160.931-85,MA,18,3610,341.22,restrito,Baixo,0,4,Cartao de debito,ativo,WhatsApp
+Luiz Freitas,***.631.971-55,GO,19,1540,227.11,adimplente,Medio,295,2,Investimento,ativo,WhatsApp
+Tatiane Carvalho,***.929.997-46,RN,37,1430,439.78,adimplente,Medio,363,2,Cartao de credito,ativo,WhatsApp
+Diego Silva,***.862.354-10,SP,54,2520,402.01,restrito,Baixo,0,1,Investimento,ativo,Telefone
+Claudia Araujo,***.353.844-73,RJ,64,4010,397.30,adimplente,Alto,69,3,Seguro,inativo,App
+Maria Silva,***.127.760-95,SE,21,7580,862.25,adimplente,Medio,303,1,Emprestimo pessoal,ativo,App
+Felipe Moreira,***.558.584-69,PR,44,2570,778.68,adimplente,Alto,189,2,Cartao de credito,inativo,WhatsApp
+Lucas Carvalho,***.310.112-22,RN,46,3640,539.32,restrito,Medio,0,1,Seguro,ativo,WhatsApp
+Pedro Ribeiro,***.135.181-28,SC,49,6600,353.41,restrito,Baixo,0,3,Cartao de debito,ativo,WhatsApp
+Diego Ferreira,***.671.573-35,BA,32,3740,802.73,restrito,Baixo,0,2,Conta digital,inativo,WhatsApp
+Camila Araujo,***.330.210-67,RS,66,5680,1008.05,restrito,Baixo,0,2,Financiamento,ativo,WhatsApp
+Luiz Ferreira,***.988.159-82,MG,60,6410,1004.84,adimplente,Alto,349,4,Emprestimo pessoal,inativo,Agencia
+Bruna Ferreira,***.924.980-30,SP,27,3680,838.28,restrito,Baixo,0,1,Financiamento,ativo,WhatsApp
+Diego Barros,***.128.269-33,GO,69,3330,362.32,adimplente,Alto,333,4,Conta digital,ativo,WhatsApp
+Larissa Cardoso,***.189.267-22,SP,32,5000,2289.31,adimplente,Medio,333,3,Financiamento,inativo,Telefone
+Beatriz Martins,***.278.936-77,PE,39,6210,382.44,restrito,Baixo,0,1,Cartao de credito,ativo,WhatsApp
+Carlos Martins,***.948.904-98,SP,43,3380,298.15,adimplente,Baixo,23,1,Investimento,ativo,App
+Mariana Rocha,***.314.939-72,BA,25,1580,628.11,adimplente,Alto,292,4,Seguro,ativo,WhatsApp
+Sergio Lima,***.215.134-69,SP,27,9340,291.39,adimplente,Medio,349,2,Investimento,ativo,WhatsApp
+Carlos Monteiro,***.951.978-29,SC,29,1930,381.01,restrito,Medio,0,3,Cartao de credito,ativo,WhatsApp
+Otavio Cavalcanti,***.250.710-51,AC,71,3370,712.98,restrito,Medio,0,2,Cartao de credito,ativo,Telefone
+Leticia Rocha,***.797.536-68,SE,40,2080,522.13,adimplente,Alto,146,1,Financiamento,ativo,App
+Andre Moreira,***.763.804-17,BA,47,2130,695.64,adimplente,Baixo,178,2,Emprestimo pessoal,inativo,App
+Fabio Ribeiro,***.722.476-46,SP,53,1300,390.42,adimplente,Medio,132,2,Cartao de debito,ativo,WhatsApp
+Sergio Barros,***.828.691-37,PE,46,3650,671.74,restrito,Baixo,0,3,Conta digital,ativo,WhatsApp
+Maria Oliveira,***.979.709-53,CE,43,2030,1192.85,adimplente,Medio,136,3,Cartao de debito,ativo,WhatsApp
+Caio Oliveira,***.675.755-16,SP,21,3030,784.87,adimplente,Medio,11,1,Emprestimo pessoal,ativo,Agencia
+Diego Souza,***.461.750-40,BA,74,5000,381.37,adimplente,Alto,323,4,Seguro,inativo,WhatsApp
+Adriana Dias,***.725.434-97,CE,44,6270,183.29,adimplente,Alto,295,2,Emprestimo pessoal,inativo,WhatsApp
+Vinicius Dias,***.102.938-55,CE,47,2820,286.75,adimplente,Medio,6,3,Financiamento,ativo,WhatsApp
+Marcos Carvalho,***.816.886-31,SP,22,2850,332.58,adimplente,Alto,25,1,Seguro,inativo,WhatsApp
+Fabio Ferreira,***.693.617-38,PR,43,2930,1394.81,adimplente,Medio,29,4,Seguro,ativo,WhatsApp
+Claudia Moreira,***.984.927-69,RJ,28,7900,457.50,restrito,Medio,0,3,Investimento,ativo,WhatsApp
+Bruno Monteiro,***.519.749-53,RS,28,2190,553.76,adimplente,Medio,146,4,Financiamento,ativo,App
+Camila Nascimento,***.250.687-45,SP,22,3190,777.49,restrito,Baixo,0,2,Conta digital,ativo,App
+Carlos Santos,***.985.392-80,SP,38,6040,257.64,restrito,Baixo,0,2,Cartao de debito,ativo,WhatsApp
+Roberto Santos,***.229.729-98,RJ,31,3900,399.20,restrito,Baixo,0,1,Emprestimo pessoal,ativo,App
+Diego Costa,***.609.437-72,GO,65,5320,253.47,adimplente,Medio,3,1,Seguro,ativo,WhatsApp
+Larissa Araujo,***.818.922-44,SC,68,2050,1206.41,restrito,Baixo,0,2,Seguro,inativo,WhatsApp
+Eduardo Gomes,***.656.711-59,MG,29,4760,1296.20,restrito,Baixo,0,1,Cartao de debito,ativo,WhatsApp
+Fabio Silva,***.460.485-62,MT,46,15020,475.98,adimplente,Alto,63,1,Conta digital,ativo,WhatsApp
+Leticia Cavalcanti,***.523.975-69,MG,67,2470,483.20,adimplente,Baixo,295,1,Investimento,inativo,WhatsApp
+Sabrina Silva,***.262.165-97,MG,39,3080,407.45,adimplente,Alto,128,4,Financiamento,inativo,WhatsApp
+Leandro Pereira,***.719.158-25,AM,57,1370,580.03,restrito,Medio,0,3,Cartao de credito,ativo,App
+Camila Castro,***.773.597-18,RJ,66,5360,766.87,adimplente,Alto,321,1,Cartao de credito,ativo,WhatsApp
+Vinicius Moreira,***.242.568-65,PA,29,6020,653.28,adimplente,Alto,187,1,Cartao de debito,ativo,WhatsApp
+Roberto Ribeiro,***.696.210-25,SP,57,3600,569.62,adimplente,Medio,64,2,Conta digital,ativo,WhatsApp
+Sandra Monteiro,***.926.651-18,RS,44,4510,544.07,restrito,Baixo,0,2,Investimento,ativo,WhatsApp
+Mariana Monteiro,***.939.109-41,SP,36,4440,921.52,adimplente,Medio,346,3,Seguro,ativo,App
+Leticia Rodrigues,***.254.685-67,GO,68,3470,672.17,adimplente,Alto,231,4,Emprestimo pessoal,ativo,Telefone
+Otavio Cavalcanti,***.707.475-24,BA,40,1570,646.17,restrito,Medio,0,1,Conta digital,ativo,WhatsApp
+Larissa Araujo,***.736.276-99,ES,44,1310,838.00,restrito,Baixo,0,1,Seguro,inativo,WhatsApp
+Paulo Freitas,***.331.760-78,MG,49,6900,591.59,restrito,Baixo,0,2,Investimento,inativo,WhatsApp
+Leandro Freitas,***.182.286-29,PE,43,5200,305.34,adimplente,Alto,150,1,Conta digital,inativo,App
+Bruno Cavalcanti,***.295.616-75,MG,44,4380,448.60,adimplente,Alto,2,1,Conta digital,inativo,WhatsApp
+Rafael Santos,***.426.348-30,RJ,21,3040,1235.01,adimplente,Medio,64,3,Investimento,ativo,WhatsApp
+Diego Gomes,***.831.207-49,DF,50,1510,2084.44,adimplente,Alto,78,1,Conta digital,ativo,Agencia
+Rodrigo Silva,***.707.464-13,SC,62,2640,780.75,adimplente,Alto,87,1,Cartao de debito,ativo,Agencia
+Vinicius Cardoso,***.815.789-36,PR,46,2410,679.43,restrito,Medio,0,1,Emprestimo pessoal,ativo,App
+Vinicius Barros,***.736.724-52,BA,35,1330,333.57,adimplente,Alto,63,3,Emprestimo pessoal,inativo,WhatsApp
+Aline Santos,***.150.694-23,RJ,19,1710,1116.29,adimplente,Medio,132,3,Emprestimo pessoal,ativo,App
+Leticia Souza,***.232.340-43,MG,37,5270,541.08,restrito,Baixo,0,1,Financiamento,ativo,WhatsApp
+Gustavo Barros,***.573.183-86,SP,26,4440,423.87,adimplente,Medio,181,2,Emprestimo pessoal,ativo,WhatsApp
+Diego Almeida,***.767.175-36,SP,75,2570,562.30,adimplente,Alto,166,3,Cartao de debito,ativo,WhatsApp
+Larissa Mendes,***.948.674-77,ES,48,3800,887.57,adimplente,Medio,270,2,Cartao de debito,ativo,App
+Paulo Pinto,***.987.723-21,BA,44,12370,1922.43,adimplente,Medio,128,3,Financiamento,ativo,WhatsApp
+Antonio Almeida,***.353.423-65,RS,21,3670,467.63,adimplente,Medio,273,2,Emprestimo pessoal,ativo,WhatsApp
+Gabriel Gomes,***.363.715-89,MS,43,8420,627.81,adimplente,Medio,260,3,Emprestimo pessoal,ativo,WhatsApp
+Eduardo Rocha,***.214.720-60,GO,71,4090,1131.70,adimplente,Medio,293,4,Investimento,ativo,App
+Diego Moreira,***.322.597-46,SP,41,2410,429.13,adimplente,Medio,217,4,Cartao de credito,ativo,WhatsApp
+Aline Ribeiro,***.138.863-85,RS,43,7320,375.43,adimplente,Medio,166,1,Financiamento,ativo,WhatsApp
+Andre Pinto,***.466.766-53,SP,49,1670,211.31,adimplente,Alto,357,4,Emprestimo pessoal,ativo,WhatsApp
+Thiago Cavalcanti,***.348.376-19,RS,47,3670,234.26,adimplente,Alto,318,1,Emprestimo pessoal,ativo,Agencia
+Leandro Nascimento,***.684.541-15,DF,29,28000,1504.70,adimplente,Medio,126,1,Emprestimo pessoal,ativo,WhatsApp
+Marcio Souza,***.611.652-99,MG,49,5850,647.46,adimplente,Medio,75,1,Emprestimo pessoal,ativo,Telefone
+Andre Pinto,***.786.719-78,AL,54,4280,894.45,adimplente,Alto,59,1,Cartao de credito,ativo,App
+Roberto Ribeiro,***.173.755-68,SP,41,2840,324.80,adimplente,Medio,318,1,Financiamento,ativo,WhatsApp
+Juliana Mendes,***.427.933-95,SP,30,5340,465.42,adimplente,Medio,154,1,Seguro,ativo,WhatsApp
+Thiago Ribeiro,***.322.652-40,MS,60,4500,723.80,restrito,Medio,0,3,Cartao de debito,ativo,WhatsApp
+Andre Oliveira,***.626.557-90,PB,25,4230,1022.48,adimplente,Medio,79,4,Investimento,ativo,App
+Lucas Carvalho,***.559.706-56,PR,48,1770,963.85,adimplente,Alto,236,1,Cartao de debito,ativo,WhatsApp
+Igor Pinto,***.624.855-15,BA,41,12380,436.36,adimplente,Medio,28,3,Seguro,ativo,App
+Gustavo Monteiro,***.705.574-41,MG,38,4870,386.65,restrito,Baixo,0,3,Seguro,ativo,Agencia
+Eduardo Ribeiro,***.833.529-81,AC,19,7860,498.29,adimplente,Alto,235,1,Conta digital,ativo,WhatsApp
+Gustavo Carvalho,***.452.321-47,DF,52,3430,619.87,adimplente,Medio,144,2,Investimento,ativo,WhatsApp
+Renata Cardoso,***.541.210-20,SC,47,4100,1834.57,restrito,Baixo,0,3,Emprestimo pessoal,ativo,App
+Leandro Silva,***.334.395-37,MG,45,1950,204.79,adimplente,Alto,73,4,Investimento,inativo,WhatsApp
+Gustavo Rodrigues,***.667.804-96,SP,42,7070,821.18,adimplente,Medio,118,1,Cartao de debito,ativo,WhatsApp
+Gustavo Ribeiro,***.335.470-28,GO,71,1490,404.43,restrito,Baixo,0,3,Seguro,ativo,WhatsApp
+Claudia Lima,***.120.689-87,RS,19,2980,224.15,adimplente,Alto,11,4,Cartao de debito,ativo,WhatsApp
+Caio Rocha,***.497.680-54,SP,44,3790,325.73,adimplente,Alto,316,2,Conta digital,ativo,App
+Gustavo Cavalcanti,***.621.538-86,MG,43,4210,246.97,adimplente,Medio,224,2,Financiamento,ativo,App
+Patricia Correia,***.607.113-13,TO,61,2900,842.79,restrito,Baixo,0,1,Cartao de credito,ativo,WhatsApp
+Vanessa Rocha,***.804.740-45,PI,26,1200,381.16,adimplente,Medio,164,3,Cartao de credito,ativo,WhatsApp
+Caio Ferreira,***.855.190-96,SP,42,3940,291.37,restrito,Baixo,0,1,Conta digital,ativo,WhatsApp
+Renata Martins,***.573.612-80,RN,43,1580,655.26,adimplente,Alto,262,2,Cartao de debito,ativo,WhatsApp
+Pedro Rodrigues,***.588.208-19,MG,64,3200,341.35,restrito,Baixo,0,2,Emprestimo pessoal,ativo,WhatsApp
+Gustavo Pereira,***.739.719-96,PR,38,5150,1128.83,restrito,Baixo,0,2,Cartao de debito,ativo,Agencia
+Camila Barros,***.610.240-87,SP,49,2450,841.37,adimplente,Alto,102,3,Conta digital,ativo,WhatsApp
+Renata Rodrigues,***.608.664-98,PR,67,3130,1025.14,restrito,Baixo,0,1,Cartao de credito,ativo,WhatsApp
+Sergio Teixeira,***.606.841-33,MG,46,5230,654.33,restrito,Baixo,0,1,Seguro,ativo,WhatsApp
+Amanda Ferreira,***.268.980-83,RJ,67,1670,312.44,restrito,Baixo,0,4,Emprestimo pessoal,inativo,App
+Renata Carvalho,***.464.259-84,RJ,29,5050,341.70,adimplente,Alto,192,2,Investimento,inativo,Agencia
+Larissa Dias,***.624.389-90,CE,65,6110,707.92,restrito,Baixo,0,4,Cartao de credito,ativo,WhatsApp
+Aline Barros,***.875.344-91,MG,36,5420,337.40,restrito,Baixo,0,1,Investimento,inativo,WhatsApp
+Diego Cavalcanti,***.455.833-10,SP,20,3780,428.89,restrito,Baixo,0,2,Emprestimo pessoal,ativo,WhatsApp
+Mariana Lima,***.167.158-72,SP,42,4260,841.44,adimplente,Alto,6,2,Emprestimo pessoal,ativo,WhatsApp
+Fabio Souza,***.311.320-86,SP,35,3440,519.60,adimplente,Medio,250,1,Financiamento,ativo,WhatsApp
+Bruna Gomes,***.922.616-31,MG,52,1660,645.77,restrito,Baixo,0,4,Investimento,ativo,Agencia
+Daniel Cavalcanti,***.304.395-97,MG,38,3630,717.63,adimplente,Alto,123,2,Conta digital,ativo,Agencia
+Marcos Ferreira,***.629.627-96,MG,45,5240,540.81,adimplente,Alto,0,4,Cartao de debito,ativo,App
+Jose Ferreira,***.728.364-77,SC,43,2450,940.24,adimplente,Alto,31,2,Financiamento,ativo,Telefone
+Thiago Castro,***.729.562-69,SP,42,1390,229.55,restrito,Medio,0,1,Conta digital,inativo,WhatsApp
+Camila Teixeira,***.633.250-99,MG,26,6590,293.89,adimplente,Medio,229,2,Cartao de debito,inativo,WhatsApp
+Vanessa Ribeiro,***.156.376-42,PA,45,3170,1159.84,restrito,Medio,0,2,Seguro,ativo,WhatsApp
+Adriana Ferreira,***.808.738-96,SP,34,15460,311.63,adimplente,Alto,193,2,Cartao de credito,ativo,App
+Patricia Correia,***.815.203-74,MA,43,5700,651.60,restrito,Baixo,0,2,Cartao de debito,inativo,App
+Leticia Ferreira,***.800.765-55,MA,49,3020,357.03,adimplente,Alto,189,4,Conta digital,ativo,App
+Daniel Teixeira,***.854.604-45,MG,22,10460,471.41,restrito,Baixo,0,4,Financiamento,ativo,App
+Thiago Barbosa,***.948.970-94,BA,48,2510,540.28,restrito,Alto,0,3,Emprestimo pessoal,ativo,App
+Felipe Dias,***.502.771-92,GO,32,1970,535.51,adimplente,Medio,218,4,Cartao de debito,inativo,WhatsApp
+Rodrigo Almeida,***.854.812-41,PE,33,2710,437.14,adimplente,Alto,44,4,Conta digital,ativo,WhatsApp
+Otavio Ribeiro,***.510.258-29,CE,42,5820,797.17,adimplente,Medio,185,2,Seguro,inativo,Telefone
+Diego Santos,***.978.719-64,MG,54,4340,1207.82,adimplente,Medio,205,1,Investimento,ativo,WhatsApp
+Marcos Ribeiro,***.212.141-41,CE,58,1200,381.25,adimplente,Alto,93,4,Financiamento,inativo,Telefone
+Sandra Almeida,***.810.302-52,RJ,62,3080,367.80,adimplente,Alto,73,2,Cartao de debito,ativo,Agencia
+Roberto Barros,***.983.654-71,ES,40,2480,375.94,restrito,Baixo,0,2,Cartao de debito,ativo,App
+Paulo Lima,***.910.874-45,SP,24,3110,538.50,restrito,Medio,0,2,Seguro,ativo,App
+Larissa Pinto,***.429.166-19,SC,20,2210,417.74,adimplente,Alto,231,4,Emprestimo pessoal,inativo,App
+Larissa Ribeiro,***.954.797-84,PE,41,3020,440.33,adimplente,Alto,158,2,Cartao de debito,ativo,Telefone
+Joao Lima,***.312.139-32,SC,74,4660,334.44,adimplente,Alto,294,1,Emprestimo pessoal,ativo,WhatsApp
+Marcio Monteiro,***.966.884-89,DF,46,5260,338.69,adimplente,Medio,254,4,Cartao de debito,ativo,WhatsApp
+Lucas Araujo,***.358.643-13,RJ,39,5970,1042.02,adimplente,Alto,255,1,Seguro,ativo,WhatsApp
+Jose Monteiro,***.607.338-98,AL,48,3010,475.91,restrito,Medio,0,4,Conta digital,ativo,WhatsApp
+Luiz Pinto,***.700.393-22,SE,70,2280,526.17,restrito,Medio,0,3,Investimento,inativo,WhatsApp
+Igor Almeida,***.514.376-75,GO,21,4460,249.00,adimplente,Alto,257,1,Investimento,ativo,WhatsApp
+Jose Martins,***.967.880-96,MG,23,6750,695.95,adimplente,Baixo,12,2,Seguro,ativo,WhatsApp
+Luiz Lima,***.953.569-47,MS,34,1690,633.50,adimplente,Alto,35,3,Emprestimo pessoal,ativo,App
+Maria Araujo,***.438.478-59,MG,38,4180,341.34,restrito,Baixo,0,4,Investimento,inativo,Agencia
+Mariana Gomes,***.667.263-58,MT,22,2230,583.89,adimplente,Alto,364,1,Investimento,ativo,Agencia
+Ana Teixeira,***.580.164-37,MA,28,2590,605.25,adimplente,Medio,110,2,Investimento,ativo,WhatsApp
+Beatriz Ribeiro,***.544.673-93,RJ,36,3450,487.05,adimplente,Medio,304,4,Seguro,inativo,WhatsApp
+Mariana Lima,***.844.424-90,CE,44,2340,782.28,adimplente,Medio,81,2,Conta digital,ativo,Telefone
+Beatriz Ferreira,***.860.119-75,PB,63,9350,1464.13,adimplente,Baixo,348,3,Cartao de credito,ativo,WhatsApp
+Mariana Santos,***.349.664-25,PI,39,3780,160.78,restrito,Baixo,0,2,Seguro,inativo,App
+Otavio Martins,***.613.191-14,ES,25,4370,1675.69,adimplente,Alto,114,1,Emprestimo pessoal,ativo,App
+Rodrigo Silva,***.241.581-76,SP,21,8200,448.85,restrito,Baixo,0,4,Investimento,ativo,WhatsApp
+Leticia Barros,***.387.983-45,SP,41,2970,295.90,adimplente,Medio,284,2,Conta digital,ativo,Agencia
+Carlos Teixeira,***.973.102-20,SP,35,1380,930.60,adimplente,Alto,365,2,Emprestimo pessoal,ativo,WhatsApp
+Maria Teixeira,***.644.328-97,BA,57,9700,598.20,adimplente,Medio,101,1,Seguro,ativo,WhatsApp
+Felipe Monteiro,***.982.553-25,BA,33,1440,925.03,adimplente,Medio,115,2,Investimento,ativo,WhatsApp
+Mariana Freitas,***.824.789-51,MG,53,9950,828.18,restrito,Baixo,0,4,Cartao de debito,ativo,Agencia
+Eduardo Cavalcanti,***.889.617-35,PI,44,5600,1713.69,restrito,Medio,0,4,Cartao de credito,ativo,App
+Jose Costa,***.331.936-48,AL,38,3990,604.17,restrito,Baixo,0,2,Financiamento,ativo,App
+Adriana Rocha,***.930.838-75,RJ,33,1200,995.49,restrito,Baixo,0,2,Financiamento,ativo,WhatsApp
+Gustavo Gomes,***.976.495-84,GO,31,2890,1600.45,adimplente,Medio,52,4,Investimento,ativo,WhatsApp
+Wesley Araujo,***.132.664-79,SP,59,5180,807.90,adimplente,Alto,216,2,Seguro,ativo,WhatsApp
+Adriana Pereira,***.128.261-60,MG,32,5610,364.05,adimplente,Medio,46,1,Cartao de debito,ativo,WhatsApp
+Aline Pereira,***.402.750-88,SP,32,8620,656.48,adimplente,Medio,239,2,Financiamento,ativo,App
+Marcio Gomes,***.446.738-34,RR,72,3770,344.30,restrito,Medio,0,1,Conta digital,inativo,WhatsApp
+Leticia Costa,***.855.982-70,SE,24,4200,1528.83,adimplente,Baixo,334,1,Seguro,ativo,WhatsApp
+Antonio Cavalcanti,***.187.325-77,ES,59,5210,662.75,adimplente,Alto,257,1,Investimento,ativo,App
+Camila Barbosa,***.316.760-74,ES,49,3720,674.65,adimplente,Medio,6,3,Emprestimo pessoal,inativo,Agencia
+Paulo Santos,***.696.688-31,SP,62,2270,779.33,adimplente,Alto,205,1,Cartao de debito,ativo,WhatsApp
+Rafael Pinto,***.823.360-49,BA,41,3490,304.45,restrito,Baixo,0,3,Emprestimo pessoal,ativo,App
+Gustavo Freitas,***.349.816-20,RJ,36,4940,342.98,adimplente,Alto,1,2,Cartao de credito,ativo,App
+Beatriz Santos,***.850.217-48,MS,63,2900,391.74,adimplente,Medio,336,1,Emprestimo pessoal,ativo,WhatsApp
+Pedro Ribeiro,***.919.597-74,SP,46,2490,917.75,adimplente,Medio,71,1,Conta digital,ativo,App
+Sabrina Monteiro,***.815.704-66,SC,55,4290,297.28,restrito,Medio,0,4,Cartao de credito,ativo,WhatsApp
+Fabio Martins,***.621.412-77,SC,39,1200,1413.61,adimplente,Baixo,258,3,Cartao de debito,ativo,WhatsApp
+Aline Rocha,***.212.324-11,PA,41,1360,915.92,adimplente,Medio,53,4,Cartao de debito,inativo,App
+Sabrina Pereira,***.419.574-43,DF,28,2130,751.39,restrito,Baixo,0,2,Cartao de debito,ativo,WhatsApp
+Rodrigo Ferreira,***.476.844-61,PE,47,2840,409.38,adimplente,Alto,335,1,Cartao de credito,ativo,WhatsApp
+Sandra Carvalho,***.996.438-61,SP,56,3420,423.32,adimplente,Baixo,88,4,Financiamento,ativo,Agencia
+Maria Costa,***.910.653-41,PR,61,10720,811.45,adimplente,Medio,124,2,Cartao de debito,ativo,WhatsApp
+Antonio Nascimento,***.799.833-83,TO,70,3260,1902.81,adimplente,Medio,359,1,Emprestimo pessoal,ativo,Telefone
+Gustavo Costa,***.778.598-95,PB,29,3160,711.77,adimplente,Medio,270,3,Cartao de credito,ativo,WhatsApp
+Leandro Lima,***.865.553-21,MG,44,1500,1077.12,restrito,Baixo,0,4,Conta digital,ativo,Telefone
+Bruno Dias,***.703.496-57,SP,32,3620,1048.34,adimplente,Medio,154,1,Cartao de debito,ativo,WhatsApp
+Vinicius Barbosa,***.331.807-44,BA,66,1990,525.00,adimplente,Medio,138,2,Cartao de debito,ativo,WhatsApp
+Andre Costa,***.160.323-91,SP,69,6190,704.64,adimplente,Medio,135,2,Conta digital,ativo,WhatsApp
+Mariana Martins,***.472.791-10,SP,31,3140,249.28,adimplente,Medio,306,1,Financiamento,inativo,WhatsApp
+Caio Souza,***.783.583-92,RJ,67,4880,417.26,restrito,Medio,0,1,Emprestimo pessoal,ativo,App
+Aline Monteiro,***.328.363-10,RJ,70,2540,675.47,restrito,Medio,0,3,Conta digital,ativo,WhatsApp
+Juliana Oliveira,***.264.676-46,MG,31,1980,1361.88,restrito,Alto,0,1,Seguro,inativo,Agencia
+Gabriel Silva,***.528.751-27,MA,65,1630,813.20,adimplente,Medio,2,3,Seguro,ativo,Agencia
+Lucas Souza,***.200.754-80,BA,46,1200,499.68,adimplente,Medio,4,3,Conta digital,ativo,WhatsApp
+Amanda Dias,***.530.721-18,PA,70,4370,502.17,restrito,Baixo,0,2,Cartao de debito,ativo,Telefone
+Thiago Dias,***.813.283-24,RS,61,3010,534.02,adimplente,Alto,13,1,Seguro,ativo,App
+Pedro Freitas,***.512.159-45,BA,40,10980,505.24,restrito,Baixo,0,2,Investimento,inativo,App
+Renata Almeida,***.519.193-96,MG,43,1200,2187.61,adimplente,Medio,294,2,Conta digital,ativo,WhatsApp
+Otavio Barbosa,***.201.852-73,RJ,43,2380,465.05,adimplente,Alto,58,4,Emprestimo pessoal,ativo,Telefone
+Rafael Freitas,***.939.446-43,PE,50,6440,644.07,adimplente,Medio,105,2,Investimento,ativo,App
+Mariana Dias,***.817.518-93,SP,73,1980,625.52,adimplente,Medio,191,2,Seguro,ativo,WhatsApp
+Sabrina Monteiro,***.703.581-21,RJ,34,5600,652.30,adimplente,Medio,201,1,Investimento,ativo,Agencia
+Antonio Castro,***.340.716-98,RS,56,1620,748.92,adimplente,Medio,330,2,Emprestimo pessoal,ativo,WhatsApp
+Leandro Silva,***.224.463-61,CE,29,4540,1548.39,restrito,Baixo,0,1,Seguro,ativo,WhatsApp
+Sandra Cardoso,***.831.496-70,MG,25,4460,301.02,restrito,Baixo,0,1,Conta digital,ativo,App
+Maria Correia,***.927.801-55,TO,24,1530,453.01,adimplente,Medio,57,3,Conta digital,ativo,App
+Joao Lima,***.681.936-22,MA,48,9740,454.63,adimplente,Medio,327,1,Investimento,ativo,WhatsApp
+Marcos Pinto,***.858.631-83,GO,60,3530,953.10,restrito,Baixo,0,1,Cartao de debito,ativo,Telefone
+Amanda Cavalcanti,***.524.102-62,RJ,37,1650,1312.31,restrito,Baixo,0,1,Seguro,ativo,WhatsApp
+Rodrigo Ribeiro,***.210.149-86,SP,69,2320,682.72,adimplente,Medio,286,3,Cartao de credito,ativo,WhatsApp
+Mariana Dias,***.145.496-27,RS,36,2490,478.11,adimplente,Medio,245,3,Conta digital,ativo,WhatsApp
+Daniel Dias,***.524.697-14,RJ,39,2880,412.17,adimplente,Alto,51,3,Cartao de debito,ativo,WhatsApp
+Fabio Gomes,***.751.706-71,MG,73,2180,304.38,adimplente,Alto,296,1,Investimento,ativo,WhatsApp
+Jose Barros,***.239.599-59,ES,40,3120,513.03,restrito,Baixo,0,2,Investimento,ativo,Agencia
+Bruno Barros,***.491.480-69,BA,43,4820,899.03,adimplente,Medio,24,2,Cartao de debito,ativo,WhatsApp
+Aline Costa,***.784.935-50,SP,20,4470,614.65,restrito,Baixo,0,2,Conta digital,ativo,WhatsApp
+Aline Teixeira,***.597.730-23,RJ,40,3190,954.16,adimplente,Alto,153,2,Cartao de credito,ativo,App
+Roberto Freitas,***.441.220-86,MT,44,4050,558.87,adimplente,Medio,266,1,Emprestimo pessoal,ativo,App
+Francisco Silva,***.700.435-86,SP,43,3690,913.70,restrito,Baixo,0,1,Seguro,ativo,Telefone
+Felipe Araujo,***.531.342-21,RJ,31,4330,519.79,adimplente,Baixo,209,1,Financiamento,ativo,Agencia
+Patricia Santos,***.634.935-88,PA,23,4960,404.38,restrito,Baixo,0,3,Financiamento,ativo,WhatsApp
+Adriana Ribeiro,***.408.526-43,PE,42,2360,882.14,adimplente,Baixo,186,1,Seguro,ativo,Agencia
+Francisco Cardoso,***.341.663-81,BA,36,3220,667.40,adimplente,Alto,333,1,Cartao de debito,ativo,WhatsApp
+Roberto Souza,***.124.808-78,SP,36,2560,548.80,adimplente,Medio,38,1,Financiamento,ativo,WhatsApp
+Larissa Costa,***.991.272-89,SP,70,6620,1044.03,adimplente,Medio,38,2,Emprestimo pessoal,inativo,App
+Maria Correia,***.999.334-41,SC,30,2740,485.66,adimplente,Medio,111,2,Conta digital,ativo,WhatsApp
+Vanessa Mendes,***.594.219-12,SP,59,3220,187.68,adimplente,Medio,4,2,Financiamento,ativo,WhatsApp
+Juliana Mendes,***.780.154-58,RJ,48,3160,822.69,adimplente,Alto,188,1,Cartao de debito,ativo,WhatsApp
+Beatriz Gomes,***.715.598-71,SP,46,4360,1427.07,adimplente,Alto,123,2,Conta digital,ativo,WhatsApp
+Vanessa Oliveira,***.880.287-96,AC,75,8280,610.47,restrito,Baixo,0,4,Conta digital,ativo,WhatsApp
+Caio Carvalho,***.253.981-70,SC,29,3050,711.76,adimplente,Alto,94,3,Cartao de debito,ativo,Agencia
+Juliana Lima,***.389.289-61,MG,33,3460,172.11,restrito,Baixo,0,1,Emprestimo pessoal,ativo,WhatsApp
+Patricia Cavalcanti,***.432.702-26,SC,46,5670,709.07,restrito,Baixo,0,1,Emprestimo pessoal,ativo,Telefone
+Marcio Ribeiro,***.893.492-36,SP,41,4330,456.28,restrito,Medio,0,4,Seguro,ativo,WhatsApp
+Larissa Dias,***.487.343-22,MG,60,6680,966.59,adimplente,Medio,192,1,Cartao de credito,ativo,Agencia
+Rafael Lima,***.691.902-83,CE,37,1970,420.10,adimplente,Alto,303,2,Cartao de credito,ativo,App
+Bruna Rocha,***.915.826-59,ES,49,2000,601.07,adimplente,Alto,333,2,Financiamento,ativo,Agencia
+Camila Monteiro,***.953.954-57,RJ,72,1390,750.87,adimplente,Alto,212,2,Financiamento,ativo,WhatsApp
+Amanda Ribeiro,***.594.554-51,MG,38,5900,445.16,restrito,Baixo,0,4,Emprestimo pessoal,ativo,WhatsApp
+Daniel Castro,***.971.188-75,PA,34,1450,375.45,adimplente,Alto,342,2,Conta digital,ativo,WhatsApp
+Wesley Souza,***.621.756-65,SC,30,3430,907.30,adimplente,Alto,250,3,Cartao de debito,ativo,WhatsApp
+Bruna Pinto,***.689.424-54,MG,43,2170,510.97,adimplente,Medio,314,2,Cartao de credito,ativo,Telefone
+Lucas Mendes,***.141.339-67,PE,49,6860,673.72,adimplente,Alto,55,2,Cartao de credito,ativo,Telefone
+Sabrina Dias,***.297.256-68,SP,34,1960,361.70,adimplente,Medio,79,2,Seguro,ativo,App
+Sergio Oliveira,***.762.905-31,AL,52,1340,705.16,restrito,Medio,0,1,Investimento,ativo,WhatsApp
+Jose Moreira,***.606.734-66,RJ,18,1990,950.92,adimplente,Medio,269,3,Seguro,inativo,Telefone
+Renata Pinto,***.316.621-24,GO,35,3070,586.58,adimplente,Baixo,92,4,Conta digital,ativo,WhatsApp
+Jose Dias,***.419.689-35,SP,45,5900,210.59,adimplente,Medio,157,1,Investimento,inativo,App
+Camila Correia,***.998.642-36,MG,46,2740,409.23,adimplente,Medio,100,3,Investimento,ativo,App
+Fernanda Castro,***.498.366-58,SP,26,3620,282.48,restrito,Baixo,0,1,Cartao de debito,ativo,Telefone
+Juliana Teixeira,***.615.376-30,SP,65,6460,541.69,adimplente,Medio,188,1,Conta digital,ativo,Agencia
+Paulo Martins,***.199.962-61,AP,49,1880,519.32,restrito,Medio,0,2,Cartao de credito,ativo,WhatsApp
+Jose Lima,***.349.516-95,SP,31,2970,573.21,restrito,Baixo,0,1,Cartao de credito,ativo,WhatsApp
+Paulo Correia,***.901.843-87,SC,24,5640,486.33,adimplente,Medio,24,4,Investimento,ativo,App
+Fabio Moreira,***.949.730-13,BA,31,2460,991.55,restrito,Medio,0,1,Financiamento,ativo,Telefone
+Diego Barros,***.376.163-54,DF,41,3720,425.40,adimplente,Medio,218,3,Cartao de debito,inativo,App
+Felipe Monteiro,***.452.708-80,BA,41,6690,597.14,adimplente,Medio,277,3,Seguro,ativo,App
+Fabio Dias,***.994.143-41,BA,49,3770,621.66,adimplente,Alto,146,3,Financiamento,ativo,WhatsApp
+Thiago Martins,***.527.441-93,RJ,35,2120,1160.41,adimplente,Medio,72,3,Cartao de credito,ativo,WhatsApp
+Caio Barbosa,***.655.319-72,MS,47,4420,287.89,adimplente,Medio,319,2,Cartao de debito,ativo,WhatsApp
+Roberto Rodrigues,***.543.598-71,SP,48,1310,959.21,restrito,Baixo,0,2,Cartao de debito,ativo,App
+Bruna Monteiro,***.302.800-75,SP,34,2220,378.62,adimplente,Medio,230,2,Conta digital,inativo,Agencia
+Sabrina Moreira,***.261.528-74,SP,52,3800,1331.84,adimplente,Medio,325,2,Cartao de debito,ativo,App
+Daniel Silva,***.914.783-43,BA,42,2170,933.35,adimplente,Alto,328,2,Financiamento,ativo,WhatsApp
+Diego Lima,***.310.407-92,SP,75,1990,275.62,adimplente,Medio,139,1,Cartao de credito,ativo,WhatsApp
+Paulo Rodrigues,***.697.636-68,RS,65,7040,1174.61,adimplente,Alto,333,2,Cartao de credito,ativo,App
+Marcos Nascimento,***.711.885-47,BA,36,1620,1282.82,adimplente,Medio,15,4,Seguro,inativo,WhatsApp
+Francisco Lima,***.134.198-25,RO,50,10980,368.20,adimplente,Alto,8,3,Seguro,ativo,WhatsApp
+Larissa Oliveira,***.817.100-49,RJ,46,2210,456.68,restrito,Medio,0,4,Financiamento,ativo,WhatsApp
+Marcos Silva,***.701.140-70,SE,33,5170,893.45,restrito,Baixo,0,4,Financiamento,ativo,Telefone
+Fabio Cardoso,***.580.680-37,PE,46,4830,390.07,adimplente,Alto,272,1,Emprestimo pessoal,ativo,WhatsApp
+Sandra Costa,***.225.879-63,PR,48,2280,423.54,adimplente,Medio,33,1,Investimento,ativo,WhatsApp
+Rafael Barbosa,***.370.988-24,MG,20,3500,343.19,adimplente,Medio,243,1,Cartao de debito,ativo,WhatsApp
+Igor Cavalcanti,***.676.274-84,RJ,30,1730,900.60,adimplente,Alto,271,2,Cartao de credito,ativo,WhatsApp
+Adriana Pinto,***.367.441-91,MG,41,1780,454.29,adimplente,Alto,44,3,Financiamento,ativo,Telefone
+Joao Cavalcanti,***.614.756-38,AP,39,3850,587.78,restrito,Baixo,0,3,Cartao de debito,ativo,WhatsApp
+Marcio Monteiro,***.138.483-54,PA,45,4930,1220.58,adimplente,Baixo,319,1,Cartao de debito,ativo,App
+Marcio Silva,***.445.139-67,SP,18,2070,829.72,restrito,Baixo,0,2,Investimento,ativo,App
+Daniel Pereira,***.979.831-28,GO,59,7170,421.08,adimplente,Alto,308,1,Cartao de debito,ativo,App
+Carlos Cardoso,***.974.154-56,BA,44,1520,916.93,adimplente,Medio,60,1,Cartao de debito,ativo,WhatsApp
+Marcio Gomes,***.441.604-83,RS,41,1280,905.74,adimplente,Alto,96,2,Cartao de credito,ativo,App
+Caio Ferreira,***.287.792-24,RO,36,4480,387.67,adimplente,Medio,110,2,Financiamento,ativo,WhatsApp
+Gabriel Correia,***.778.541-11,RN,48,1630,462.71,adimplente,Alto,354,2,Cartao de credito,ativo,App
+Leandro Costa,***.402.638-11,RJ,38,5490,380.60,adimplente,Medio,41,2,Seguro,ativo,Agencia
+Fabio Ribeiro,***.563.824-35,CE,41,3270,513.82,adimplente,Baixo,18,2,Investimento,ativo,Agencia
+Marcio Costa,***.157.704-12,SP,18,1410,581.63,adimplente,Baixo,100,3,Financiamento,ativo,Telefone
+Caio Martins,***.492.362-26,GO,68,2910,598.52,adimplente,Medio,43,3,Cartao de credito,inativo,WhatsApp
+Lucas Pinto,***.592.681-20,PB,73,6010,913.85,adimplente,Alto,29,2,Cartao de credito,ativo,WhatsApp
+Joao Mendes,***.562.465-63,SP,25,2290,689.81,restrito,Medio,0,4,Financiamento,ativo,App
+Claudia Souza,***.337.743-64,RS,41,8710,261.49,adimplente,Medio,242,3,Investimento,ativo,WhatsApp
+Wesley Pereira,***.658.879-67,RS,27,6400,1264.68,adimplente,Medio,197,3,Seguro,ativo,WhatsApp
+Marcos Gomes,***.273.672-26,RO,49,5120,273.14,adimplente,Medio,130,1,Cartao de debito,ativo,Telefone
+Vanessa Dias,***.478.692-29,BA,31,2450,589.69,restrito,Baixo,0,1,Emprestimo pessoal,ativo,WhatsApp
+Tatiane Nascimento,***.740.550-86,SP,53,5820,546.17,adimplente,Medio,214,1,Emprestimo pessoal,ativo,WhatsApp
+Bruna Rodrigues,***.715.121-61,MG,48,1840,226.20,restrito,Baixo,0,1,Cartao de credito,ativo,App
+Roberto Cardoso,***.602.824-74,MG,61,3570,312.13,restrito,Baixo,0,1,Investimento,ativo,WhatsApp
+Claudia Monteiro,***.533.714-74,PA,60,5170,760.89,adimplente,Baixo,79,1,Financiamento,ativo,WhatsApp
+Felipe Barbosa,***.801.348-57,SP,32,11460,1960.73,adimplente,Alto,24,1,Cartao de credito,ativo,WhatsApp
+Rodrigo Gomes,***.582.180-32,BA,37,3010,647.70,restrito,Baixo,0,3,Investimento,ativo,App
+Vanessa Lima,***.172.905-71,ES,66,3100,685.10,restrito,Medio,0,1,Emprestimo pessoal,ativo,Agencia
+Marcos Silva,***.521.666-74,PE,44,3700,341.92,adimplente,Baixo,298,4,Financiamento,ativo,WhatsApp
+Gustavo Correia,***.942.364-99,GO,48,3010,831.49,adimplente,Medio,309,1,Investimento,ativo,WhatsApp
+Felipe Souza,***.107.989-96,MG,35,2930,234.81,adimplente,Alto,218,2,Cartao de debito,ativo,WhatsApp
+Igor Pinto,***.890.311-84,SP,41,5940,1046.13,adimplente,Medio,117,1,Cartao de debito,inativo,WhatsApp
+Rodrigo Costa,***.720.317-20,BA,23,2120,966.42,adimplente,Baixo,88,1,Cartao de credito,inativo,WhatsApp
+Bruno Silva,***.811.157-58,DF,65,1200,379.13,adimplente,Alto,69,3,Seguro,ativo,WhatsApp
+Gustavo Cavalcanti,***.381.375-59,RS,72,1480,823.18,adimplente,Medio,47,4,Conta digital,ativo,Telefone
+Gustavo Ribeiro,***.927.994-78,PR,68,2060,283.43,adimplente,Alto,31,2,Emprestimo pessoal,ativo,WhatsApp
+Tatiane Araujo,***.836.329-85,SE,29,7110,1384.09,adimplente,Medio,285,3,Financiamento,ativo,App
+Eduardo Gomes,***.141.634-38,SP,53,3240,1137.28,restrito,Baixo,0,1,Cartao de debito,ativo,WhatsApp
+Bruna Souza,***.201.989-41,AM,60,6500,526.81,adimplente,Alto,206,1,Seguro,ativo,Agencia
+Luiz Pinto,***.457.175-95,RJ,75,5540,457.99,adimplente,Medio,122,1,Seguro,ativo,App
+Caio Silva,***.935.513-26,MG,34,4640,520.68,adimplente,Alto,99,3,Investimento,inativo,WhatsApp
+Camila Monteiro,***.109.260-14,RJ,37,1290,405.07,restrito,Medio,0,3,Seguro,ativo,Agencia
+Rodrigo Carvalho,***.878.340-14,PR,48,9190,658.73,restrito,Baixo,0,3,Cartao de debito,ativo,WhatsApp
+Caio Nascimento,***.234.851-28,RS,34,3430,318.86,adimplente,Medio,190,1,Investimento,ativo,WhatsApp
+Adriana Teixeira,***.791.283-97,BA,65,6110,899.93,adimplente,Medio,294,3,Investimento,inativo,WhatsApp
+Carlos Santos,***.680.529-88,PA,65,2300,746.80,adimplente,Medio,240,2,Conta digital,ativo,App
+Fabio Costa,***.352.835-24,SP,36,5220,256.51,adimplente,Medio,218,2,Financiamento,ativo,WhatsApp
+Daniel Castro,***.393.490-16,SC,33,1680,268.15,adimplente,Alto,56,2,Financiamento,inativo,WhatsApp
+Mariana Ferreira,***.916.618-20,BA,28,2670,593.45,adimplente,Medio,310,2,Cartao de credito,inativo,WhatsApp
+Otavio Rodrigues,***.306.965-51,PR,71,3110,529.84,adimplente,Medio,325,3,Cartao de debito,ativo,WhatsApp
+Tatiane Souza,***.716.926-62,MG,22,2790,1156.10,adimplente,Alto,247,3,Cartao de credito,ativo,App
+Rafael Rocha,***.623.685-73,MG,32,5990,728.37,adimplente,Alto,317,1,Investimento,ativo,App
+Antonio Martins,***.567.685-81,MA,47,5600,477.56,adimplente,Alto,335,1,Conta digital,ativo,WhatsApp
+Rafael Freitas,***.381.899-65,SP,64,3610,1142.23,restrito,Medio,0,2,Financiamento,ativo,Agencia
+Roberto Castro,***.500.896-56,PA,26,1300,338.12,adimplente,Alto,175,1,Conta digital,ativo,WhatsApp
+Vinicius Monteiro,***.896.954-92,SC,46,1280,319.59,restrito,Medio,0,2,Financiamento,ativo,WhatsApp
+Tatiane Castro,***.886.816-46,SP,66,3240,550.84,restrito,Baixo,0,2,Investimento,ativo,App
+Gustavo Barbosa,***.701.260-46,SP,19,6050,504.39,adimplente,Medio,215,3,Financiamento,ativo,WhatsApp
+Tatiane Carvalho,***.217.992-39,SP,30,3520,419.43,adimplente,Alto,69,1,Conta digital,ativo,WhatsApp
+Gustavo Freitas,***.431.994-10,SP,73,3340,535.52,adimplente,Alto,14,3,Conta digital,ativo,WhatsApp
+Caio Ribeiro,***.808.619-41,BA,31,4770,272.54,restrito,Alto,0,4,Cartao de credito,ativo,App
+Felipe Nascimento,***.240.818-41,SE,54,5530,202.43,adimplente,Alto,189,1,Financiamento,inativo,App
+Sergio Moreira,***.178.791-41,RS,25,8390,761.47,restrito,Baixo,0,1,Cartao de credito,ativo,WhatsApp
+Juliana Ferreira,***.392.391-98,SP,42,4030,1422.22,adimplente,Medio,286,1,Cartao de debito,ativo,WhatsApp
+Joao Santos,***.638.323-87,CE,51,3330,1055.47,adimplente,Medio,338,3,Seguro,ativo,WhatsApp
+Juliana Ferreira,***.729.602-83,RS,41,2770,1042.96,adimplente,Medio,197,1,Conta digital,ativo,WhatsApp
+Jose Oliveira,***.955.709-32,RJ,38,2670,731.39,adimplente,Medio,275,1,Seguro,ativo,WhatsApp
+Caio Costa,***.671.663-58,SP,74,3840,1135.16,adimplente,Baixo,214,2,Investimento,ativo,Telefone
+Camila Barros,***.155.110-11,RJ,48,2410,1545.70,adimplente,Alto,124,3,Cartao de debito,ativo,App
+Aline Almeida,***.172.591-49,RJ,47,8430,580.80,adimplente,Alto,294,4,Conta digital,ativo,App
+Antonio Barbosa,***.974.791-17,PR,39,8060,686.10,adimplente,Medio,20,4,Emprestimo pessoal,ativo,Telefone
+Sandra Ribeiro,***.740.237-70,RJ,31,4890,310.99,restrito,Baixo,0,4,Emprestimo pessoal,ativo,WhatsApp
